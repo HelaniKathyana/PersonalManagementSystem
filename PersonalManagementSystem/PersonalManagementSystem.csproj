@@ -141,24 +141,6 @@
     <None Include="Resources\logo-main.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dashboard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\reports.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\income.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\expense.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\contact.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\prediction.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\TotalIncome.png" />
   </ItemGroup>
   <ItemGroup>
@@ -174,7 +156,7 @@
     <None Include="Resources\signin-image.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\signup-image.jpg" />
+    <None Include="Resources\signup-image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

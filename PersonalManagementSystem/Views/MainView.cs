@@ -21,5 +21,10 @@ namespace PersonalManagementSystem
         {
      
         }
+
+        private void dataGridViewContact_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

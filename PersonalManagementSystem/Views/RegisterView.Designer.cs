@@ -230,9 +230,9 @@ namespace PersonalManagementSystem
             // pictureBoxSignIn
             // 
             this.pictureBoxSignIn.Image = global::PersonalManagementSystem.Properties.Resources.signup_image;
-            this.pictureBoxSignIn.Location = new System.Drawing.Point(48, 60);
+            this.pictureBoxSignIn.Location = new System.Drawing.Point(12, 26);
             this.pictureBoxSignIn.Name = "pictureBoxSignIn";
-            this.pictureBoxSignIn.Size = new System.Drawing.Size(232, 372);
+            this.pictureBoxSignIn.Size = new System.Drawing.Size(312, 450);
             this.pictureBoxSignIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSignIn.TabIndex = 17;
             this.pictureBoxSignIn.TabStop = false;

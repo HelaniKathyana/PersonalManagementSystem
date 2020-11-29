@@ -42,13 +42,11 @@ namespace PersonalManagementSystem
                     txtPassword.Clear();
                     checkBoxShowPwd.Checked = false;
 
-                    this.Hide();
-
                     MainView main = new MainView();
-                    main.ShowDialog();
+                    main.Show();
+                    this.Hide();
                     main = null;
 
-                    this.Show();
                     this.txtUserEmail.Select();
                 }
                 else
@@ -82,7 +80,7 @@ namespace PersonalManagementSystem
         private void labelRegister_Click(object sender, EventArgs e)
         {
             RegisterView register = new RegisterView();
-            register.ShowDialog();
+            register.Show();
             this.Hide();
         }
     }

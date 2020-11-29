@@ -98,7 +98,6 @@ namespace PersonalManagementSystem
                 txtEmail.Clear();
                 txtPassword.Clear();
                 txtConfirmPassword.Clear();
-
             }
 
         }
@@ -106,32 +105,8 @@ namespace PersonalManagementSystem
         private void labelLogin_Click(object sender, EventArgs e)
         {
             LoginView login = new LoginView();
-            login.ShowDialog();
+            login.Show();
             this.Hide();
         }
-
-        /*        private void labelRegister_Click(object sender, EventArgs e)
-                {
-                    new LoginView().Show();
-                    this.Hide();
-                }
-
-                private void buttonRegister_Click(object sender, EventArgs e)
-                {
-                    if (txtName.Text == "Helani" && txtEmail.Text == "helani@gmail.com" && txtPassword.Text == "123" && txtConfirmPassword.Text == "123")
-                    {
-                        new LoginView().Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Try again!!");
-                        txtName.Clear();
-                        txtEmail.Clear();
-                        txtPassword.Clear();
-                        txtConfirmPassword.Clear();
-                        txtName.Focus();
-                    }
-                }*/
     }
 }
