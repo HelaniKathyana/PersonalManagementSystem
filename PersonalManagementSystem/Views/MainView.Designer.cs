@@ -30,6 +30,9 @@ namespace PersonalManagementSystem
         private void InitializeComponent()
         {
             System.Windows.Forms.TabControl mainViewTabControl;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.dashboardTabPage = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,7 +55,14 @@ namespace PersonalManagementSystem
             this.inomeTabPage = new System.Windows.Forms.TabPage();
             this.expensesTabPage = new System.Windows.Forms.TabPage();
             this.contactsTabPage = new System.Windows.Forms.TabPage();
+            this.buttonAddContact = new System.Windows.Forms.Button();
+            this.textSearchContact = new System.Windows.Forms.TextBox();
             this.dataGridViewContact = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
             this.predictionTabPage = new System.Windows.Forms.TabPage();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -65,12 +75,8 @@ namespace PersonalManagementSystem
             this.pictureBoxProfit = new System.Windows.Forms.PictureBox();
             this.pictureBoxExpense = new System.Windows.Forms.PictureBox();
             this.pictureBoxIncome = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSearch = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             mainViewTabControl = new System.Windows.Forms.TabControl();
             mainViewTabControl.SuspendLayout();
             this.dashboardTabPage.SuspendLayout();
@@ -85,6 +91,7 @@ namespace PersonalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -351,6 +358,9 @@ namespace PersonalManagementSystem
             // 
             // contactsTabPage
             // 
+            this.contactsTabPage.Controls.Add(this.buttonAddContact);
+            this.contactsTabPage.Controls.Add(this.pictureBoxSearch);
+            this.contactsTabPage.Controls.Add(this.textSearchContact);
             this.contactsTabPage.Controls.Add(this.dataGridViewContact);
             this.contactsTabPage.Location = new System.Drawing.Point(4, 44);
             this.contactsTabPage.Name = "contactsTabPage";
@@ -360,13 +370,58 @@ namespace PersonalManagementSystem
             this.contactsTabPage.Text = "Contacts";
             this.contactsTabPage.UseVisualStyleBackColor = true;
             // 
+            // buttonAddContact
+            // 
+            this.buttonAddContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonAddContact.FlatAppearance.BorderSize = 0;
+            this.buttonAddContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddContact.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddContact.ForeColor = System.Drawing.Color.White;
+            this.buttonAddContact.Location = new System.Drawing.Point(728, 17);
+            this.buttonAddContact.Name = "buttonAddContact";
+            this.buttonAddContact.Size = new System.Drawing.Size(154, 36);
+            this.buttonAddContact.TabIndex = 4;
+            this.buttonAddContact.Text = "Add Contact";
+            this.buttonAddContact.UseVisualStyleBackColor = false;
+            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
+            // 
+            // textSearchContact
+            // 
+            this.textSearchContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSearchContact.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textSearchContact.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.textSearchContact.Location = new System.Drawing.Point(34, 17);
+            this.textSearchContact.Multiline = true;
+            this.textSearchContact.Name = "textSearchContact";
+            this.textSearchContact.Size = new System.Drawing.Size(250, 30);
+            this.textSearchContact.TabIndex = 1;
+            this.textSearchContact.Text = " Search Contacts";
+            this.textSearchContact.Enter += new System.EventHandler(this.SearchContactText_Enter);
+            this.textSearchContact.Leave += new System.EventHandler(this.SearchContactText_Leave);
+            // 
             // dataGridViewContact
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewContact.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewContact.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewContact.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataGridViewContact.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dataGridViewContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewContact.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewContact.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -374,11 +429,44 @@ namespace PersonalManagementSystem
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridViewContact.Location = new System.Drawing.Point(34, 89);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewContact.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewContact.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridViewContact.Location = new System.Drawing.Point(34, 74);
             this.dataGridViewContact.Name = "dataGridViewContact";
-            this.dataGridViewContact.Size = new System.Drawing.Size(848, 426);
+            this.dataGridViewContact.Size = new System.Drawing.Size(848, 441);
             this.dataGridViewContact.TabIndex = 0;
-            this.dataGridViewContact.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContact_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Name";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Email";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Mobile Number";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Designation";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Address";
+            this.Column5.Name = "Column5";
             // 
             // reportsTabPage
             // 
@@ -502,6 +590,16 @@ namespace PersonalManagementSystem
             this.pictureBoxIncome.TabIndex = 2;
             this.pictureBoxIncome.TabStop = false;
             // 
+            // pictureBoxSearch
+            // 
+            this.pictureBoxSearch.Image = global::PersonalManagementSystem.Properties.Resources.search;
+            this.pictureBoxSearch.Location = new System.Drawing.Point(258, 21);
+            this.pictureBoxSearch.Name = "pictureBoxSearch";
+            this.pictureBoxSearch.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSearch.TabIndex = 2;
+            this.pictureBoxSearch.TabStop = false;
+            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
@@ -511,31 +609,6 @@ namespace PersonalManagementSystem
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Name";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Email";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Mobile Number";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Designation";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Address";
-            this.Column5.Name = "Column5";
             // 
             // MainView
             // 
@@ -556,6 +629,7 @@ namespace PersonalManagementSystem
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.contactsTabPage.ResumeLayout(false);
+            this.contactsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
@@ -566,6 +640,7 @@ namespace PersonalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExpense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -612,5 +687,8 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.PictureBox pictureBoxSearch;
+        private System.Windows.Forms.TextBox textSearchContact;
+        private System.Windows.Forms.Button buttonAddContact;
     }
 }

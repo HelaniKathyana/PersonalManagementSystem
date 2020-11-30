@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonalManagementSystem.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,8 +23,30 @@ namespace PersonalManagementSystem
      
         }
 
-        private void dataGridViewContact_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SearchContactText_Enter(object sender, EventArgs e)
         {
+            if (textSearchContact.Text == " Search Contacts")
+            {
+                textSearchContact.Text = "";
+
+                textSearchContact.ForeColor = Color.Black;
+            }
+        }
+
+        private void SearchContactText_Leave(object sender, EventArgs e)
+        {
+            if (textSearchContact.Text == "")
+            {
+                textSearchContact.Text = " Search Contacts";
+
+                textSearchContact.ForeColor = Color.Silver;
+            }
+        }
+
+        private void buttonAddContact_Click(object sender, EventArgs e)
+        {
+            AddContactView addContact = new AddContactView();
+            addContact.ShowDialog();
 
         }
     }

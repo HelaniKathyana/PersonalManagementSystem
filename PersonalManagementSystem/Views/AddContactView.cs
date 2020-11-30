@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PersonalManagementSystem.Views
 {
-    public partial class MainPage : Form
+    public partial class AddContactView : Form
     {
-        public MainPage()
+        public AddContactView()
         {
             InitializeComponent();
-        }
-
-        private void labelTitle_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
