@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PersonalManagementSystem.Connection;
+using PersonalManagementSystem.Models;
 
 namespace PersonalManagementSystem
 {
     public partial class LoginView : Form
     {
+        static LoginModel lm = new LoginModel();
         public LoginView()
         {
             InitializeComponent();
@@ -28,15 +30,10 @@ namespace PersonalManagementSystem
             if(!string.IsNullOrEmpty(txtUserEmail.Text) &&
                !string.IsNullOrEmpty(txtPassword.Text))
             {
-                string loginSQL = string.Empty;
 
-                loginSQL += "SELECT * FROM Login ";
-                loginSQL += "WHERE Email = '" + txtUserEmail.Text + "' ";
-                loginSQL += "AND Password = '" + txtPassword.Text + "'";
+                DataTable userData = lm.executeLoginSql(txtUserEmail.Text, txtPassword.Text);
 
-                DataTable userData = ServerConnection.executeSQL(loginSQL);
-
-                if(userData.Rows.Count > 0)
+                if (userData.Rows.Count > 0)
                 {
                     txtUserEmail.Clear();
                     txtPassword.Clear();

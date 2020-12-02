@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PersonalManagementSystem.Connection;
+using PersonalManagementSystem.Models;
 
 namespace PersonalManagementSystem
 {
     public partial class RegisterView : Form
     {
+        static RegisterModel rm = new RegisterModel();
         public RegisterView()
         {
             InitializeComponent();
@@ -69,8 +71,7 @@ namespace PersonalManagementSystem
                 return;
             }
 
-            string emailSQL = "SELECT Email FROM Login WHERE Email = '" + txtEmail.Text + "'";
-            DataTable checkDuplicates = PersonalManagementSystem.Connection.ServerConnection.executeSQL(emailSQL);
+            DataTable checkDuplicates = rm.executeIsDuplicate(txtEmail.Text);
 
             if(checkDuplicates.Rows.Count > 0)
             {
@@ -84,12 +85,7 @@ namespace PersonalManagementSystem
 
             if(result == DialogResult.Yes)
             {
-                string registerSQL = string.Empty;
-
-                registerSQL += "INSERT INTO Login (Full_Name, Email, Password)";
-                registerSQL += "VALUES ('" + txtFullName.Text + "','" + txtEmail.Text + "','" + txtPassword.Text + "')";
-
-                PersonalManagementSystem.Connection.ServerConnection.executeSQL(registerSQL);
+                rm.executeRegisterSql(txtFullName.Text, txtEmail.Text, txtPassword.Text);
 
                 MessageBox.Show("The record has been saved successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
