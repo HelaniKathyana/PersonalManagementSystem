@@ -27,7 +27,7 @@ namespace PersonalManagementSystem
 
         private void loadUserData()
         {
-            DataTable userData = ServerConnection.executeSQL("SELECT Full_Name FROM Login");
+            DataTable userData = ServerConnection.executeSQL("SELECT Full_Name FROM [User]");
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -47,6 +47,13 @@ namespace PersonalManagementSystem
             {
                 MessageBox.Show("Please enter Email.", caption, btn, ico);
                 txtEmail.Select();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtUsername.Text))
+            {
+                MessageBox.Show("Please enter Username.", caption, btn, ico);
+                txtUsername.Select();
                 return;
             }
 
@@ -71,12 +78,12 @@ namespace PersonalManagementSystem
                 return;
             }
 
-            DataTable checkDuplicates = rm.executeIsDuplicate(txtEmail.Text);
+            DataTable checkDuplicates = rm.executeIsDuplicate(txtUsername.Text);
 
             if(checkDuplicates.Rows.Count > 0)
             {
-                MessageBox.Show("The Email already exists. Please try another email.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtEmail.SelectAll();
+                MessageBox.Show("The Username already exists. Please try another username.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtUsername.SelectAll();
                 return;
             }
 
@@ -85,17 +92,17 @@ namespace PersonalManagementSystem
 
             if(result == DialogResult.Yes)
             {
-                rm.executeRegisterSql(txtFullName.Text, txtEmail.Text, txtPassword.Text);
+                rm.executeRegisterSql(txtFullName.Text, txtEmail.Text, txtUsername.Text, txtPassword.Text);
 
                 MessageBox.Show("The record has been saved successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 loadUserData();
                 txtFullName.Clear();
                 txtEmail.Clear();
+                txtUsername.Clear();
                 txtPassword.Clear();
                 txtConfirmPassword.Clear();
             }
-
         }
 
         private void labelLogin_Click(object sender, EventArgs e)

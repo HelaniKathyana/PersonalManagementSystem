@@ -42,12 +42,14 @@ namespace PersonalManagementSystem
             this.labelAlreadyHaveAnAccount = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
             this.buttonRegister = new System.Windows.Forms.Button();
-            this.checkBoxTerms = new System.Windows.Forms.CheckBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.pictureBoxSignIn = new System.Windows.Forms.PictureBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.labelUsername = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignIn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +105,7 @@ namespace PersonalManagementSystem
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panel3.Location = new System.Drawing.Point(347, 264);
+            this.panel3.Location = new System.Drawing.Point(347, 320);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(260, 1);
             this.panel3.TabIndex = 3;
@@ -113,7 +115,7 @@ namespace PersonalManagementSystem
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.labelPassword.Location = new System.Drawing.Point(343, 217);
+            this.labelPassword.Location = new System.Drawing.Point(343, 273);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(76, 21);
             this.labelPassword.TabIndex = 4;
@@ -122,7 +124,7 @@ namespace PersonalManagementSystem
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panel4.Location = new System.Drawing.Point(347, 328);
+            this.panel4.Location = new System.Drawing.Point(347, 384);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(260, 1);
             this.panel4.TabIndex = 3;
@@ -132,7 +134,7 @@ namespace PersonalManagementSystem
             this.labelConfirmPw.AutoSize = true;
             this.labelConfirmPw.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirmPw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.labelConfirmPw.Location = new System.Drawing.Point(343, 281);
+            this.labelConfirmPw.Location = new System.Drawing.Point(343, 337);
             this.labelConfirmPw.Name = "labelConfirmPw";
             this.labelConfirmPw.Size = new System.Drawing.Size(137, 21);
             this.labelConfirmPw.TabIndex = 4;
@@ -143,7 +145,7 @@ namespace PersonalManagementSystem
             this.labelAlreadyHaveAnAccount.AutoSize = true;
             this.labelAlreadyHaveAnAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAlreadyHaveAnAccount.ForeColor = System.Drawing.Color.Gray;
-            this.labelAlreadyHaveAnAccount.Location = new System.Drawing.Point(369, 432);
+            this.labelAlreadyHaveAnAccount.Location = new System.Drawing.Point(369, 454);
             this.labelAlreadyHaveAnAccount.Name = "labelAlreadyHaveAnAccount";
             this.labelAlreadyHaveAnAccount.Size = new System.Drawing.Size(164, 17);
             this.labelAlreadyHaveAnAccount.TabIndex = 11;
@@ -154,7 +156,7 @@ namespace PersonalManagementSystem
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.labelLogin.Location = new System.Drawing.Point(529, 432);
+            this.labelLogin.Location = new System.Drawing.Point(529, 454);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(40, 17);
             this.labelLogin.TabIndex = 10;
@@ -168,24 +170,13 @@ namespace PersonalManagementSystem
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.Color.White;
-            this.buttonRegister.Location = new System.Drawing.Point(347, 383);
+            this.buttonRegister.Location = new System.Drawing.Point(347, 405);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(260, 43);
             this.buttonRegister.TabIndex = 9;
             this.buttonRegister.Text = "REGISTER";
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
-            // 
-            // checkBoxTerms
-            // 
-            this.checkBoxTerms.AutoSize = true;
-            this.checkBoxTerms.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTerms.Location = new System.Drawing.Point(355, 355);
-            this.checkBoxTerms.Name = "checkBoxTerms";
-            this.checkBoxTerms.Size = new System.Drawing.Size(241, 19);
-            this.checkBoxTerms.TabIndex = 12;
-            this.checkBoxTerms.Text = "I have accepted the Terms and Condition";
-            this.checkBoxTerms.UseVisualStyleBackColor = true;
             // 
             // txtFullName
             // 
@@ -211,7 +202,7 @@ namespace PersonalManagementSystem
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(346, 239);
+            this.txtPassword.Location = new System.Drawing.Point(346, 295);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(260, 22);
             this.txtPassword.TabIndex = 15;
@@ -221,7 +212,7 @@ namespace PersonalManagementSystem
             // 
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(346, 303);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(346, 359);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(260, 22);
             this.txtConfirmPassword.TabIndex = 16;
@@ -230,25 +221,56 @@ namespace PersonalManagementSystem
             // pictureBoxSignIn
             // 
             this.pictureBoxSignIn.Image = global::PersonalManagementSystem.Properties.Resources.signup_image;
-            this.pictureBoxSignIn.Location = new System.Drawing.Point(12, 26);
+            this.pictureBoxSignIn.Location = new System.Drawing.Point(12, 12);
             this.pictureBoxSignIn.Name = "pictureBoxSignIn";
-            this.pictureBoxSignIn.Size = new System.Drawing.Size(312, 450);
+            this.pictureBoxSignIn.Size = new System.Drawing.Size(312, 486);
             this.pictureBoxSignIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSignIn.TabIndex = 17;
             this.pictureBoxSignIn.TabStop = false;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(347, 234);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(260, 24);
+            this.txtUsername.TabIndex = 20;
+            // 
+            // labelUsername
+            // 
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.labelUsername.Location = new System.Drawing.Point(343, 213);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(81, 21);
+            this.labelUsername.TabIndex = 19;
+            this.labelUsername.Text = "Username";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel5.Location = new System.Drawing.Point(347, 260);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(260, 1);
+            this.panel5.TabIndex = 18;
             // 
             // RegisterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(648, 500);
+            this.ClientSize = new System.Drawing.Size(648, 510);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.labelUsername);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.pictureBoxSignIn);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.checkBoxTerms);
             this.Controls.Add(this.labelAlreadyHaveAnAccount);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonRegister);
@@ -286,11 +308,13 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.Label labelAlreadyHaveAnAccount;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Button buttonRegister;
-        private System.Windows.Forms.CheckBox checkBoxTerms;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.PictureBox pictureBoxSignIn;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label labelUsername;
+        private System.Windows.Forms.Panel panel5;
     }
 }

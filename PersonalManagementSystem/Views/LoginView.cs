@@ -22,20 +22,20 @@ namespace PersonalManagementSystem
 
         private void Login_Load(object sender, EventArgs e)
         {
-            txtUserEmail.Select();
+            txtUsername.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtUserEmail.Text) &&
+            if(!string.IsNullOrEmpty(txtUsername.Text) &&
                !string.IsNullOrEmpty(txtPassword.Text))
             {
 
-                DataTable userData = lm.executeLoginSql(txtUserEmail.Text, txtPassword.Text);
+                DataTable userData = lm.executeLoginSql(txtUsername.Text, txtPassword.Text);
 
                 if (userData.Rows.Count > 0)
                 {
-                    txtUserEmail.Clear();
+                    txtUsername.Clear();
                     txtPassword.Clear();
                     checkBoxShowPwd.Checked = false;
 
@@ -44,21 +44,21 @@ namespace PersonalManagementSystem
                     this.Hide();
                     main = null;
 
-                    this.txtUserEmail.Select();
+                    this.txtUsername.Select();
                 }
                 else
                 {
                     MessageBox.Show("The username or password is incorrect. Try again.", "",
                         MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    txtUserEmail.Focus();
-                    txtUserEmail.SelectAll();
+                    txtUsername.Focus();
+                    txtUsername.SelectAll();
                 }
             }
             else
             {
                 MessageBox.Show("Please enter username and password.", "",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtUserEmail.Select();
+                txtUsername.Select();
             }
         }
 

@@ -10,17 +10,17 @@ namespace PersonalManagementSystem.Models
 {
     class LoginModel
     {
-        public DataTable executeLoginSql(string email, string password)
+        public DataTable executeLoginSql(string username, string password)
         {
             string loginSQL = string.Empty;
 
-            loginSQL += "SELECT * FROM Login ";
-            loginSQL += "WHERE Email = '" + email + "' ";
+            loginSQL += "SELECT * FROM [User] ";
+            loginSQL += "WHERE Username = '" + username + "' ";
             loginSQL += "AND Password = '" + password + "'";
 
-            DataTable userData = ServerConnection.executeSQL(loginSQL);
+            DataTable loginData = ServerConnection.executeSQL(loginSQL);
 
-            return userData;
+            return loginData;
         }
     }
 }

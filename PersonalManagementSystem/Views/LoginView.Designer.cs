@@ -34,7 +34,7 @@ namespace PersonalManagementSystem
             this.panelUsename = new System.Windows.Forms.Panel();
             this.panelPassword = new System.Windows.Forms.Panel();
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.txtUserEmail = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.labelRegister = new System.Windows.Forms.Label();
             this.labelNotAMember = new System.Windows.Forms.Label();
@@ -89,14 +89,14 @@ namespace PersonalManagementSystem
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtUserEmail
+            // txtUsername
             // 
-            this.txtUserEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserEmail.Location = new System.Drawing.Point(376, 135);
-            this.txtUserEmail.Name = "txtUserEmail";
-            this.txtUserEmail.Size = new System.Drawing.Size(200, 22);
-            this.txtUserEmail.TabIndex = 5;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(376, 135);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(200, 22);
+            this.txtUsername.TabIndex = 5;
             // 
             // txtPassword
             // 
@@ -186,7 +186,7 @@ namespace PersonalManagementSystem
             this.Controls.Add(this.labelNotAMember);
             this.Controls.Add(this.labelRegister);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUserEmail);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.panelPassword);
             this.Controls.Add(this.panelUsename);
@@ -215,7 +215,7 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.PictureBox pictureBoxPass;
         private System.Windows.Forms.Panel panelPassword;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.TextBox txtUserEmail;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.Label labelNotAMember;

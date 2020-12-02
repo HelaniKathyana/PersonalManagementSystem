@@ -10,19 +10,19 @@ namespace PersonalManagementSystem.Models
 {
     class RegisterModel
     {
-        public DataTable executeIsDuplicate(string email)
+        public DataTable executeIsDuplicate(string username)
         {
-            string emailSQL = "SELECT Email FROM Login WHERE Email = '" + email + "'";
-            DataTable checkDuplicates = PersonalManagementSystem.Connection.ServerConnection.executeSQL(emailSQL);
+            string usernameSQL = "SELECT Email FROM [User] WHERE Username = '" + username + "'";
+            DataTable checkDuplicates = PersonalManagementSystem.Connection.ServerConnection.executeSQL(usernameSQL);
             return checkDuplicates;
         }
 
-        public DataTable executeRegisterSql(string name, string email, string password)
+        public DataTable executeRegisterSql(string name, string email, string username, string password)
         {
             string registerSQL = string.Empty;
 
-            registerSQL += "INSERT INTO Login (Full_Name, Email, Password)";
-            registerSQL += "VALUES ('" + name + "','" + email + "','" + password + "')";
+            registerSQL += "INSERT INTO [User] (Full_Name, Email, Username, Password)";
+            registerSQL += "VALUES ('" + name + "','" + email + "','" + username + "','" + password + "')";
 
             DataTable userData = ServerConnection.executeSQL(registerSQL);
             return userData;
