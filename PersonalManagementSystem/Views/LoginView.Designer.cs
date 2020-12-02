@@ -93,20 +93,27 @@ namespace PersonalManagementSystem
             // 
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.Silver;
             this.txtUsername.Location = new System.Drawing.Point(376, 135);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(200, 22);
             this.txtUsername.TabIndex = 5;
+            this.txtUsername.Text = "Username";
+            this.txtUsername.Enter += new System.EventHandler(this.UsernameText_Enter);
+            this.txtUsername.Leave += new System.EventHandler(this.UsernameText_Leave);
             // 
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.Silver;
             this.txtPassword.Location = new System.Drawing.Point(376, 207);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(200, 22);
             this.txtPassword.TabIndex = 6;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.Enter += new System.EventHandler(this.PasswordText_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.PasswordText_Leave);
             // 
             // labelRegister
             // 

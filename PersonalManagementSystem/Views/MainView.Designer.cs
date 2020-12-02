@@ -38,24 +38,32 @@ namespace PersonalManagementSystem
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTotalIncome = new System.Windows.Forms.Label();
             this.labelBalance = new System.Windows.Forms.Label();
             this.labelTotalBalance = new System.Windows.Forms.Label();
+            this.pictureBoxBalance = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.labelProfit = new System.Windows.Forms.Label();
             this.labelTotalProfit = new System.Windows.Forms.Label();
+            this.pictureBoxProfit = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.labelExpense = new System.Windows.Forms.Label();
             this.labelTotalExpense = new System.Windows.Forms.Label();
+            this.pictureBoxExpense = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.labelIncome = new System.Windows.Forms.Label();
+            this.pictureBoxIncome = new System.Windows.Forms.PictureBox();
             this.inomeTabPage = new System.Windows.Forms.TabPage();
             this.expensesTabPage = new System.Windows.Forms.TabPage();
             this.contactsTabPage = new System.Windows.Forms.TabPage();
             this.buttonAddContact = new System.Windows.Forms.Button();
+            this.pictureBoxSearch = new System.Windows.Forms.PictureBox();
             this.textSearchContact = new System.Windows.Forms.TextBox();
             this.dataGridViewContact = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,31 +75,23 @@ namespace PersonalManagementSystem
             this.predictionTabPage = new System.Windows.Forms.TabPage();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.labelSignUp = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBalance = new System.Windows.Forms.PictureBox();
-            this.pictureBoxProfit = new System.Windows.Forms.PictureBox();
-            this.pictureBoxExpense = new System.Windows.Forms.PictureBox();
-            this.pictureBoxIncome = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSearch = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             mainViewTabControl = new System.Windows.Forms.TabControl();
             mainViewTabControl.SuspendLayout();
             this.dashboardTabPage.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.contactsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).BeginInit();
-            this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBalance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncome)).BeginInit();
+            this.contactsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).BeginInit();
+            this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,6 +167,15 @@ namespace PersonalManagementSystem
             this.label3.TabIndex = 29;
             this.label3.Text = "Balance";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pictureBox4.Location = new System.Drawing.Point(201, 163);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -178,6 +187,15 @@ namespace PersonalManagementSystem
             this.label2.TabIndex = 27;
             this.label2.Text = "Expenses";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Magenta;
+            this.pictureBox3.Location = new System.Drawing.Point(100, 163);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox3.TabIndex = 26;
+            this.pictureBox3.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -188,6 +206,15 @@ namespace PersonalManagementSystem
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 25;
             this.label1.Text = "Income";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.pictureBox2.Location = new System.Drawing.Point(11, 163);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -245,6 +272,16 @@ namespace PersonalManagementSystem
             this.labelTotalBalance.TabIndex = 13;
             this.labelTotalBalance.Text = "Balance";
             // 
+            // pictureBoxBalance
+            // 
+            this.pictureBoxBalance.Image = global::PersonalManagementSystem.Properties.Resources.Balance;
+            this.pictureBoxBalance.Location = new System.Drawing.Point(702, 19);
+            this.pictureBoxBalance.Name = "pictureBoxBalance";
+            this.pictureBoxBalance.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBalance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBalance.TabIndex = 14;
+            this.pictureBoxBalance.TabStop = false;
+            // 
             // bunifuSeparator2
             // 
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
@@ -278,6 +315,16 @@ namespace PersonalManagementSystem
             this.labelTotalProfit.Size = new System.Drawing.Size(51, 21);
             this.labelTotalProfit.TabIndex = 9;
             this.labelTotalProfit.Text = "Profit";
+            // 
+            // pictureBoxProfit
+            // 
+            this.pictureBoxProfit.Image = global::PersonalManagementSystem.Properties.Resources.profit;
+            this.pictureBoxProfit.Location = new System.Drawing.Point(502, 19);
+            this.pictureBoxProfit.Name = "pictureBoxProfit";
+            this.pictureBoxProfit.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxProfit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxProfit.TabIndex = 10;
+            this.pictureBoxProfit.TabStop = false;
             // 
             // bunifuSeparator3
             // 
@@ -313,6 +360,16 @@ namespace PersonalManagementSystem
             this.labelTotalExpense.TabIndex = 5;
             this.labelTotalExpense.Text = "Total Expenditure";
             // 
+            // pictureBoxExpense
+            // 
+            this.pictureBoxExpense.Image = global::PersonalManagementSystem.Properties.Resources.TotalExpense;
+            this.pictureBoxExpense.Location = new System.Drawing.Point(243, 19);
+            this.pictureBoxExpense.Name = "pictureBoxExpense";
+            this.pictureBoxExpense.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxExpense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxExpense.TabIndex = 6;
+            this.pictureBoxExpense.TabStop = false;
+            // 
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
@@ -335,6 +392,16 @@ namespace PersonalManagementSystem
             this.labelIncome.Size = new System.Drawing.Size(48, 28);
             this.labelIncome.TabIndex = 3;
             this.labelIncome.Text = "000";
+            // 
+            // pictureBoxIncome
+            // 
+            this.pictureBoxIncome.Image = global::PersonalManagementSystem.Properties.Resources.TotalIncome;
+            this.pictureBoxIncome.Location = new System.Drawing.Point(34, 19);
+            this.pictureBoxIncome.Name = "pictureBoxIncome";
+            this.pictureBoxIncome.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxIncome.TabIndex = 2;
+            this.pictureBoxIncome.TabStop = false;
             // 
             // inomeTabPage
             // 
@@ -385,6 +452,16 @@ namespace PersonalManagementSystem
             this.buttonAddContact.Text = "Add Contact";
             this.buttonAddContact.UseVisualStyleBackColor = false;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
+            // 
+            // pictureBoxSearch
+            // 
+            this.pictureBoxSearch.Image = global::PersonalManagementSystem.Properties.Resources.search;
+            this.pictureBoxSearch.Location = new System.Drawing.Point(258, 21);
+            this.pictureBoxSearch.Name = "pictureBoxSearch";
+            this.pictureBoxSearch.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSearch.TabIndex = 2;
+            this.pictureBoxSearch.TabStop = false;
             // 
             // textSearchContact
             // 
@@ -442,6 +519,7 @@ namespace PersonalManagementSystem
             this.dataGridViewContact.Name = "dataGridViewContact";
             this.dataGridViewContact.Size = new System.Drawing.Size(848, 441);
             this.dataGridViewContact.TabIndex = 0;
+            this.dataGridViewContact.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContact_CellContentClick);
             // 
             // Column1
             // 
@@ -512,6 +590,16 @@ namespace PersonalManagementSystem
             this.labelSignUp.TabIndex = 1;
             this.labelSignUp.Text = "Sign Up";
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(15, 10);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(36, 36);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
@@ -522,93 +610,6 @@ namespace PersonalManagementSystem
             this.labelTitle.Size = new System.Drawing.Size(91, 37);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Fedha";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pictureBox4.Location = new System.Drawing.Point(201, 163);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Magenta;
-            this.pictureBox3.Location = new System.Drawing.Point(100, 163);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox3.TabIndex = 26;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 163);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBoxBalance
-            // 
-            this.pictureBoxBalance.Image = global::PersonalManagementSystem.Properties.Resources.Balance;
-            this.pictureBoxBalance.Location = new System.Drawing.Point(702, 19);
-            this.pictureBoxBalance.Name = "pictureBoxBalance";
-            this.pictureBoxBalance.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxBalance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxBalance.TabIndex = 14;
-            this.pictureBoxBalance.TabStop = false;
-            // 
-            // pictureBoxProfit
-            // 
-            this.pictureBoxProfit.Image = global::PersonalManagementSystem.Properties.Resources.profit;
-            this.pictureBoxProfit.Location = new System.Drawing.Point(502, 19);
-            this.pictureBoxProfit.Name = "pictureBoxProfit";
-            this.pictureBoxProfit.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxProfit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxProfit.TabIndex = 10;
-            this.pictureBoxProfit.TabStop = false;
-            // 
-            // pictureBoxExpense
-            // 
-            this.pictureBoxExpense.Image = global::PersonalManagementSystem.Properties.Resources.TotalExpense;
-            this.pictureBoxExpense.Location = new System.Drawing.Point(243, 19);
-            this.pictureBoxExpense.Name = "pictureBoxExpense";
-            this.pictureBoxExpense.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxExpense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxExpense.TabIndex = 6;
-            this.pictureBoxExpense.TabStop = false;
-            // 
-            // pictureBoxIncome
-            // 
-            this.pictureBoxIncome.Image = global::PersonalManagementSystem.Properties.Resources.TotalIncome;
-            this.pictureBoxIncome.Location = new System.Drawing.Point(34, 19);
-            this.pictureBoxIncome.Name = "pictureBoxIncome";
-            this.pictureBoxIncome.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxIncome.TabIndex = 2;
-            this.pictureBoxIncome.TabStop = false;
-            // 
-            // pictureBoxSearch
-            // 
-            this.pictureBoxSearch.Image = global::PersonalManagementSystem.Properties.Resources.search;
-            this.pictureBoxSearch.Location = new System.Drawing.Point(258, 21);
-            this.pictureBoxSearch.Name = "pictureBoxSearch";
-            this.pictureBoxSearch.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSearch.TabIndex = 2;
-            this.pictureBoxSearch.TabStop = false;
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(15, 10);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(36, 36);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
             // 
             // MainView
             // 
@@ -626,21 +627,21 @@ namespace PersonalManagementSystem
             mainViewTabControl.ResumeLayout(false);
             this.dashboardTabPage.ResumeLayout(false);
             this.dashboardTabPage.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.contactsTabPage.ResumeLayout(false);
-            this.contactsTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).EndInit();
-            this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExpense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncome)).EndInit();
+            this.contactsTabPage.ResumeLayout(false);
+            this.contactsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).EndInit();
+            this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 

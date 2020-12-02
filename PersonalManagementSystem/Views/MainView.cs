@@ -49,5 +49,10 @@ namespace PersonalManagementSystem
             addContact.ShowDialog();
 
         }
+
+        private void dataGridViewContact_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

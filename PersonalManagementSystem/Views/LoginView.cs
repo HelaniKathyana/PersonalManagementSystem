@@ -22,7 +22,7 @@ namespace PersonalManagementSystem
 
         private void Login_Load(object sender, EventArgs e)
         {
-            txtUsername.Select();
+    //        txtUsername.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,6 +38,8 @@ namespace PersonalManagementSystem
                     txtUsername.Clear();
                     txtPassword.Clear();
                     checkBoxShowPwd.Checked = false;
+
+                    MessageBox.Show("Successfully Log In.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     MainView main = new MainView();
                     main.Show();
@@ -79,6 +81,48 @@ namespace PersonalManagementSystem
             RegisterView register = new RegisterView();
             register.Show();
             this.Hide();
+        }
+
+        private void UsernameText_Enter(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "Username")
+            {
+                txtUsername.Text = "";
+
+                txtUsername.ForeColor = Color.Black;
+            }
+        }
+
+        private void UsernameText_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "Username";
+
+                txtUsername.ForeColor = Color.Silver;
+            }
+        }
+
+        private void PasswordText_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Password")
+            {
+                txtPassword.Text = "";
+
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.ForeColor = Color.Black;
+            }
+        }
+
+        private void PasswordText_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "Password";
+
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.ForeColor = Color.Silver;
+            }
         }
     }
 }
