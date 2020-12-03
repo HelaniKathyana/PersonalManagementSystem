@@ -16,5 +16,19 @@ namespace PersonalManagementSystem.Views
         {
             InitializeComponent();
         }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonAddContact_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void AddContactView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

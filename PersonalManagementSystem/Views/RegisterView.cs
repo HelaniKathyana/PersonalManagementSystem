@@ -14,7 +14,7 @@ namespace PersonalManagementSystem
 {
     public partial class RegisterView : Form
     {
-        static RegisterModel rm = new RegisterModel();
+        static UserModel rm = new UserModel();
         public RegisterView()
         {
             InitializeComponent();

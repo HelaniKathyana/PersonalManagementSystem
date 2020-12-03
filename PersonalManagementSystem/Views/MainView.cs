@@ -1,4 +1,5 @@
-﻿using PersonalManagementSystem.Views;
+﻿using PersonalManagementSystem.Models;
+using PersonalManagementSystem.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,12 @@ namespace PersonalManagementSystem
 {
     public partial class MainView : Form
     {
+        private int user_id;
+        public void setId(int id)
+        {
+            user_id = id;
+        }
+        static ContactModel cm = new ContactModel();
         public MainView()
         {
             InitializeComponent();
@@ -20,9 +27,10 @@ namespace PersonalManagementSystem
 
         private void MainView_Load(object sender, EventArgs e)
         {
-     
+            loadContactData();
         }
 
+        // Contact View
         private void SearchContactText_Enter(object sender, EventArgs e)
         {
             if (textSearchContact.Text == " Search Contacts")
@@ -47,12 +55,20 @@ namespace PersonalManagementSystem
         {
             AddContactView addContact = new AddContactView();
             addContact.ShowDialog();
-
         }
 
-        private void dataGridViewContact_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void loadContactData()
         {
+            DataTable contactData = cm.displayAllContactData(user_id);
 
+            dataGridViewContact.DataSource = contactData;
+            dataGridViewContact.Columns[0].HeaderText = "Name";
+            dataGridViewContact.Columns[1].HeaderText = "Email";
+            dataGridViewContact.Columns[2].HeaderText = "Mobile Number";
+            dataGridViewContact.Columns[3].HeaderText = "Designation";
+            dataGridViewContact.Columns[4].HeaderText = "Address";
+            Console.WriteLine("user id is" + user_id);
         }
+
     }
 }

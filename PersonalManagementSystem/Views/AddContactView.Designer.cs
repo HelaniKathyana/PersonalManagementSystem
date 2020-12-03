@@ -145,6 +145,7 @@ namespace PersonalManagementSystem.Views
             this.buttonAddContact.Text = "Add Contact";
             this.buttonAddContact.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAddContact.UseVisualStyleBackColor = false;
+            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
             // buttonClose
             // 
@@ -156,6 +157,7 @@ namespace PersonalManagementSystem.Views
             this.buttonClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonClose.TabIndex = 0;
             this.buttonClose.TabStop = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // AddContactView
             // 
@@ -176,6 +178,7 @@ namespace PersonalManagementSystem.Views
             this.Name = "AddContactView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddContactView";
+            this.Load += new System.EventHandler(this.AddContactView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.buttonClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

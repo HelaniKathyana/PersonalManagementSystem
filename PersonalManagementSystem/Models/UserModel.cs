@@ -8,8 +8,21 @@ using PersonalManagementSystem.Connection;
 
 namespace PersonalManagementSystem.Models
 {
-    class RegisterModel
+    public class UserModel
     {
+        public DataTable executeLoginSql(string username, string password)
+        {
+            string loginSQL = string.Empty;
+
+            loginSQL += "SELECT * FROM [User] ";
+            loginSQL += "WHERE Username = '" + username + "' ";
+            loginSQL += "AND Password = '" + password + "'";
+
+            DataTable loginData = ServerConnection.executeSQL(loginSQL);
+
+            return loginData;
+        }
+
         public DataTable executeIsDuplicate(string username)
         {
             string usernameSQL = "SELECT Email FROM [User] WHERE Username = '" + username + "'";
@@ -26,7 +39,6 @@ namespace PersonalManagementSystem.Models
 
             DataTable userData = ServerConnection.executeSQL(registerSQL);
             return userData;
-
         }
     }
 }

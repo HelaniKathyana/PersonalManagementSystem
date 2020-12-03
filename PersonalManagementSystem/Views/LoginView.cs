@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PersonalManagementSystem.Connection;
 using PersonalManagementSystem.Models;
 
 namespace PersonalManagementSystem
 {
     public partial class LoginView : Form
     {
-        static LoginModel lm = new LoginModel();
+        int id;
+        static UserModel lm = new UserModel();
         public LoginView()
         {
             InitializeComponent();
@@ -33,6 +33,12 @@ namespace PersonalManagementSystem
 
                 DataTable userData = lm.executeLoginSql(txtUsername.Text, txtPassword.Text);
 
+                foreach (DataRow row in userData.Rows)
+                {
+                    string idn = row["User_ID"].ToString();
+                    id = int.Parse(idn);
+                }
+              
                 if (userData.Rows.Count > 0)
                 {
                     txtUsername.Clear();
@@ -42,6 +48,7 @@ namespace PersonalManagementSystem
                     MessageBox.Show("Successfully Log In.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     MainView main = new MainView();
+                    main.setId(id);
                     main.Show();
                     this.Hide();
                     main = null;
