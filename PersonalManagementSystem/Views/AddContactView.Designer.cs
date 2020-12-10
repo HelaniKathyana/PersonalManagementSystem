@@ -131,10 +131,13 @@ namespace PersonalManagementSystem.Views
             // 
             this.buttonAddContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAddContact.BackColor = System.Drawing.Color.White;
-            this.buttonAddContact.FlatAppearance.BorderSize = 0;
+            this.buttonAddContact.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonAddContact.FlatAppearance.BorderSize = 3;
+            this.buttonAddContact.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAddContact.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.buttonAddContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddContact.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.buttonAddContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonAddContact.ForeColor = System.Drawing.Color.Black;
             this.buttonAddContact.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddContact.Image")));
             this.buttonAddContact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAddContact.Location = new System.Drawing.Point(262, 374);
@@ -178,6 +181,7 @@ namespace PersonalManagementSystem.Views
             this.Name = "AddContactView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddContactView";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddContactView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.buttonClose)).EndInit();
             this.ResumeLayout(false);

@@ -53,8 +53,35 @@ namespace PersonalManagementSystem
 
         private void buttonAddContact_Click(object sender, EventArgs e)
         {
-            AddContactView addContact = new AddContactView();
-            addContact.ShowDialog();
+            Form contactOverlay = new Form();
+            try
+            {
+                using (AddContactView addContact = new AddContactView())
+                {
+                    contactOverlay.StartPosition = FormStartPosition.Manual;
+                    contactOverlay.FormBorderStyle = FormBorderStyle.None;
+                    contactOverlay.Opacity = .50d;
+                    contactOverlay.BackColor = Color.Black;
+                    contactOverlay.WindowState = FormWindowState.Maximized;
+                    contactOverlay.TopMost = true;
+                    contactOverlay.Location = this.Location;
+                    contactOverlay.ShowInTaskbar = false;
+                    contactOverlay.Show();
+
+                    addContact.Owner = contactOverlay;
+                    addContact.ShowDialog();
+
+                    contactOverlay.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally 
+            {
+                contactOverlay.Dispose();
+            }
         }
 
         private void loadContactData()
@@ -67,7 +94,6 @@ namespace PersonalManagementSystem
             dataGridViewContact.Columns[2].HeaderText = "Mobile Number";
             dataGridViewContact.Columns[3].HeaderText = "Designation";
             dataGridViewContact.Columns[4].HeaderText = "Address";
-            Console.WriteLine("user id is" + user_id);
         }
 
     }
