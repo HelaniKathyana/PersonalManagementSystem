@@ -42,6 +42,7 @@ namespace PersonalManagementSystem
             this.pictureBoxPass = new System.Windows.Forms.PictureBox();
             this.pictureBoxEmail = new System.Windows.Forms.PictureBox();
             this.pictureBoxSignIn = new System.Windows.Forms.PictureBox();
+            this.validation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignIn)).BeginInit();
@@ -181,6 +182,16 @@ namespace PersonalManagementSystem
             this.pictureBoxSignIn.TabIndex = 10;
             this.pictureBoxSignIn.TabStop = false;
             // 
+            // validation
+            // 
+            this.validation.AutoSize = true;
+            this.validation.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.validation.Location = new System.Drawing.Point(385, 361);
+            this.validation.Name = "validation";
+            this.validation.Size = new System.Drawing.Size(0, 19);
+            this.validation.TabIndex = 16;
+            this.validation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // LoginView
             // 
             this.AcceptButton = this.buttonLogin;
@@ -188,6 +199,7 @@ namespace PersonalManagementSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(627, 420);
+            this.Controls.Add(this.validation);
             this.Controls.Add(this.pictureBoxSignIn);
             this.Controls.Add(this.checkBoxShowPwd);
             this.Controls.Add(this.labelNotAMember);
@@ -228,6 +240,7 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.Label labelNotAMember;
         private System.Windows.Forms.CheckBox checkBoxShowPwd;
         private System.Windows.Forms.PictureBox pictureBoxSignIn;
+        private System.Windows.Forms.Label validation;
     }
 }
 

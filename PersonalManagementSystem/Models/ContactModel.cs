@@ -17,9 +17,12 @@ namespace PersonalManagementSystem.Models
             return contactData;
         }
 
-        public DataTable addContactData(int id)
+        public DataTable addContactData(string name, string email, string mobileNumber, string designation, string address, int id)
         {
-            string contactSQL = "SELECT Name, Email, Mobile_Number, Designation, Address FROM Contact WHERE User_ID = '" + id + "'";
+            string contactSQL = string.Empty;
+            contactSQL += "INSERT INTO Contact (Name, Email, Mobile_Number, Designation, Address, User_ID)";
+            contactSQL += "VALUES ('" + name + "','" + email + "','" + mobileNumber + "','" + designation + "','" + address + "','" + id + "')";
+
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }

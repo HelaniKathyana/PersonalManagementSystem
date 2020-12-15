@@ -30,7 +30,6 @@ namespace PersonalManagementSystem.Views
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddContactView));
-            this.textName = new System.Windows.Forms.TextBox();
             this.labelAddContact = new System.Windows.Forms.Label();
             this.bunifuSeparator = new Bunifu.Framework.UI.BunifuSeparator();
             this.textEmail = new System.Windows.Forms.TextBox();
@@ -39,20 +38,15 @@ namespace PersonalManagementSystem.Views
             this.textAddress = new System.Windows.Forms.TextBox();
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.PictureBox();
+            this.textName = new System.Windows.Forms.TextBox();
+            this.labelName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.validation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.buttonClose)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textName
-            // 
-            this.textName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textName.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.textName.ForeColor = System.Drawing.Color.Silver;
-            this.textName.Location = new System.Drawing.Point(21, 85);
-            this.textName.Multiline = true;
-            this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(395, 30);
-            this.textName.TabIndex = 1;
-            this.textName.Text = "Name";
             // 
             // labelAddContact
             // 
@@ -81,51 +75,47 @@ namespace PersonalManagementSystem.Views
             // 
             // textEmail
             // 
-            this.textEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textEmail.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.textEmail.ForeColor = System.Drawing.Color.Silver;
-            this.textEmail.Location = new System.Drawing.Point(21, 136);
+            this.textEmail.ForeColor = System.Drawing.Color.Black;
+            this.textEmail.Location = new System.Drawing.Point(21, 168);
             this.textEmail.Multiline = true;
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(395, 30);
             this.textEmail.TabIndex = 4;
-            this.textEmail.Text = "Email";
             // 
             // textMobileNumber
             // 
-            this.textMobileNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textMobileNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textMobileNumber.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.textMobileNumber.ForeColor = System.Drawing.Color.Silver;
-            this.textMobileNumber.Location = new System.Drawing.Point(21, 186);
+            this.textMobileNumber.ForeColor = System.Drawing.Color.Black;
+            this.textMobileNumber.Location = new System.Drawing.Point(21, 235);
             this.textMobileNumber.Multiline = true;
             this.textMobileNumber.Name = "textMobileNumber";
             this.textMobileNumber.Size = new System.Drawing.Size(395, 30);
             this.textMobileNumber.TabIndex = 5;
-            this.textMobileNumber.Text = "Mobile Number";
             // 
             // textDesignation
             // 
-            this.textDesignation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDesignation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textDesignation.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.textDesignation.ForeColor = System.Drawing.Color.Silver;
-            this.textDesignation.Location = new System.Drawing.Point(21, 235);
+            this.textDesignation.ForeColor = System.Drawing.Color.Black;
+            this.textDesignation.Location = new System.Drawing.Point(21, 303);
             this.textDesignation.Multiline = true;
             this.textDesignation.Name = "textDesignation";
             this.textDesignation.Size = new System.Drawing.Size(395, 30);
             this.textDesignation.TabIndex = 6;
-            this.textDesignation.Text = "Designation";
             // 
             // textAddress
             // 
-            this.textAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textAddress.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.textAddress.ForeColor = System.Drawing.Color.Silver;
-            this.textAddress.Location = new System.Drawing.Point(21, 284);
+            this.textAddress.ForeColor = System.Drawing.Color.Black;
+            this.textAddress.Location = new System.Drawing.Point(21, 374);
             this.textAddress.Multiline = true;
             this.textAddress.Name = "textAddress";
             this.textAddress.Size = new System.Drawing.Size(395, 69);
             this.textAddress.TabIndex = 7;
-            this.textAddress.Text = "Address";
             // 
             // buttonAddContact
             // 
@@ -140,13 +130,12 @@ namespace PersonalManagementSystem.Views
             this.buttonAddContact.ForeColor = System.Drawing.Color.Black;
             this.buttonAddContact.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddContact.Image")));
             this.buttonAddContact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddContact.Location = new System.Drawing.Point(262, 374);
+            this.buttonAddContact.Location = new System.Drawing.Point(262, 463);
             this.buttonAddContact.Name = "buttonAddContact";
-            this.buttonAddContact.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonAddContact.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonAddContact.Size = new System.Drawing.Size(154, 36);
             this.buttonAddContact.TabIndex = 8;
             this.buttonAddContact.Text = "Add Contact";
-            this.buttonAddContact.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAddContact.UseVisualStyleBackColor = false;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
@@ -162,12 +151,90 @@ namespace PersonalManagementSystem.Views
             this.buttonClose.TabStop = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // textName
+            // 
+            this.textName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textName.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.textName.ForeColor = System.Drawing.Color.Black;
+            this.textName.Location = new System.Drawing.Point(21, 102);
+            this.textName.Multiline = true;
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(395, 30);
+            this.textName.TabIndex = 9;
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Location = new System.Drawing.Point(20, 74);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(58, 20);
+            this.labelName.TabIndex = 10;
+            this.labelName.Text = "Name :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 20);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Email :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 208);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Mobile Number :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 274);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Designaton :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 347);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Address :";
+            // 
+            // validation
+            // 
+            this.validation.AutoSize = true;
+            this.validation.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.validation.Location = new System.Drawing.Point(125, 514);
+            this.validation.Name = "validation";
+            this.validation.Size = new System.Drawing.Size(0, 19);
+            this.validation.TabIndex = 15;
+            this.validation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AddContactView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(436, 441);
+            this.ClientSize = new System.Drawing.Size(436, 547);
+            this.Controls.Add(this.validation);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.textName);
             this.Controls.Add(this.buttonAddContact);
             this.Controls.Add(this.textAddress);
             this.Controls.Add(this.textDesignation);
@@ -175,7 +242,6 @@ namespace PersonalManagementSystem.Views
             this.Controls.Add(this.textEmail);
             this.Controls.Add(this.bunifuSeparator);
             this.Controls.Add(this.labelAddContact);
-            this.Controls.Add(this.textName);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddContactView";
@@ -192,7 +258,6 @@ namespace PersonalManagementSystem.Views
         #endregion
 
         private System.Windows.Forms.PictureBox buttonClose;
-        private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.Label labelAddContact;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator;
         private System.Windows.Forms.TextBox textEmail;
@@ -200,5 +265,12 @@ namespace PersonalManagementSystem.Views
         private System.Windows.Forms.TextBox textDesignation;
         private System.Windows.Forms.TextBox textAddress;
         private System.Windows.Forms.Button buttonAddContact;
+        private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label validation;
     }
 }

@@ -58,6 +58,7 @@ namespace PersonalManagementSystem
             {
                 using (AddContactView addContact = new AddContactView())
                 {
+                    addContact.setId(user_id);
                     contactOverlay.StartPosition = FormStartPosition.Manual;
                     contactOverlay.FormBorderStyle = FormBorderStyle.None;
                     contactOverlay.Opacity = .50d;
