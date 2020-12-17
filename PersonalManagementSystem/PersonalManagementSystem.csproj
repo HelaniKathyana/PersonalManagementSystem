@@ -99,6 +99,12 @@
     <Compile Include="Views\RegisterView.Designer.cs">
       <DependentUpon>RegisterView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UpdateContactView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateContactView.Designer.cs">
+      <DependentUpon>UpdateContactView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\AddContactView.resx">
       <DependentUpon>AddContactView.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RegisterView.resx">
       <DependentUpon>RegisterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UpdateContactView.resx">
+      <DependentUpon>UpdateContactView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

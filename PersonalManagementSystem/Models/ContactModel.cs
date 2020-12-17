@@ -12,7 +12,14 @@ namespace PersonalManagementSystem.Models
     {
         public DataTable displayAllContactData(int id)
         {
-            string contactSQL = "SELECT Name, Email, Mobile_Number, Designation, Address FROM Contact WHERE User_ID = '" + id + "'";
+            string contactSQL = "SELECT Contact_ID, Name, Email, Mobile_Number, Designation, Address FROM Contact WHERE User_ID = '" + id + "'";
+            DataTable contactData = ServerConnection.executeSQL(contactSQL);
+            return contactData;
+        }
+
+        public DataTable displayContactDataById(int id)
+        {
+            string contactSQL = "SELECT Contact_ID, Name, Email, Mobile_Number, Designation, Address FROM Contact WHERE Contact_ID = '" + id + "'";
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }
@@ -23,6 +30,20 @@ namespace PersonalManagementSystem.Models
             contactSQL += "INSERT INTO Contact (Name, Email, Mobile_Number, Designation, Address, User_ID)";
             contactSQL += "VALUES ('" + name + "','" + email + "','" + mobileNumber + "','" + designation + "','" + address + "','" + id + "')";
 
+            DataTable contactData = ServerConnection.executeSQL(contactSQL);
+            return contactData;
+        }
+
+        public DataTable deleteContactData(object name)
+        {
+            string contactSQL = "DELETE FROM Contact WHERE Name = '" + name + "'";
+            DataTable contactData = ServerConnection.executeSQL(contactSQL);
+            return contactData;
+        }
+
+        public DataTable updateContactData(string name, string email, string mobileNumber, string designation, string address, int id)
+        {
+            string contactSQL = "UPDATE Contact SET Name = '" + name + "', Email = '" + email + "', Mobile_Number = '" + mobileNumber + "', Designation = '" + designation + "',  Address = '" + address + "'WHERE User_ID = '" + id + "'";
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }

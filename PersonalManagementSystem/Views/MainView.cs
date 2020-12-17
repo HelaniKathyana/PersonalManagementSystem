@@ -15,6 +15,7 @@ namespace PersonalManagementSystem
     public partial class MainView : Form
     {
         private int user_id;
+        String contId;
         public void setId(int id)
         {
             user_id = id;
@@ -36,7 +37,6 @@ namespace PersonalManagementSystem
             if (textSearchContact.Text == " Search Contacts")
             {
                 textSearchContact.Text = "";
-
                 textSearchContact.ForeColor = Color.Black;
             }
         }
@@ -46,9 +46,21 @@ namespace PersonalManagementSystem
             if (textSearchContact.Text == "")
             {
                 textSearchContact.Text = " Search Contacts";
-
                 textSearchContact.ForeColor = Color.Silver;
             }
+        }
+
+        private void loadContactData()
+        {
+            DataTable contactData = cm.displayAllContactData(user_id);
+
+            dataGridViewContact.DataSource = contactData;
+            dataGridViewContact.Columns[0].HeaderText = "Id";
+            dataGridViewContact.Columns[1].HeaderText = "Name";
+            dataGridViewContact.Columns[2].HeaderText = "Email";
+            dataGridViewContact.Columns[3].HeaderText = "Mobile Number";
+            dataGridViewContact.Columns[4].HeaderText = "Designation";
+            dataGridViewContact.Columns[5].HeaderText = "Address";
         }
 
         private void buttonAddContact_Click(object sender, EventArgs e)
@@ -82,20 +94,69 @@ namespace PersonalManagementSystem
             finally 
             {
                 contactOverlay.Dispose();
+                loadContactData();
             }
         }
 
-        private void loadContactData()
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
-            DataTable contactData = cm.displayAllContactData(user_id);
-
-            dataGridViewContact.DataSource = contactData;
-            dataGridViewContact.Columns[0].HeaderText = "Name";
-            dataGridViewContact.Columns[1].HeaderText = "Email";
-            dataGridViewContact.Columns[2].HeaderText = "Mobile Number";
-            dataGridViewContact.Columns[3].HeaderText = "Designation";
-            dataGridViewContact.Columns[4].HeaderText = "Address";
+            try
+            {
+                if (MessageBox.Show("Do you want to permanently delete the selected record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    cm.deleteContactData(dataGridViewContact.CurrentRow.Cells[0].Value);
+                    loadContactData();
+                    MessageBox.Show("The selected record has been deletecd.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                // and error occured
+            }
         }
 
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            Form contactOverlay = new Form();
+            try
+            {
+                using (UpdateContactView updateContact = new UpdateContactView())
+                {
+                    updateContact.setId(int.Parse(contId));
+                    contactOverlay.StartPosition = FormStartPosition.Manual;
+                    contactOverlay.FormBorderStyle = FormBorderStyle.None;
+                    contactOverlay.Opacity = .50d;
+                    contactOverlay.BackColor = Color.Black;
+                    contactOverlay.WindowState = FormWindowState.Maximized;
+                    contactOverlay.TopMost = true;
+                    contactOverlay.Location = this.Location;
+                    contactOverlay.ShowInTaskbar = false;
+                    contactOverlay.Show();
+
+                    updateContact.Owner = contactOverlay;
+                    updateContact.ShowDialog();
+
+                    contactOverlay.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                contactOverlay.Dispose();
+            }
+        }
+
+        private void dataGridViewContact_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+           contId = dataGridViewContact.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
     }
 }

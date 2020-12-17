@@ -62,6 +62,8 @@ namespace PersonalManagementSystem
             this.inomeTabPage = new System.Windows.Forms.TabPage();
             this.expensesTabPage = new System.Windows.Forms.TabPage();
             this.contactsTabPage = new System.Windows.Forms.TabPage();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.pictureBoxSearch = new System.Windows.Forms.PictureBox();
             this.textSearchContact = new System.Windows.Forms.TextBox();
@@ -420,6 +422,8 @@ namespace PersonalManagementSystem
             // 
             // contactsTabPage
             // 
+            this.contactsTabPage.Controls.Add(this.buttonUpdate);
+            this.contactsTabPage.Controls.Add(this.buttonDelete);
             this.contactsTabPage.Controls.Add(this.buttonAddContact);
             this.contactsTabPage.Controls.Add(this.pictureBoxSearch);
             this.contactsTabPage.Controls.Add(this.textSearchContact);
@@ -431,6 +435,44 @@ namespace PersonalManagementSystem
             this.contactsTabPage.TabIndex = 3;
             this.contactsTabPage.Text = "Contacts";
             this.contactsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonUpdate.BackColor = System.Drawing.Color.White;
+            this.buttonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.buttonUpdate.FlatAppearance.BorderSize = 3;
+            this.buttonUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdate.ForeColor = System.Drawing.Color.Black;
+            this.buttonUpdate.Location = new System.Drawing.Point(496, 17);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(98, 36);
+            this.buttonUpdate.TabIndex = 6;
+            this.buttonUpdate.Text = "Edit";
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDelete.BackColor = System.Drawing.Color.White;
+            this.buttonDelete.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.buttonDelete.FlatAppearance.BorderSize = 3;
+            this.buttonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.Black;
+            this.buttonDelete.Location = new System.Drawing.Point(613, 17);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(98, 36);
+            this.buttonDelete.TabIndex = 5;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonAddContact
             // 
@@ -511,6 +553,7 @@ namespace PersonalManagementSystem
             this.dataGridViewContact.Name = "dataGridViewContact";
             this.dataGridViewContact.Size = new System.Drawing.Size(848, 441);
             this.dataGridViewContact.TabIndex = 0;
+            this.dataGridViewContact.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewContact_RowHeaderMouseClick);
             // 
             // reportsTabPage
             // 
@@ -652,5 +695,7 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.PictureBox pictureBoxSearch;
         private System.Windows.Forms.TextBox textSearchContact;
         private System.Windows.Forms.Button buttonAddContact;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonUpdate;
     }
 }

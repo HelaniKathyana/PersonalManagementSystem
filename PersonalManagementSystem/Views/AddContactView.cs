@@ -17,6 +17,8 @@ namespace PersonalManagementSystem.Views
         static ContactModel cm = new ContactModel();
         private int id;
 
+        MainView mv = new MainView();
+
         public void setId(int id)
         {
             this.id = id;
@@ -46,57 +48,59 @@ namespace PersonalManagementSystem.Views
 
         private void buttonAddContact_Click(object sender, EventArgs e)
         {
+            MessageBoxButtons btn = MessageBoxButtons.OK;
+            MessageBoxIcon ico = MessageBoxIcon.Information;
+            string caption = "";
 
             if (string.IsNullOrEmpty(textName.Text))
             {
-                validation.ForeColor = Color.Red;
-                validation.Text = "Please enter Full Name.";
+                MessageBox.Show("Please enter the Full name", caption, btn, ico);
                 textName.Select();
                 return;
             }
 
-            if (string.IsNullOrEmpty(textEmail.Text))
+            Regex rEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            if (textEmail.Text.Length > 0)
             {
-                validation.ForeColor = Color.Red;
-                validation.Text = "Please enter Email.";
-                textEmail.Select();
-                return;
+                if (!rEmail.IsMatch(textEmail.Text))
+                {
+                    MessageBox.Show("Invalid Email Address", caption, btn, MessageBoxIcon.Error);
+                    textEmail.Select();
+                    return;
+                }
             }
 
-            if (string.IsNullOrEmpty(textMobileNumber.Text))
+            Regex rMobile = new Regex("^[0-9]{10}");
+            bool isValid = rMobile.IsMatch(textMobileNumber.Text);
+            if (!isValid)
             {
-                validation.ForeColor = Color.Red;
-                validation.Text = "Please enter Mobile number.";
+                MessageBox.Show("Please enter valid Mobile number", caption, btn, ico);
                 textMobileNumber.Select();
                 return;
             }
 
             if (string.IsNullOrEmpty(textDesignation.Text))
             {
-                validation.ForeColor = Color.Red;
-                validation.Text = "Please enter Designation.";
+                MessageBox.Show("Please enter Designation", caption, btn, ico);
                 textDesignation.Select();
                 return;
             }
 
             if (string.IsNullOrEmpty(textAddress.Text))
             {
-                validation.ForeColor = Color.Red;
-                validation.Text = "Please enter Address.";
+                MessageBox.Show("Please enter Address", caption, btn, ico);
                 textAddress.Select();
                 return;
             }
 
-
             DialogResult result;
-            result = MessageBox.Show("Do you want to  save the record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = MessageBox.Show("Do you want to save the record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 cm.addContactData(textName.Text, textEmail.Text, textMobileNumber.Text, textDesignation.Text, textAddress.Text, id);
 
-                validation.ForeColor = Color.Green;
-                validation.Text = "The record has been saved successfully.";
+                MessageBox.Show("The record has been saved successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 clearFeilds();
                 this.Hide();

@@ -44,7 +44,6 @@ namespace PersonalManagementSystem.Views
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.validation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.buttonClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,23 +211,12 @@ namespace PersonalManagementSystem.Views
             this.label4.TabIndex = 14;
             this.label4.Text = "Address :";
             // 
-            // validation
-            // 
-            this.validation.AutoSize = true;
-            this.validation.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.validation.Location = new System.Drawing.Point(125, 514);
-            this.validation.Name = "validation";
-            this.validation.Size = new System.Drawing.Size(0, 19);
-            this.validation.TabIndex = 15;
-            this.validation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // AddContactView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(436, 547);
-            this.Controls.Add(this.validation);
+            this.ClientSize = new System.Drawing.Size(436, 528);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -244,9 +232,9 @@ namespace PersonalManagementSystem.Views
             this.Controls.Add(this.labelAddContact);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddContactView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AddContactView";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.AddContactView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.buttonClose)).EndInit();
@@ -271,6 +259,5 @@ namespace PersonalManagementSystem.Views
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label validation;
     }
 }
