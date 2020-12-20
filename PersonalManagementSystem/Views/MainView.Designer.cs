@@ -30,9 +30,9 @@ namespace PersonalManagementSystem
         private void InitializeComponent()
         {
             System.Windows.Forms.TabControl mainViewTabControl;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.dashboardTabPage = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -74,6 +74,7 @@ namespace PersonalManagementSystem
             this.labelSignUp = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.buttonAddIncome = new System.Windows.Forms.Button();
             mainViewTabControl = new System.Windows.Forms.TabControl();
             mainViewTabControl.SuspendLayout();
             this.dashboardTabPage.SuspendLayout();
@@ -85,6 +86,7 @@ namespace PersonalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncome)).BeginInit();
+            this.inomeTabPage.SuspendLayout();
             this.contactsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).BeginInit();
@@ -94,15 +96,16 @@ namespace PersonalManagementSystem
             // 
             // mainViewTabControl
             // 
+            mainViewTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             mainViewTabControl.Controls.Add(this.dashboardTabPage);
             mainViewTabControl.Controls.Add(this.inomeTabPage);
             mainViewTabControl.Controls.Add(this.expensesTabPage);
             mainViewTabControl.Controls.Add(this.contactsTabPage);
             mainViewTabControl.Controls.Add(this.reportsTabPage);
             mainViewTabControl.Controls.Add(this.predictionTabPage);
-            mainViewTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             mainViewTabControl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mainViewTabControl.Location = new System.Drawing.Point(0, 55);
+            mainViewTabControl.Location = new System.Drawing.Point(0, 52);
             mainViewTabControl.Name = "mainViewTabControl";
             mainViewTabControl.Padding = new System.Drawing.Point(24, 12);
             mainViewTabControl.SelectedIndex = 0;
@@ -402,13 +405,14 @@ namespace PersonalManagementSystem
             // 
             // inomeTabPage
             // 
+            this.inomeTabPage.BackColor = System.Drawing.Color.White;
+            this.inomeTabPage.Controls.Add(this.buttonAddIncome);
             this.inomeTabPage.Location = new System.Drawing.Point(4, 44);
             this.inomeTabPage.Name = "inomeTabPage";
             this.inomeTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.inomeTabPage.Size = new System.Drawing.Size(918, 558);
             this.inomeTabPage.TabIndex = 1;
             this.inomeTabPage.Text = "Income";
-            this.inomeTabPage.UseVisualStyleBackColor = true;
             // 
             // expensesTabPage
             // 
@@ -519,35 +523,35 @@ namespace PersonalManagementSystem
             // 
             // dataGridViewContact
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewContact.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewContact.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewContact.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewContact.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridViewContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewContact.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewContact.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewContact.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewContact.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewContact.GridColor = System.Drawing.Color.LightGray;
             this.dataGridViewContact.Location = new System.Drawing.Point(34, 74);
             this.dataGridViewContact.Name = "dataGridViewContact";
@@ -620,6 +624,22 @@ namespace PersonalManagementSystem
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Fedha";
             // 
+            // buttonAddIncome
+            // 
+            this.buttonAddIncome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonAddIncome.FlatAppearance.BorderSize = 3;
+            this.buttonAddIncome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAddIncome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonAddIncome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddIncome.ForeColor = System.Drawing.Color.Black;
+            this.buttonAddIncome.Location = new System.Drawing.Point(728, 17);
+            this.buttonAddIncome.Name = "buttonAddIncome";
+            this.buttonAddIncome.Size = new System.Drawing.Size(154, 36);
+            this.buttonAddIncome.TabIndex = 0;
+            this.buttonAddIncome.Text = "Add Income";
+            this.buttonAddIncome.UseVisualStyleBackColor = true;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,6 +665,7 @@ namespace PersonalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExpense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncome)).EndInit();
+            this.inomeTabPage.ResumeLayout(false);
             this.contactsTabPage.ResumeLayout(false);
             this.contactsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).EndInit();
@@ -697,5 +718,6 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.Button buttonAddContact;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonAddIncome;
     }
 }

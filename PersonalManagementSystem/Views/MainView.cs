@@ -15,7 +15,8 @@ namespace PersonalManagementSystem
     public partial class MainView : Form
     {
         private int user_id;
-        String contId;
+        static String contId;
+      //  UpdateContactView updateContact = new UpdateContactView();
         public void setId(int id)
         {
             user_id = id;
@@ -128,6 +129,7 @@ namespace PersonalManagementSystem
                 using (UpdateContactView updateContact = new UpdateContactView())
                 {
                     updateContact.setId(int.Parse(contId));
+                    Console.WriteLine(updateContact.getId());
                     contactOverlay.StartPosition = FormStartPosition.Manual;
                     contactOverlay.FormBorderStyle = FormBorderStyle.None;
                     contactOverlay.Opacity = .50d;
@@ -151,12 +153,13 @@ namespace PersonalManagementSystem
             finally
             {
                 contactOverlay.Dispose();
+                loadContactData();
             }
         }
 
         private void dataGridViewContact_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           contId = dataGridViewContact.Rows[e.RowIndex].Cells[0].Value.ToString();
+            contId = dataGridViewContact.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
     }
 }

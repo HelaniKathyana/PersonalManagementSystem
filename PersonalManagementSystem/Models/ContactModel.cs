@@ -43,7 +43,7 @@ namespace PersonalManagementSystem.Models
 
         public DataTable updateContactData(string name, string email, string mobileNumber, string designation, string address, int id)
         {
-            string contactSQL = "UPDATE Contact SET Name = '" + name + "', Email = '" + email + "', Mobile_Number = '" + mobileNumber + "', Designation = '" + designation + "',  Address = '" + address + "'WHERE User_ID = '" + id + "'";
+            string contactSQL = "UPDATE Contact SET Name = '" + name + "', Email = '" + email + "', Mobile_Number = '" + mobileNumber + "', Designation = '" + designation + "',  Address = '" + address + "' WHERE Contact_ID = '" + id + "'";
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }
