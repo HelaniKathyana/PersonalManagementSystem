@@ -34,9 +34,9 @@ namespace PersonalManagementSystem.Models
             return contactData;
         }
 
-        public DataTable deleteContactData(object name)
+        public DataTable deleteContactData(object id)
         {
-            string contactSQL = "DELETE FROM Contact WHERE Name = '" + name + "'";
+            string contactSQL = "DELETE FROM Contact WHERE Contact_ID = '" + id + "'";
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }
@@ -44,6 +44,13 @@ namespace PersonalManagementSystem.Models
         public DataTable updateContactData(string name, string email, string mobileNumber, string designation, string address, int id)
         {
             string contactSQL = "UPDATE Contact SET Name = '" + name + "', Email = '" + email + "', Mobile_Number = '" + mobileNumber + "', Designation = '" + designation + "',  Address = '" + address + "' WHERE Contact_ID = '" + id + "'";
+            DataTable contactData = ServerConnection.executeSQL(contactSQL);
+            return contactData;
+        }
+
+        public DataTable searchContactData(string name)
+        {
+            string contactSQL = "SELECT * FROM Contact WHERE Name = '" + name + "'";
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }

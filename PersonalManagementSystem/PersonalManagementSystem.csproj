@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Connection\ServerConnection.cs" />
     <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\IncomeModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

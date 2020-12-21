@@ -16,12 +16,13 @@ namespace PersonalManagementSystem
     {
         private int user_id;
         static String contId;
-      //  UpdateContactView updateContact = new UpdateContactView();
+      
         public void setId(int id)
         {
             user_id = id;
         }
         static ContactModel cm = new ContactModel();
+        static IncomeModel im = new IncomeModel();
         public MainView()
         {
             InitializeComponent();
@@ -30,6 +31,22 @@ namespace PersonalManagementSystem
         private void MainView_Load(object sender, EventArgs e)
         {
             loadContactData();
+            loadIncomeData();
+        }
+
+        //Income View
+        private void loadIncomeData()
+        {
+            DataTable incomeData = im.displayAllIncomeData(user_id);
+
+            dataGridViewIncome.DataSource = incomeData;
+            dataGridViewIncome.Columns[0].HeaderText = "Id";
+            dataGridViewIncome.Columns[1].HeaderText = "Payment From";
+            dataGridViewIncome.Columns[2].HeaderText = "Description";
+            dataGridViewIncome.Columns[3].HeaderText = "Category";
+            dataGridViewIncome.Columns[4].HeaderText = "Account";
+            dataGridViewIncome.Columns[5].HeaderText = "Transaction Date";
+            dataGridViewIncome.Columns[6].HeaderText = "Amount";
         }
 
         // Contact View
@@ -49,6 +66,13 @@ namespace PersonalManagementSystem
                 textSearchContact.Text = " Search Contacts";
                 textSearchContact.ForeColor = Color.Silver;
             }
+        }
+
+        private void textSearchName_TextChanged(object sender, EventArgs e)
+        {
+            DataTable contactData = cm.searchContactData(textSearchContact.Text);
+            dataGridViewContact.DataSource = contactData;
+            loadContactData();
         }
 
         private void loadContactData()
@@ -99,7 +123,7 @@ namespace PersonalManagementSystem
             }
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void buttonDeleteContact_Click(object sender, EventArgs e)
         {
             try
             {
@@ -121,7 +145,7 @@ namespace PersonalManagementSystem
             }
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
+        private void buttonEditContacts_Click(object sender, EventArgs e)
         {
             Form contactOverlay = new Form();
             try

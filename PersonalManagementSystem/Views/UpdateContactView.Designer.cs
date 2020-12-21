@@ -62,7 +62,7 @@ namespace PersonalManagementSystem.Views
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 347);
+            this.label4.Location = new System.Drawing.Point(18, 338);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 29;
@@ -72,7 +72,7 @@ namespace PersonalManagementSystem.Views
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 274);
+            this.label3.Location = new System.Drawing.Point(18, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 20);
             this.label3.TabIndex = 28;
@@ -82,7 +82,7 @@ namespace PersonalManagementSystem.Views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 208);
+            this.label2.Location = new System.Drawing.Point(18, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 27;
@@ -146,7 +146,7 @@ namespace PersonalManagementSystem.Views
             this.textAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textAddress.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.textAddress.ForeColor = System.Drawing.Color.Black;
-            this.textAddress.Location = new System.Drawing.Point(19, 374);
+            this.textAddress.Location = new System.Drawing.Point(19, 366);
             this.textAddress.Multiline = true;
             this.textAddress.Name = "textAddress";
             this.textAddress.Size = new System.Drawing.Size(395, 69);
@@ -157,7 +157,7 @@ namespace PersonalManagementSystem.Views
             this.textDesignation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textDesignation.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.textDesignation.ForeColor = System.Drawing.Color.Black;
-            this.textDesignation.Location = new System.Drawing.Point(19, 303);
+            this.textDesignation.Location = new System.Drawing.Point(19, 300);
             this.textDesignation.Multiline = true;
             this.textDesignation.Name = "textDesignation";
             this.textDesignation.Size = new System.Drawing.Size(395, 30);
@@ -168,7 +168,7 @@ namespace PersonalManagementSystem.Views
             this.textMobileNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textMobileNumber.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.textMobileNumber.ForeColor = System.Drawing.Color.Black;
-            this.textMobileNumber.Location = new System.Drawing.Point(19, 235);
+            this.textMobileNumber.Location = new System.Drawing.Point(19, 234);
             this.textMobileNumber.Multiline = true;
             this.textMobileNumber.Name = "textMobileNumber";
             this.textMobileNumber.Size = new System.Drawing.Size(395, 30);
