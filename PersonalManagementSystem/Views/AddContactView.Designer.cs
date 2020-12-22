@@ -234,7 +234,7 @@ namespace PersonalManagementSystem.Views
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddContactView";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
             this.Load += new System.EventHandler(this.AddContactView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.buttonClose)).EndInit();

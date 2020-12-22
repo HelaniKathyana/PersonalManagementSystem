@@ -49,30 +49,46 @@ namespace PersonalManagementSystem
             dataGridViewIncome.Columns[6].HeaderText = "Amount";
         }
 
+        private void buttonAddIncome_Click(object sender, EventArgs e)
+        {
+            Form incomeOverlay = new Form();
+            try
+            {
+                using (AddIncomeView addIncome = new AddIncomeView())
+                {
+                    addIncome.setId(user_id);
+                    incomeOverlay.StartPosition = FormStartPosition.Manual;
+                    incomeOverlay.FormBorderStyle = FormBorderStyle.None;
+                    incomeOverlay.Opacity = .50d;
+                    incomeOverlay.BackColor = Color.Black;
+                    incomeOverlay.WindowState = FormWindowState.Maximized;
+                    incomeOverlay.TopMost = true;
+                    incomeOverlay.Location = this.Location;
+                    incomeOverlay.ShowInTaskbar = false;
+                    incomeOverlay.Show();
+
+                    addIncome.Owner = incomeOverlay;
+                    addIncome.ShowDialog();
+
+                    incomeOverlay.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                incomeOverlay.Dispose();
+                loadIncomeData();
+            }
+        }
+
         // Contact View
-        private void SearchContactText_Enter(object sender, EventArgs e)
-        {
-            if (textSearchContact.Text == " Search Contacts")
-            {
-                textSearchContact.Text = "";
-                textSearchContact.ForeColor = Color.Black;
-            }
-        }
-
-        private void SearchContactText_Leave(object sender, EventArgs e)
-        {
-            if (textSearchContact.Text == "")
-            {
-                textSearchContact.Text = " Search Contacts";
-                textSearchContact.ForeColor = Color.Silver;
-            }
-        }
-
         private void textSearchName_TextChanged(object sender, EventArgs e)
         {
             DataTable contactData = cm.searchContactData(textSearchContact.Text);
             dataGridViewContact.DataSource = contactData;
-            loadContactData();
         }
 
         private void loadContactData()
@@ -153,7 +169,6 @@ namespace PersonalManagementSystem
                 using (UpdateContactView updateContact = new UpdateContactView())
                 {
                     updateContact.setId(int.Parse(contId));
-                    Console.WriteLine(updateContact.getId());
                     contactOverlay.StartPosition = FormStartPosition.Manual;
                     contactOverlay.FormBorderStyle = FormBorderStyle.None;
                     contactOverlay.Opacity = .50d;
@@ -185,5 +200,6 @@ namespace PersonalManagementSystem
         {
             contId = dataGridViewContact.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
+
     }
 }

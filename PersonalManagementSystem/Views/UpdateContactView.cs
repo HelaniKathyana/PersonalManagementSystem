@@ -94,7 +94,7 @@ namespace PersonalManagementSystem.Views
 
                 MessageBox.Show("The record has been updated successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.Hide();
+                this.Close();
             }
         }
 

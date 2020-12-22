@@ -17,12 +17,11 @@ namespace PersonalManagementSystem.Views
         static ContactModel cm = new ContactModel();
         private int id;
 
-        MainView mv = new MainView();
-
         public void setId(int id)
         {
             this.id = id;
         }
+
         public AddContactView()
         {
             InitializeComponent();
@@ -103,7 +102,7 @@ namespace PersonalManagementSystem.Views
                 MessageBox.Show("The record has been saved successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 clearFeilds();
-                this.Hide();
+                this.Close();
             }
 
         }
