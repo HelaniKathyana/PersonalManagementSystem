@@ -84,6 +84,28 @@ namespace PersonalManagementSystem
             }
         }
 
+        private void buttonDeleteIncome_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Do you want to permanently delete the selected record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    im.deleteIncomeData(dataGridViewIncome.CurrentRow.Cells[0].Value);
+                    loadIncomeData();
+                    MessageBox.Show("The selected record has been deletecd.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                // and error occured
+            }
+        }
+
         // Contact View
         private void textSearchName_TextChanged(object sender, EventArgs e)
         {

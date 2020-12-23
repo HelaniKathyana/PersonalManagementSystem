@@ -73,6 +73,7 @@ namespace PersonalManagementSystem
             this.buttonAddIncome = new System.Windows.Forms.Button();
             this.expensesTabPage = new System.Windows.Forms.TabPage();
             this.contactsTabPage = new System.Windows.Forms.TabPage();
+            this.labelSearch = new System.Windows.Forms.Label();
             this.buttonEditContacts = new System.Windows.Forms.Button();
             this.buttonDeleteContact = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
@@ -85,7 +86,6 @@ namespace PersonalManagementSystem
             this.labelSignUp = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.labelSearch = new System.Windows.Forms.Label();
             mainViewTabControl = new System.Windows.Forms.TabControl();
             mainViewTabControl.SuspendLayout();
             this.dashboardTabPage.SuspendLayout();
@@ -554,6 +554,7 @@ namespace PersonalManagementSystem
             this.buttonDeleteIncome.TabIndex = 1;
             this.buttonDeleteIncome.Text = "Delete";
             this.buttonDeleteIncome.UseVisualStyleBackColor = true;
+            this.buttonDeleteIncome.Click += new System.EventHandler(this.buttonDeleteIncome_Click);
             // 
             // buttonAddIncome
             // 
@@ -599,6 +600,15 @@ namespace PersonalManagementSystem
             this.contactsTabPage.TabIndex = 3;
             this.contactsTabPage.Text = "Contacts";
             this.contactsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(31, 27);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(118, 17);
+            this.labelSearch.TabIndex = 7;
+            this.labelSearch.Text = "Search by Name : ";
             // 
             // buttonEditContacts
             // 
@@ -781,15 +791,6 @@ namespace PersonalManagementSystem
             this.labelTitle.Size = new System.Drawing.Size(91, 37);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Fedha";
-            // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(31, 27);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(118, 17);
-            this.labelSearch.TabIndex = 7;
-            this.labelSearch.Text = "Search by Name : ";
             // 
             // MainView
             // 

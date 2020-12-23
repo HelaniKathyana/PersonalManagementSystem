@@ -26,12 +26,19 @@ namespace PersonalManagementSystem.Models
 
         public DataTable addIncomeData(string description, string category, string account, DateTime date, float amount, int conid, int userid)
         {
-            string contactSQL = string.Empty;
-            contactSQL += "INSERT INTO Income (Description, Category, Account, Transaction_Date, Amount, Contact_ID, User_ID)";
-            contactSQL += "VALUES ('" + description + "','" + category + "','" + account + "','" + date + "','" + amount + "','" + conid + "','" + userid + "')";
+            string incomeSQL = string.Empty;
+            incomeSQL += "INSERT INTO Income (Description, Category, Account, Transaction_Date, Amount, Contact_ID, User_ID)";
+            incomeSQL += "VALUES ('" + description + "','" + category + "','" + account + "','" + date + "','" + amount + "','" + conid + "','" + userid + "')";
 
-            DataTable contactData = ServerConnection.executeSQL(contactSQL);
-            return contactData;
+            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
+            return incomeData;
+        }
+
+        public DataTable deleteIncomeData(object id)
+        {
+            string incomeSQL = "DELETE FROM Income WHERE Income_ID = '" + id + "'";
+            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
+            return incomeData;
         }
     }
 }
