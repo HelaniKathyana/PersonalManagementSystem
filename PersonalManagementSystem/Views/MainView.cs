@@ -23,6 +23,7 @@ namespace PersonalManagementSystem
             user_id = id;
         }
         static ContactModel cm = new ContactModel();
+        static ExpenseModel em = new ExpenseModel();
         static IncomeModel im = new IncomeModel();
 
         public MainView()
@@ -34,6 +35,7 @@ namespace PersonalManagementSystem
         {
             loadContactData();
             loadIncomeData();
+            loadExpenseData();
             loadTotalIncome();
         }
 
@@ -174,6 +176,57 @@ namespace PersonalManagementSystem
         private void dataGridViewIncome_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             incomeId = dataGridViewIncome.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
+        //Expense View
+        private void loadExpenseData()
+        {
+            DataTable expenseData = em.displayAllExpenseData(user_id);
+
+            dataGridViewExpense.DataSource = expenseData;
+            dataGridViewExpense.Columns[0].HeaderText = "Id";
+            dataGridViewExpense.Columns[1].HeaderText = "Payment To";
+            dataGridViewExpense.Columns[2].HeaderText = "Description";
+            dataGridViewExpense.Columns[3].HeaderText = "Category";
+            dataGridViewExpense.Columns[4].HeaderText = "Account";
+            dataGridViewExpense.Columns[5].HeaderText = "Transaction Date";
+            dataGridViewExpense.Columns[6].HeaderText = "Amount";
+        }
+
+        private void buttonAddExpense_Click(object sender, EventArgs e)
+        {
+            Form expenseOverlay = new Form();
+            try
+            {
+                using (AddExpenseView addExpense = new AddExpenseView())
+                {
+                    addExpense.setId(user_id);
+                    expenseOverlay.StartPosition = FormStartPosition.Manual;
+                    expenseOverlay.FormBorderStyle = FormBorderStyle.None;
+                    expenseOverlay.Opacity = .50d;
+                    expenseOverlay.BackColor = Color.Black;
+                    expenseOverlay.WindowState = FormWindowState.Maximized;
+                    expenseOverlay.TopMost = true;
+                    expenseOverlay.Location = this.Location;
+                    expenseOverlay.ShowInTaskbar = false;
+                    expenseOverlay.Show();
+
+                    addExpense.Owner = expenseOverlay;
+                    addExpense.ShowDialog();
+
+                    expenseOverlay.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                expenseOverlay.Dispose();
+                loadExpenseData();
+            
+            }
         }
 
         // Contact View

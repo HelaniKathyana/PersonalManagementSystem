@@ -11,25 +11,19 @@ using System.Windows.Forms;
 
 namespace PersonalManagementSystem.Views
 {
-    public partial class AddIncomeView : Form
+    public partial class AddExpenseView : Form
     {
-        static IncomeModel im = new IncomeModel();
+        static ExpenseModel em = new ExpenseModel();
         private int id;
 
         public void setId(int id)
         {
             this.id = id;
-            displayPaymentFromList(id);
+            displayPaymentToList(id);
         }
-
-        public int getId()
+        public AddExpenseView()
         {
-            return id;
-        }
-
-        public AddIncomeView()
-        {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -45,15 +39,15 @@ namespace PersonalManagementSystem.Views
             }
         }
 
-        private void displayPaymentFromList(int id)
+        private void displayPaymentToList(int id)
         {
-            DataTable incomeData = im.displayPaymentFromList(id);
-            comboBoxPaymentFrom.DataSource = incomeData;
-            comboBoxPaymentFrom.DisplayMember = "Payment_From";
-            comboBoxPaymentFrom.ValueMember = "Contact_ID";
+            DataTable expenseData = em.displayPaymentToList(id);
+            comboBoxPaymentTo.DataSource = expenseData;
+            comboBoxPaymentTo.DisplayMember = "Payment_To";
+            comboBoxPaymentTo.ValueMember = "Contact_ID";
         }
 
-        private void buttonAddIncome_Click(object sender, EventArgs e)
+        private void buttonAddExpense_Click(object sender, EventArgs e)
         {
             MessageBoxButtons btn = MessageBoxButtons.OK;
             MessageBoxIcon ico = MessageBoxIcon.Information;
@@ -78,7 +72,7 @@ namespace PersonalManagementSystem.Views
                 MessageBox.Show("Please enter Account", caption, btn, ico);
                 textAccount.Select();
                 return;
-            }       
+            }
 
             if (String.IsNullOrEmpty(textAmount.Text) || System.Text.RegularExpressions.Regex.IsMatch(textAmount.Text, "[^0-9]"))
             {
@@ -93,9 +87,9 @@ namespace PersonalManagementSystem.Views
 
             if (result == DialogResult.Yes)
             {
-                int contactId = (int) comboBoxPaymentFrom.SelectedValue;
-               
-                im.addIncomeData(textDescription.Text, textCategory.Text, textAccount.Text, dateTimePicker.Value, float.Parse(textAmount.Text), contactId, id);
+                int contactId = (int)comboBoxPaymentTo.SelectedValue;
+
+                em.addExpenseData(textDescription.Text, textCategory.Text, textAccount.Text, dateTimePicker.Value, float.Parse(textAmount.Text), contactId, id);
 
                 MessageBox.Show("The record has been saved successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -103,6 +97,5 @@ namespace PersonalManagementSystem.Views
                 this.Close();
             }
         }
-
     }
 }
