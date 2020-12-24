@@ -47,8 +47,8 @@ namespace PersonalManagementSystem
         //Income View
         private void textSearchIncomeName_TextChanged(object sender, EventArgs e)
         {
-  //          DataTable incomeData = im.searchIncomeData(textSearchIncome.Text);
-  //          dataGridViewIncome.DataSource = incomeData;
+            DataTable incomeData = im.searchIncomeData(textSearchIncome.Text);
+            dataGridViewIncome.DataSource = incomeData;
         }
 
         private void loadIncomeData()

@@ -57,7 +57,7 @@ namespace PersonalManagementSystem.Models
 
         public DataTable searchIncomeData(string name)
         {
-            string contactSQL = "SELECT * FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE c.Name LIKE '" + name + "%'";
+            string contactSQL = "SELECT i.Income_ID, c.Name AS Payment_From, i.Description, i.Category, i.Account, i.Transaction_Date, i.Amount FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE c.Name LIKE '" + name + "%'";
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }
