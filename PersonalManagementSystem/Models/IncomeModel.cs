@@ -61,7 +61,5 @@ namespace PersonalManagementSystem.Models
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }
-
-
     }
 }

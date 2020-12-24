@@ -34,6 +34,7 @@ namespace PersonalManagementSystem
         {
             loadContactData();
             loadIncomeData();
+            loadTotalIncome();
         }
 
         private void labelSignUp_Click(object sender, EventArgs e)
@@ -66,7 +67,12 @@ namespace PersonalManagementSystem
 
         private void loadTotalIncome()
         {
-
+            int sum = 0;
+            for (int i = 0; i < dataGridViewIncome.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dataGridViewIncome.Rows[i].Cells[6].Value);
+            }
+            incomeTotal.Text = "Total Income : " + sum.ToString();
         }
 
         private void buttonAddIncome_Click(object sender, EventArgs e)
@@ -101,6 +107,7 @@ namespace PersonalManagementSystem
             {
                 incomeOverlay.Dispose();
                 loadIncomeData();
+                loadTotalIncome();
             }
         }
 
@@ -113,6 +120,7 @@ namespace PersonalManagementSystem
                 {
                     im.deleteIncomeData(dataGridViewIncome.CurrentRow.Cells[0].Value);
                     loadIncomeData();
+                    loadTotalIncome();
                     MessageBox.Show("The selected record has been deletecd.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -159,6 +167,7 @@ namespace PersonalManagementSystem
             {
                 contactOverlay.Dispose();
                 loadIncomeData();
+                loadTotalIncome();
             }
         }
 
