@@ -100,7 +100,6 @@ namespace PersonalManagementSystem.Views
 
         private void displayContactDetails(int id)
         {
-            ContactModel cm = new ContactModel();
             DataTable contactData = cm.displayContactDataById(id);
 
             foreach (DataRow row in contactData.Rows)

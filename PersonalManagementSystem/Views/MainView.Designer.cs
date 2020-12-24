@@ -30,12 +30,15 @@ namespace PersonalManagementSystem
         private void InitializeComponent()
         {
             System.Windows.Forms.TabControl mainViewTabControl;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.dashboardTabPage = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,23 +66,31 @@ namespace PersonalManagementSystem
             this.labelIncome = new System.Windows.Forms.Label();
             this.pictureBoxIncome = new System.Windows.Forms.PictureBox();
             this.inomeTabPage = new System.Windows.Forms.TabPage();
+            this.labelSearchIncome = new System.Windows.Forms.Label();
+            this.textSearchIncome = new System.Windows.Forms.TextBox();
             this.incomeTotal = new System.Windows.Forms.Label();
             this.incomeSeparator = new Bunifu.Framework.UI.BunifuSeparator();
-            this.pictureBoxSearchIncomes = new System.Windows.Forms.PictureBox();
-            this.textSearchIncome = new System.Windows.Forms.TextBox();
             this.dataGridViewIncome = new System.Windows.Forms.DataGridView();
             this.buttonEditIncome = new System.Windows.Forms.Button();
             this.buttonDeleteIncome = new System.Windows.Forms.Button();
             this.buttonAddIncome = new System.Windows.Forms.Button();
             this.expensesTabPage = new System.Windows.Forms.TabPage();
+            this.labelSearchExpense = new System.Windows.Forms.Label();
+            this.textSearchExpense = new System.Windows.Forms.TextBox();
+            this.expenseTotal = new System.Windows.Forms.Label();
+            this.expenseSeparator = new Bunifu.Framework.UI.BunifuSeparator();
+            this.dataGridViewExpense = new System.Windows.Forms.DataGridView();
+            this.buttonEditExpense = new System.Windows.Forms.Button();
+            this.buttonDeleteExpense = new System.Windows.Forms.Button();
+            this.buttonAddExpense = new System.Windows.Forms.Button();
             this.contactsTabPage = new System.Windows.Forms.TabPage();
-            this.labelSearch = new System.Windows.Forms.Label();
+            this.labelSearchContact = new System.Windows.Forms.Label();
             this.buttonEditContacts = new System.Windows.Forms.Button();
             this.buttonDeleteContact = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
-            this.pictureBoxSearchContacts = new System.Windows.Forms.PictureBox();
             this.textSearchContact = new System.Windows.Forms.TextBox();
             this.dataGridViewContact = new System.Windows.Forms.DataGridView();
+            this.pictureBoxSearchContacts = new System.Windows.Forms.PictureBox();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
             this.predictionTabPage = new System.Windows.Forms.TabPage();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -98,11 +109,12 @@ namespace PersonalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncome)).BeginInit();
             this.inomeTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchIncomes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).BeginInit();
+            this.expensesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpense)).BeginInit();
             this.contactsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchContacts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchContacts)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -420,10 +432,10 @@ namespace PersonalManagementSystem
             // inomeTabPage
             // 
             this.inomeTabPage.BackColor = System.Drawing.Color.White;
+            this.inomeTabPage.Controls.Add(this.labelSearchIncome);
+            this.inomeTabPage.Controls.Add(this.textSearchIncome);
             this.inomeTabPage.Controls.Add(this.incomeTotal);
             this.inomeTabPage.Controls.Add(this.incomeSeparator);
-            this.inomeTabPage.Controls.Add(this.pictureBoxSearchIncomes);
-            this.inomeTabPage.Controls.Add(this.textSearchIncome);
             this.inomeTabPage.Controls.Add(this.dataGridViewIncome);
             this.inomeTabPage.Controls.Add(this.buttonEditIncome);
             this.inomeTabPage.Controls.Add(this.buttonDeleteIncome);
@@ -434,6 +446,27 @@ namespace PersonalManagementSystem
             this.inomeTabPage.Size = new System.Drawing.Size(918, 558);
             this.inomeTabPage.TabIndex = 1;
             this.inomeTabPage.Text = "Income";
+            // 
+            // labelSearchIncome
+            // 
+            this.labelSearchIncome.AutoSize = true;
+            this.labelSearchIncome.Location = new System.Drawing.Point(31, 27);
+            this.labelSearchIncome.Name = "labelSearchIncome";
+            this.labelSearchIncome.Size = new System.Drawing.Size(118, 17);
+            this.labelSearchIncome.TabIndex = 9;
+            this.labelSearchIncome.Text = "Search by Name : ";
+            // 
+            // textSearchIncome
+            // 
+            this.textSearchIncome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSearchIncome.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textSearchIncome.ForeColor = System.Drawing.Color.Black;
+            this.textSearchIncome.Location = new System.Drawing.Point(154, 20);
+            this.textSearchIncome.Multiline = true;
+            this.textSearchIncome.Name = "textSearchIncome";
+            this.textSearchIncome.Size = new System.Drawing.Size(274, 30);
+            this.textSearchIncome.TabIndex = 8;
+            this.textSearchIncome.TextChanged += new System.EventHandler(this.textSearchIncomeName_TextChanged);
             // 
             // incomeTotal
             // 
@@ -462,64 +495,43 @@ namespace PersonalManagementSystem
             this.incomeSeparator.Transparency = 255;
             this.incomeSeparator.Vertical = false;
             // 
-            // pictureBoxSearchIncomes
-            // 
-            this.pictureBoxSearchIncomes.Image = global::PersonalManagementSystem.Properties.Resources.search;
-            this.pictureBoxSearchIncomes.Location = new System.Drawing.Point(258, 21);
-            this.pictureBoxSearchIncomes.Name = "pictureBoxSearchIncomes";
-            this.pictureBoxSearchIncomes.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxSearchIncomes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSearchIncomes.TabIndex = 5;
-            this.pictureBoxSearchIncomes.TabStop = false;
-            // 
-            // textSearchIncome
-            // 
-            this.textSearchIncome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textSearchIncome.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textSearchIncome.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textSearchIncome.Location = new System.Drawing.Point(34, 17);
-            this.textSearchIncome.Multiline = true;
-            this.textSearchIncome.Name = "textSearchIncome";
-            this.textSearchIncome.Size = new System.Drawing.Size(250, 30);
-            this.textSearchIncome.TabIndex = 4;
-            this.textSearchIncome.Text = " Search Incomes";
-            // 
             // dataGridViewIncome
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewIncome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewIncome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewIncome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIncome.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridViewIncome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewIncome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewIncome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewIncome.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewIncome.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewIncome.GridColor = System.Drawing.Color.LightGray;
             this.dataGridViewIncome.Location = new System.Drawing.Point(34, 74);
             this.dataGridViewIncome.Name = "dataGridViewIncome";
             this.dataGridViewIncome.Size = new System.Drawing.Size(848, 416);
             this.dataGridViewIncome.TabIndex = 3;
+            this.dataGridViewIncome.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewIncome_RowHeaderMouseClick);
             // 
             // buttonEditIncome
             // 
@@ -537,6 +549,7 @@ namespace PersonalManagementSystem
             this.buttonEditIncome.TabIndex = 2;
             this.buttonEditIncome.Text = "Edit";
             this.buttonEditIncome.UseVisualStyleBackColor = true;
+            this.buttonEditIncome.Click += new System.EventHandler(this.buttonEditIncome_Click);
             // 
             // buttonDeleteIncome
             // 
@@ -576,6 +589,14 @@ namespace PersonalManagementSystem
             // 
             // expensesTabPage
             // 
+            this.expensesTabPage.Controls.Add(this.labelSearchExpense);
+            this.expensesTabPage.Controls.Add(this.textSearchExpense);
+            this.expensesTabPage.Controls.Add(this.expenseTotal);
+            this.expensesTabPage.Controls.Add(this.expenseSeparator);
+            this.expensesTabPage.Controls.Add(this.dataGridViewExpense);
+            this.expensesTabPage.Controls.Add(this.buttonEditExpense);
+            this.expensesTabPage.Controls.Add(this.buttonDeleteExpense);
+            this.expensesTabPage.Controls.Add(this.buttonAddExpense);
             this.expensesTabPage.Location = new System.Drawing.Point(4, 44);
             this.expensesTabPage.Name = "expensesTabPage";
             this.expensesTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -584,15 +605,150 @@ namespace PersonalManagementSystem
             this.expensesTabPage.Text = "Expenses";
             this.expensesTabPage.UseVisualStyleBackColor = true;
             // 
+            // labelSearchExpense
+            // 
+            this.labelSearchExpense.AutoSize = true;
+            this.labelSearchExpense.Location = new System.Drawing.Point(31, 27);
+            this.labelSearchExpense.Name = "labelSearchExpense";
+            this.labelSearchExpense.Size = new System.Drawing.Size(118, 17);
+            this.labelSearchExpense.TabIndex = 11;
+            this.labelSearchExpense.Text = "Search by Name : ";
+            // 
+            // textSearchExpense
+            // 
+            this.textSearchExpense.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSearchExpense.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textSearchExpense.ForeColor = System.Drawing.Color.Black;
+            this.textSearchExpense.Location = new System.Drawing.Point(154, 20);
+            this.textSearchExpense.Multiline = true;
+            this.textSearchExpense.Name = "textSearchExpense";
+            this.textSearchExpense.Size = new System.Drawing.Size(274, 30);
+            this.textSearchExpense.TabIndex = 10;
+            // 
+            // expenseTotal
+            // 
+            this.expenseTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.expenseTotal.AutoSize = true;
+            this.expenseTotal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.expenseTotal.Location = new System.Drawing.Point(834, 513);
+            this.expenseTotal.Name = "expenseTotal";
+            this.expenseTotal.Size = new System.Drawing.Size(48, 28);
+            this.expenseTotal.TabIndex = 8;
+            this.expenseTotal.Text = "000";
+            this.expenseTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // expenseSeparator
+            // 
+            this.expenseSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.expenseSeparator.BackColor = System.Drawing.Color.Transparent;
+            this.expenseSeparator.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.expenseSeparator.LineThickness = 1;
+            this.expenseSeparator.Location = new System.Drawing.Point(34, 497);
+            this.expenseSeparator.Margin = new System.Windows.Forms.Padding(5);
+            this.expenseSeparator.Name = "expenseSeparator";
+            this.expenseSeparator.Size = new System.Drawing.Size(848, 21);
+            this.expenseSeparator.TabIndex = 7;
+            this.expenseSeparator.Transparency = 255;
+            this.expenseSeparator.Vertical = false;
+            // 
+            // dataGridViewExpense
+            // 
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewExpense.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.dataGridViewExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewExpense.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewExpense.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dataGridViewExpense.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewExpense.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dataGridViewExpense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewExpense.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dataGridViewExpense.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridViewExpense.Location = new System.Drawing.Point(34, 74);
+            this.dataGridViewExpense.Name = "dataGridViewExpense";
+            this.dataGridViewExpense.Size = new System.Drawing.Size(848, 416);
+            this.dataGridViewExpense.TabIndex = 4;
+            // 
+            // buttonEditExpense
+            // 
+            this.buttonEditExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonEditExpense.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.buttonEditExpense.FlatAppearance.BorderSize = 3;
+            this.buttonEditExpense.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonEditExpense.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.buttonEditExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditExpense.ForeColor = System.Drawing.Color.Black;
+            this.buttonEditExpense.Location = new System.Drawing.Point(471, 17);
+            this.buttonEditExpense.Name = "buttonEditExpense";
+            this.buttonEditExpense.Size = new System.Drawing.Size(111, 36);
+            this.buttonEditExpense.TabIndex = 3;
+            this.buttonEditExpense.Text = "Edit";
+            this.buttonEditExpense.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteExpense
+            // 
+            this.buttonDeleteExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDeleteExpense.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.buttonDeleteExpense.FlatAppearance.BorderSize = 3;
+            this.buttonDeleteExpense.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonDeleteExpense.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonDeleteExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeleteExpense.ForeColor = System.Drawing.Color.Black;
+            this.buttonDeleteExpense.Location = new System.Drawing.Point(600, 17);
+            this.buttonDeleteExpense.Name = "buttonDeleteExpense";
+            this.buttonDeleteExpense.Size = new System.Drawing.Size(111, 36);
+            this.buttonDeleteExpense.TabIndex = 2;
+            this.buttonDeleteExpense.Text = "Delete";
+            this.buttonDeleteExpense.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddExpense
+            // 
+            this.buttonAddExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddExpense.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonAddExpense.FlatAppearance.BorderSize = 3;
+            this.buttonAddExpense.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAddExpense.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonAddExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddExpense.ForeColor = System.Drawing.Color.Black;
+            this.buttonAddExpense.Location = new System.Drawing.Point(728, 17);
+            this.buttonAddExpense.Name = "buttonAddExpense";
+            this.buttonAddExpense.Size = new System.Drawing.Size(154, 36);
+            this.buttonAddExpense.TabIndex = 1;
+            this.buttonAddExpense.Text = "Add Expense";
+            this.buttonAddExpense.UseVisualStyleBackColor = true;
+            // 
             // contactsTabPage
             // 
-            this.contactsTabPage.Controls.Add(this.labelSearch);
+            this.contactsTabPage.Controls.Add(this.labelSearchContact);
             this.contactsTabPage.Controls.Add(this.buttonEditContacts);
             this.contactsTabPage.Controls.Add(this.buttonDeleteContact);
             this.contactsTabPage.Controls.Add(this.buttonAddContact);
-            this.contactsTabPage.Controls.Add(this.pictureBoxSearchContacts);
             this.contactsTabPage.Controls.Add(this.textSearchContact);
             this.contactsTabPage.Controls.Add(this.dataGridViewContact);
+            this.contactsTabPage.Controls.Add(this.pictureBoxSearchContacts);
             this.contactsTabPage.Location = new System.Drawing.Point(4, 44);
             this.contactsTabPage.Name = "contactsTabPage";
             this.contactsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -601,14 +757,14 @@ namespace PersonalManagementSystem
             this.contactsTabPage.Text = "Contacts";
             this.contactsTabPage.UseVisualStyleBackColor = true;
             // 
-            // labelSearch
+            // labelSearchContact
             // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(31, 27);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(118, 17);
-            this.labelSearch.TabIndex = 7;
-            this.labelSearch.Text = "Search by Name : ";
+            this.labelSearchContact.AutoSize = true;
+            this.labelSearchContact.Location = new System.Drawing.Point(31, 27);
+            this.labelSearchContact.Name = "labelSearchContact";
+            this.labelSearchContact.Size = new System.Drawing.Size(118, 17);
+            this.labelSearchContact.TabIndex = 7;
+            this.labelSearchContact.Text = "Search by Name : ";
             // 
             // buttonEditContacts
             // 
@@ -667,16 +823,6 @@ namespace PersonalManagementSystem
             this.buttonAddContact.UseVisualStyleBackColor = false;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
-            // pictureBoxSearchContacts
-            // 
-            this.pictureBoxSearchContacts.Image = global::PersonalManagementSystem.Properties.Resources.search;
-            this.pictureBoxSearchContacts.Location = new System.Drawing.Point(401, 24);
-            this.pictureBoxSearchContacts.Name = "pictureBoxSearchContacts";
-            this.pictureBoxSearchContacts.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxSearchContacts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSearchContacts.TabIndex = 2;
-            this.pictureBoxSearchContacts.TabStop = false;
-            // 
             // textSearchContact
             // 
             this.textSearchContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -687,45 +833,55 @@ namespace PersonalManagementSystem
             this.textSearchContact.Name = "textSearchContact";
             this.textSearchContact.Size = new System.Drawing.Size(274, 30);
             this.textSearchContact.TabIndex = 1;
-            this.textSearchContact.TextChanged += new System.EventHandler(this.textSearchName_TextChanged);
+            this.textSearchContact.TextChanged += new System.EventHandler(this.textSearchContactName_TextChanged);
             // 
             // dataGridViewContact
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewContact.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewContact.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewContact.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewContact.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridViewContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewContact.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewContact.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridViewContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewContact.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewContact.DefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridViewContact.GridColor = System.Drawing.Color.LightGray;
             this.dataGridViewContact.Location = new System.Drawing.Point(34, 74);
             this.dataGridViewContact.Name = "dataGridViewContact";
             this.dataGridViewContact.Size = new System.Drawing.Size(848, 441);
             this.dataGridViewContact.TabIndex = 0;
             this.dataGridViewContact.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewContact_RowHeaderMouseClick);
+            // 
+            // pictureBoxSearchContacts
+            // 
+            this.pictureBoxSearchContacts.Image = global::PersonalManagementSystem.Properties.Resources.search;
+            this.pictureBoxSearchContacts.Location = new System.Drawing.Point(401, 24);
+            this.pictureBoxSearchContacts.Name = "pictureBoxSearchContacts";
+            this.pictureBoxSearchContacts.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxSearchContacts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSearchContacts.TabIndex = 2;
+            this.pictureBoxSearchContacts.TabStop = false;
             // 
             // reportsTabPage
             // 
@@ -770,6 +926,7 @@ namespace PersonalManagementSystem
             this.labelSignUp.Size = new System.Drawing.Size(67, 21);
             this.labelSignUp.TabIndex = 1;
             this.labelSignUp.Text = "Sign Up";
+            this.labelSignUp.Click += new System.EventHandler(this.labelSignUp_Click);
             // 
             // pictureBoxLogo
             // 
@@ -819,12 +976,14 @@ namespace PersonalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncome)).EndInit();
             this.inomeTabPage.ResumeLayout(false);
             this.inomeTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchIncomes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).EndInit();
+            this.expensesTabPage.ResumeLayout(false);
+            this.expensesTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpense)).EndInit();
             this.contactsTabPage.ResumeLayout(false);
             this.contactsTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchContacts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchContacts)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
@@ -859,7 +1018,6 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.Label labelIncome;
         private System.Windows.Forms.PictureBox pictureBoxIncome;
         private System.Windows.Forms.TabPage inomeTabPage;
-        private System.Windows.Forms.TabPage expensesTabPage;
         private System.Windows.Forms.TabPage contactsTabPage;
         private System.Windows.Forms.TabPage reportsTabPage;
         private System.Windows.Forms.TabPage predictionTabPage;
@@ -874,13 +1032,22 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.Button buttonDeleteContact;
         private System.Windows.Forms.Button buttonEditContacts;
         private System.Windows.Forms.Button buttonAddIncome;
-        private System.Windows.Forms.PictureBox pictureBoxSearchIncomes;
-        private System.Windows.Forms.TextBox textSearchIncome;
         private System.Windows.Forms.DataGridView dataGridViewIncome;
         private System.Windows.Forms.Button buttonEditIncome;
         private System.Windows.Forms.Button buttonDeleteIncome;
         private System.Windows.Forms.Label incomeTotal;
         private Bunifu.Framework.UI.BunifuSeparator incomeSeparator;
-        private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.Label labelSearchContact;
+        private System.Windows.Forms.Label labelSearchIncome;
+        private System.Windows.Forms.TextBox textSearchIncome;
+        private System.Windows.Forms.TabPage expensesTabPage;
+        private Bunifu.Framework.UI.BunifuSeparator expenseSeparator;
+        private System.Windows.Forms.DataGridView dataGridViewExpense;
+        private System.Windows.Forms.Button buttonEditExpense;
+        private System.Windows.Forms.Button buttonDeleteExpense;
+        private System.Windows.Forms.Button buttonAddExpense;
+        private System.Windows.Forms.Label expenseTotal;
+        private System.Windows.Forms.Label labelSearchExpense;
+        private System.Windows.Forms.TextBox textSearchExpense;
     }
 }

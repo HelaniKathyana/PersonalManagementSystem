@@ -11,38 +11,33 @@ using System.Windows.Forms;
 
 namespace PersonalManagementSystem.Views
 {
-    public partial class AddIncomeView : Form
+    public partial class UpdateIncomeView : Form
     {
+        String x = "";
+        public int id;
+        public int enteredId;
         static IncomeModel im = new IncomeModel();
-        private int id;
 
         public void setId(int id)
         {
             this.id = id;
-            displayPaymentFromList(id);
+            displayIncomeDetails(id);
         }
 
-        public int getId()
+        public void setEnteredId(int id)
         {
-            return id;
+           enteredId = id;
+           displayPaymentFromList(enteredId);
         }
 
-        public AddIncomeView()
+        public UpdateIncomeView()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void clearFeilds()
-        {
-            foreach (TextBox textBox in this.Controls.OfType<TextBox>())
-            {
-                textBox.Text = string.Empty;
-            }
         }
 
         private void displayPaymentFromList(int id)
@@ -51,10 +46,25 @@ namespace PersonalManagementSystem.Views
             comboBoxPaymentFrom.DataSource = incomeData;
             comboBoxPaymentFrom.DisplayMember = "Payment_From";
             comboBoxPaymentFrom.ValueMember = "Contact_ID";
-
+            comboBoxPaymentFrom.SelectedIndex = comboBoxPaymentFrom.FindStringExact(x);
         }
 
-        private void buttonAddIncome_Click(object sender, EventArgs e)
+        private void displayIncomeDetails(int id)
+        {
+            DataTable incomeData = im.displayIncomeDataById(id);
+            
+            foreach (DataRow row in incomeData.Rows)
+            {
+                x = row["Payment_From"].ToString();
+                textDescription.Text = row["Description"].ToString();
+                textCategory.Text = row["Category"].ToString();
+                textAccount.Text = row["Account"].ToString();
+                dateTimePicker.Text = row["Transaction_Date"].ToString();
+                textAmount.Text = row["Amount"].ToString();
+            }
+        }
+
+        private void buttonUpdateIncome_Click(object sender, EventArgs e)
         {
             MessageBoxButtons btn = MessageBoxButtons.OK;
             MessageBoxIcon ico = MessageBoxIcon.Information;
@@ -79,7 +89,7 @@ namespace PersonalManagementSystem.Views
                 MessageBox.Show("Please enter Account", caption, btn, ico);
                 textAccount.Select();
                 return;
-            }       
+            }
 
             if (String.IsNullOrEmpty(textAmount.Text) || System.Text.RegularExpressions.Regex.IsMatch(textAmount.Text, "[^0-9]"))
             {
@@ -90,20 +100,18 @@ namespace PersonalManagementSystem.Views
             }
 
             DialogResult result;
-            result = MessageBox.Show("Do you want to save the record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = MessageBox.Show("Do you want to update the record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                int contactId = (int) comboBoxPaymentFrom.SelectedValue;
-               
-                im.addIncomeData(textDescription.Text, textCategory.Text, textAccount.Text, dateTimePicker.Value, float.Parse(textAmount.Text), contactId, id);
+                int contactId = (int)comboBoxPaymentFrom.SelectedValue;
 
-                MessageBox.Show("The record has been saved successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                im.updateIncomeData(textDescription.Text, textCategory.Text, textAccount.Text, dateTimePicker.Value, float.Parse(textAmount.Text), contactId, id);
 
-                clearFeilds();
+                MessageBox.Show("The record has been updated successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 this.Close();
             }
         }
-
     }
 }

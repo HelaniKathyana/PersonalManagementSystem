@@ -15,14 +15,16 @@ namespace PersonalManagementSystem
     public partial class MainView : Form
     {
         private int user_id;
+        static String incomeId;
         static String contId;
-      
+
         public void setId(int id)
         {
             user_id = id;
         }
         static ContactModel cm = new ContactModel();
         static IncomeModel im = new IncomeModel();
+
         public MainView()
         {
             InitializeComponent();
@@ -34,7 +36,20 @@ namespace PersonalManagementSystem
             loadIncomeData();
         }
 
+        private void labelSignUp_Click(object sender, EventArgs e)
+        {
+            LoginView login = new LoginView();
+            login.Show();
+            this.Hide();
+        }
+
         //Income View
+        private void textSearchIncomeName_TextChanged(object sender, EventArgs e)
+        {
+  //          DataTable incomeData = im.searchIncomeData(textSearchIncome.Text);
+  //          dataGridViewIncome.DataSource = incomeData;
+        }
+
         private void loadIncomeData()
         {
             DataTable incomeData = im.displayAllIncomeData(user_id);
@@ -47,6 +62,11 @@ namespace PersonalManagementSystem
             dataGridViewIncome.Columns[4].HeaderText = "Account";
             dataGridViewIncome.Columns[5].HeaderText = "Transaction Date";
             dataGridViewIncome.Columns[6].HeaderText = "Amount";
+        }
+
+        private void loadTotalIncome()
+        {
+
         }
 
         private void buttonAddIncome_Click(object sender, EventArgs e)
@@ -106,8 +126,49 @@ namespace PersonalManagementSystem
             }
         }
 
+        private void buttonEditIncome_Click(object sender, EventArgs e)
+        {
+            Form contactOverlay = new Form();
+            try
+            {
+                using (UpdateIncomeView updateContact = new UpdateIncomeView())
+                {
+                    updateContact.setId(int.Parse(incomeId));
+                    updateContact.setEnteredId(user_id);
+                    contactOverlay.StartPosition = FormStartPosition.Manual;
+                    contactOverlay.FormBorderStyle = FormBorderStyle.None;
+                    contactOverlay.Opacity = .50d;
+                    contactOverlay.BackColor = Color.Black;
+                    contactOverlay.WindowState = FormWindowState.Maximized;
+                    contactOverlay.TopMost = true;
+                    contactOverlay.Location = this.Location;
+                    contactOverlay.ShowInTaskbar = false;
+                    contactOverlay.Show();
+
+                    updateContact.Owner = contactOverlay;
+                    updateContact.ShowDialog();
+
+                    contactOverlay.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                contactOverlay.Dispose();
+                loadIncomeData();
+            }
+        }
+
+        private void dataGridViewIncome_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            incomeId = dataGridViewIncome.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
         // Contact View
-        private void textSearchName_TextChanged(object sender, EventArgs e)
+        private void textSearchContactName_TextChanged(object sender, EventArgs e)
         {
             DataTable contactData = cm.searchContactData(textSearchContact.Text);
             dataGridViewContact.DataSource = contactData;

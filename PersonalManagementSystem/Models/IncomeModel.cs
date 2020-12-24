@@ -17,6 +17,13 @@ namespace PersonalManagementSystem.Models
             return incomeData;
         }
 
+        public DataTable displayIncomeDataById(int id)
+        {
+            string contactSQL = "SELECT Description, Category, Account, Transaction_Date, Amount, c.Name AS Payment_From, i.Contact_ID FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE Income_ID = '" + id + "'";
+            DataTable contactData = ServerConnection.executeSQL(contactSQL);
+            return contactData;
+        }
+
         public DataTable displayPaymentFromList(int id)
         {
             string incomeSQL = "SELECT Contact_ID, Name AS Payment_From FROM Contact WHERE User_ID = '" + id + "'";
@@ -40,5 +47,21 @@ namespace PersonalManagementSystem.Models
             DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
             return incomeData;
         }
+
+        public DataTable updateIncomeData(string description, string category, string account, DateTime date, float amount, int conid, int incomeid)
+        {
+            string incomeSQL = "UPDATE Income SET Description = '" + description + "', Category = '" + category + "', Account = '" + account + "', Transaction_Date = '" + date + "',  Amount = '" + amount + "', Contact_ID = '" + conid + "' WHERE Income_ID = '" + incomeid + "'";
+            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
+            return incomeData;
+        }
+
+        public DataTable searchIncomeData(string name)
+        {
+            string contactSQL = "SELECT * FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE c.Name LIKE '" + name + "%'";
+            DataTable contactData = ServerConnection.executeSQL(contactSQL);
+            return contactData;
+        }
+
+
     }
 }
