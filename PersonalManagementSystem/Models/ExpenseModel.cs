@@ -33,5 +33,26 @@ namespace PersonalManagementSystem.Models
             DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
             return expenseData;
         }
+
+        public DataTable deleteExpenseData(object id)
+        {
+            string expenseSQL = "DELETE FROM Expense WHERE Expense_ID = '" + id + "'";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
+        }
+
+        public DataTable displayExpenseDataById(int id)
+        {
+            string expenseSQL = "SELECT Description, Category, Account, Transaction_Date, Amount, c.Name AS Payment_To, e.Contact_ID FROM Expense AS e INNER JOIN Contact AS c ON e.Contact_ID = c.Contact_ID WHERE Expense_ID = '" + id + "'";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
+        }
+
+        public DataTable updateExpenseData(string description, string category, string account, DateTime date, float amount, int conid, int expenseId)
+        {
+            string expenseSQL = "UPDATE Expense SET Description = '" + description + "', Category = '" + category + "', Account = '" + account + "', Transaction_Date = '" + date + "',  Amount = '" + amount + "', Contact_ID = '" + conid + "' WHERE Expense_ID = '" + expenseId + "'";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace PersonalManagementSystem.Views
 {
-    partial class UpdateIncomeView
+    partial class UpdateExpenseView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,22 +29,22 @@ namespace PersonalManagementSystem.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateIncomeView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateExpenseView));
             this.labelAmount = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxPaymentFrom = new System.Windows.Forms.ComboBox();
+            this.comboBoxPaymentTo = new System.Windows.Forms.ComboBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelAccount = new System.Windows.Forms.Label();
             this.labelCategory = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
-            this.labelPayementFrom = new System.Windows.Forms.Label();
+            this.labelPayementTo = new System.Windows.Forms.Label();
             this.textAmount = new System.Windows.Forms.TextBox();
+            this.buttonUpdateExpense = new System.Windows.Forms.Button();
             this.textAccount = new System.Windows.Forms.TextBox();
             this.textCategory = new System.Windows.Forms.TextBox();
             this.textDescription = new System.Windows.Forms.TextBox();
             this.bunifuSeparator = new Bunifu.Framework.UI.BunifuSeparator();
-            this.labelUpdateIncome = new System.Windows.Forms.Label();
-            this.buttonUpdateIncome = new System.Windows.Forms.Button();
+            this.labelUpdateExpese = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.buttonClose)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +56,7 @@ namespace PersonalManagementSystem.Views
             this.labelAmount.Location = new System.Drawing.Point(18, 361);
             this.labelAmount.Name = "labelAmount";
             this.labelAmount.Size = new System.Drawing.Size(72, 20);
-            this.labelAmount.TabIndex = 47;
+            this.labelAmount.TabIndex = 63;
             this.labelAmount.Text = "Amount :";
             // 
             // dateTimePicker
@@ -66,20 +66,20 @@ namespace PersonalManagementSystem.Views
             this.dateTimePicker.Location = new System.Drawing.Point(19, 323);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(395, 27);
-            this.dateTimePicker.TabIndex = 46;
+            this.dateTimePicker.TabIndex = 62;
             // 
-            // comboBoxPaymentFrom
+            // comboBoxPaymentTo
             // 
-            this.comboBoxPaymentFrom.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBoxPaymentFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxPaymentFrom.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxPaymentFrom.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxPaymentFrom.FormattingEnabled = true;
-            this.comboBoxPaymentFrom.ItemHeight = 20;
-            this.comboBoxPaymentFrom.Location = new System.Drawing.Point(19, 115);
-            this.comboBoxPaymentFrom.Name = "comboBoxPaymentFrom";
-            this.comboBoxPaymentFrom.Size = new System.Drawing.Size(395, 28);
-            this.comboBoxPaymentFrom.TabIndex = 45;
+            this.comboBoxPaymentTo.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBoxPaymentTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxPaymentTo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPaymentTo.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxPaymentTo.FormattingEnabled = true;
+            this.comboBoxPaymentTo.ItemHeight = 20;
+            this.comboBoxPaymentTo.Location = new System.Drawing.Point(19, 115);
+            this.comboBoxPaymentTo.Name = "comboBoxPaymentTo";
+            this.comboBoxPaymentTo.Size = new System.Drawing.Size(395, 28);
+            this.comboBoxPaymentTo.TabIndex = 61;
             // 
             // labelDate
             // 
@@ -88,7 +88,7 @@ namespace PersonalManagementSystem.Views
             this.labelDate.Location = new System.Drawing.Point(18, 292);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(131, 20);
-            this.labelDate.TabIndex = 44;
+            this.labelDate.TabIndex = 60;
             this.labelDate.Text = "Transaction Date :";
             // 
             // labelAccount
@@ -98,7 +98,7 @@ namespace PersonalManagementSystem.Views
             this.labelAccount.Location = new System.Drawing.Point(219, 220);
             this.labelAccount.Name = "labelAccount";
             this.labelAccount.Size = new System.Drawing.Size(73, 20);
-            this.labelAccount.TabIndex = 43;
+            this.labelAccount.TabIndex = 59;
             this.labelAccount.Text = "Account :";
             // 
             // labelCategory
@@ -108,7 +108,7 @@ namespace PersonalManagementSystem.Views
             this.labelCategory.Location = new System.Drawing.Point(18, 220);
             this.labelCategory.Name = "labelCategory";
             this.labelCategory.Size = new System.Drawing.Size(80, 20);
-            this.labelCategory.TabIndex = 42;
+            this.labelCategory.TabIndex = 58;
             this.labelCategory.Text = "Category :";
             // 
             // labelDescription
@@ -118,18 +118,18 @@ namespace PersonalManagementSystem.Views
             this.labelDescription.Location = new System.Drawing.Point(18, 151);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(159, 20);
-            this.labelDescription.TabIndex = 41;
+            this.labelDescription.TabIndex = 57;
             this.labelDescription.Text = "Payment Description :";
             // 
-            // labelPayementFrom
+            // labelPayementTo
             // 
-            this.labelPayementFrom.AutoSize = true;
-            this.labelPayementFrom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPayementFrom.Location = new System.Drawing.Point(18, 87);
-            this.labelPayementFrom.Name = "labelPayementFrom";
-            this.labelPayementFrom.Size = new System.Drawing.Size(117, 20);
-            this.labelPayementFrom.TabIndex = 40;
-            this.labelPayementFrom.Text = "Payment From :";
+            this.labelPayementTo.AutoSize = true;
+            this.labelPayementTo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPayementTo.Location = new System.Drawing.Point(18, 87);
+            this.labelPayementTo.Name = "labelPayementTo";
+            this.labelPayementTo.Size = new System.Drawing.Size(97, 20);
+            this.labelPayementTo.TabIndex = 56;
+            this.labelPayementTo.Text = "Payment To :";
             // 
             // textAmount
             // 
@@ -140,7 +140,29 @@ namespace PersonalManagementSystem.Views
             this.textAmount.Multiline = true;
             this.textAmount.Name = "textAmount";
             this.textAmount.Size = new System.Drawing.Size(395, 30);
-            this.textAmount.TabIndex = 39;
+            this.textAmount.TabIndex = 55;
+            // 
+            // buttonUpdateExpense
+            // 
+            this.buttonUpdateExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonUpdateExpense.BackColor = System.Drawing.Color.White;
+            this.buttonUpdateExpense.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonUpdateExpense.FlatAppearance.BorderSize = 3;
+            this.buttonUpdateExpense.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonUpdateExpense.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonUpdateExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdateExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.buttonUpdateExpense.ForeColor = System.Drawing.Color.Black;
+            this.buttonUpdateExpense.Image = ((System.Drawing.Image)(resources.GetObject("buttonUpdateExpense.Image")));
+            this.buttonUpdateExpense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonUpdateExpense.Location = new System.Drawing.Point(241, 447);
+            this.buttonUpdateExpense.Name = "buttonUpdateExpense";
+            this.buttonUpdateExpense.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonUpdateExpense.Size = new System.Drawing.Size(173, 36);
+            this.buttonUpdateExpense.TabIndex = 54;
+            this.buttonUpdateExpense.Text = "Update Expense";
+            this.buttonUpdateExpense.UseVisualStyleBackColor = false;
+            this.buttonUpdateExpense.Click += new System.EventHandler(this.buttonUpdateExpense_Click);
             // 
             // textAccount
             // 
@@ -151,7 +173,7 @@ namespace PersonalManagementSystem.Views
             this.textAccount.Multiline = true;
             this.textAccount.Name = "textAccount";
             this.textAccount.Size = new System.Drawing.Size(191, 30);
-            this.textAccount.TabIndex = 37;
+            this.textAccount.TabIndex = 53;
             // 
             // textCategory
             // 
@@ -162,7 +184,7 @@ namespace PersonalManagementSystem.Views
             this.textCategory.Multiline = true;
             this.textCategory.Name = "textCategory";
             this.textCategory.Size = new System.Drawing.Size(191, 30);
-            this.textCategory.TabIndex = 36;
+            this.textCategory.TabIndex = 52;
             // 
             // textDescription
             // 
@@ -173,7 +195,7 @@ namespace PersonalManagementSystem.Views
             this.textDescription.Multiline = true;
             this.textDescription.Name = "textDescription";
             this.textDescription.Size = new System.Drawing.Size(395, 30);
-            this.textDescription.TabIndex = 35;
+            this.textDescription.TabIndex = 51;
             // 
             // bunifuSeparator
             // 
@@ -185,42 +207,20 @@ namespace PersonalManagementSystem.Views
             this.bunifuSeparator.Location = new System.Drawing.Point(20, 63);
             this.bunifuSeparator.Name = "bunifuSeparator";
             this.bunifuSeparator.Size = new System.Drawing.Size(395, 16);
-            this.bunifuSeparator.TabIndex = 34;
+            this.bunifuSeparator.TabIndex = 50;
             this.bunifuSeparator.Transparency = 255;
             this.bunifuSeparator.Vertical = false;
             // 
-            // labelUpdateIncome
+            // labelUpdateExpese
             // 
-            this.labelUpdateIncome.AutoSize = true;
-            this.labelUpdateIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 13.75F, System.Drawing.FontStyle.Bold);
-            this.labelUpdateIncome.ForeColor = System.Drawing.Color.DimGray;
-            this.labelUpdateIncome.Location = new System.Drawing.Point(21, 35);
-            this.labelUpdateIncome.Name = "labelUpdateIncome";
-            this.labelUpdateIncome.Size = new System.Drawing.Size(143, 25);
-            this.labelUpdateIncome.TabIndex = 33;
-            this.labelUpdateIncome.Text = "Update Income";
-            // 
-            // buttonUpdateIncome
-            // 
-            this.buttonUpdateIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUpdateIncome.BackColor = System.Drawing.Color.White;
-            this.buttonUpdateIncome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.buttonUpdateIncome.FlatAppearance.BorderSize = 3;
-            this.buttonUpdateIncome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.buttonUpdateIncome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.buttonUpdateIncome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdateIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.buttonUpdateIncome.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpdateIncome.Image = ((System.Drawing.Image)(resources.GetObject("buttonUpdateIncome.Image")));
-            this.buttonUpdateIncome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUpdateIncome.Location = new System.Drawing.Point(241, 447);
-            this.buttonUpdateIncome.Name = "buttonUpdateIncome";
-            this.buttonUpdateIncome.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonUpdateIncome.Size = new System.Drawing.Size(173, 36);
-            this.buttonUpdateIncome.TabIndex = 38;
-            this.buttonUpdateIncome.Text = "Update Income";
-            this.buttonUpdateIncome.UseVisualStyleBackColor = false;
-            this.buttonUpdateIncome.Click += new System.EventHandler(this.buttonUpdateIncome_Click);
+            this.labelUpdateExpese.AutoSize = true;
+            this.labelUpdateExpese.Font = new System.Drawing.Font("Segoe UI Semibold", 13.75F, System.Drawing.FontStyle.Bold);
+            this.labelUpdateExpese.ForeColor = System.Drawing.Color.DimGray;
+            this.labelUpdateExpese.Location = new System.Drawing.Point(21, 35);
+            this.labelUpdateExpese.Name = "labelUpdateExpese";
+            this.labelUpdateExpese.Size = new System.Drawing.Size(149, 25);
+            this.labelUpdateExpese.TabIndex = 49;
+            this.labelUpdateExpese.Text = "Update Expense";
             // 
             // buttonClose
             // 
@@ -230,11 +230,11 @@ namespace PersonalManagementSystem.Views
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(25, 25);
             this.buttonClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonClose.TabIndex = 32;
+            this.buttonClose.TabIndex = 48;
             this.buttonClose.TabStop = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // UpdateIncomeView
+            // UpdateExpenseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,23 +242,23 @@ namespace PersonalManagementSystem.Views
             this.ClientSize = new System.Drawing.Size(436, 518);
             this.Controls.Add(this.labelAmount);
             this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.comboBoxPaymentFrom);
+            this.Controls.Add(this.comboBoxPaymentTo);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelAccount);
             this.Controls.Add(this.labelCategory);
             this.Controls.Add(this.labelDescription);
-            this.Controls.Add(this.labelPayementFrom);
+            this.Controls.Add(this.labelPayementTo);
             this.Controls.Add(this.textAmount);
-            this.Controls.Add(this.buttonUpdateIncome);
+            this.Controls.Add(this.buttonUpdateExpense);
             this.Controls.Add(this.textAccount);
             this.Controls.Add(this.textCategory);
             this.Controls.Add(this.textDescription);
             this.Controls.Add(this.bunifuSeparator);
-            this.Controls.Add(this.labelUpdateIncome);
+            this.Controls.Add(this.labelUpdateExpese);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UpdateIncomeView";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Name = "UpdateExpenseView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.buttonClose)).EndInit();
             this.ResumeLayout(false);
@@ -270,19 +270,19 @@ namespace PersonalManagementSystem.Views
 
         private System.Windows.Forms.Label labelAmount;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.ComboBox comboBoxPaymentFrom;
+        private System.Windows.Forms.ComboBox comboBoxPaymentTo;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelAccount;
         private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.Label labelDescription;
-        private System.Windows.Forms.Label labelPayementFrom;
+        private System.Windows.Forms.Label labelPayementTo;
         private System.Windows.Forms.TextBox textAmount;
-        private System.Windows.Forms.Button buttonUpdateIncome;
+        private System.Windows.Forms.Button buttonUpdateExpense;
         private System.Windows.Forms.TextBox textAccount;
         private System.Windows.Forms.TextBox textCategory;
         private System.Windows.Forms.TextBox textDescription;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator;
-        private System.Windows.Forms.Label labelUpdateIncome;
+        private System.Windows.Forms.Label labelUpdateExpese;
         private System.Windows.Forms.PictureBox buttonClose;
     }
 }

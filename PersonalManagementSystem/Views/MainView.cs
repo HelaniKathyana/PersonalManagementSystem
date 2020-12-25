@@ -16,26 +16,28 @@ namespace PersonalManagementSystem
     {
         private int user_id;
         static String incomeId;
+        static String expenseId;
         static String contId;
 
         public void setId(int id)
         {
             user_id = id;
         }
-        static ContactModel cm = new ContactModel();
-        static ExpenseModel em = new ExpenseModel();
-        static IncomeModel im = new IncomeModel();
 
+        static IncomeModel im = new IncomeModel();
+        static ExpenseModel em = new ExpenseModel();
+        static ContactModel cm = new ContactModel();
+        
         public MainView()
         {
             InitializeComponent();
         }
 
         private void MainView_Load(object sender, EventArgs e)
-        {
-            loadContactData();
+        {   
             loadIncomeData();
             loadExpenseData();
+            loadContactData();
             loadTotalIncome();
         }
 
@@ -227,6 +229,69 @@ namespace PersonalManagementSystem
                 loadExpenseData();
             
             }
+        }
+
+        private void buttonDeleteExpense_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Do you want to permanently delete the selected record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    em.deleteExpenseData(dataGridViewExpense.CurrentRow.Cells[0].Value);
+                    loadExpenseData();
+                    MessageBox.Show("The selected record has been deletecd.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                // and error occured
+            }
+        }
+
+        private void buttonEditExpense_Click(object sender, EventArgs e)
+        {
+            Form expenseOverlay = new Form();
+            try
+            {
+                using (UpdateExpenseView updateExpense = new UpdateExpenseView())
+                {
+                    updateExpense.setId(int.Parse(expenseId));
+                    updateExpense.setEnteredId(user_id);
+                    expenseOverlay.StartPosition = FormStartPosition.Manual;
+                    expenseOverlay.FormBorderStyle = FormBorderStyle.None;
+                    expenseOverlay.Opacity = .50d;
+                    expenseOverlay.BackColor = Color.Black;
+                    expenseOverlay.WindowState = FormWindowState.Maximized;
+                    expenseOverlay.TopMost = true;
+                    expenseOverlay.Location = this.Location;
+                    expenseOverlay.ShowInTaskbar = false;
+                    expenseOverlay.Show();
+
+                    updateExpense.Owner = expenseOverlay;
+                    updateExpense.ShowDialog();
+
+                    expenseOverlay.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                expenseOverlay.Dispose();
+                loadExpenseData();
+            }
+        }
+
+        private void dataGridViewExpense_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            expenseId = dataGridViewIncome.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         // Contact View
