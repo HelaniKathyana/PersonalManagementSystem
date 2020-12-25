@@ -39,6 +39,7 @@ namespace PersonalManagementSystem
             loadExpenseData();
             loadContactData();
             loadTotalIncome();
+            loadTotalExpense();
         }
 
         private void labelSignUp_Click(object sender, EventArgs e)
@@ -201,6 +202,16 @@ namespace PersonalManagementSystem
             dataGridViewExpense.Columns[6].HeaderText = "Amount";
         }
 
+        private void loadTotalExpense()
+        {
+            int sum = 0;
+            for (int i = 0; i < dataGridViewExpense.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dataGridViewExpense.Rows[i].Cells[6].Value);
+            }
+            expenseTotal.Text = "Total Expense : " + sum.ToString();
+        }
+
         private void buttonAddExpense_Click(object sender, EventArgs e)
         {
             Form expenseOverlay = new Form();
@@ -233,7 +244,9 @@ namespace PersonalManagementSystem
             {
                 expenseOverlay.Dispose();
                 loadExpenseData();
-            
+                loadTotalExpense();
+
+
             }
         }
 
@@ -246,6 +259,7 @@ namespace PersonalManagementSystem
                 {
                     em.deleteExpenseData(dataGridViewExpense.CurrentRow.Cells[0].Value);
                     loadExpenseData();
+                    loadTotalExpense();
                     MessageBox.Show("The selected record has been deletecd.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -292,6 +306,7 @@ namespace PersonalManagementSystem
             {
                 expenseOverlay.Dispose();
                 loadExpenseData();
+                loadTotalExpense();
             }
         }
 
