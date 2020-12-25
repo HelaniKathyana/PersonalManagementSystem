@@ -181,6 +181,12 @@ namespace PersonalManagementSystem
         }
 
         //Expense View
+        private void textSearchExpenseName_TextChanged(object sender, EventArgs e)
+        {
+            DataTable expenseData = em.searchExpenseData(textSearchExpense.Text);
+            dataGridViewExpense.DataSource = expenseData;
+        }
+
         private void loadExpenseData()
         {
             DataTable expenseData = em.displayAllExpenseData(user_id);

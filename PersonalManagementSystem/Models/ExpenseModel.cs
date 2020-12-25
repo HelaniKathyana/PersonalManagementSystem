@@ -54,5 +54,12 @@ namespace PersonalManagementSystem.Models
             DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
             return expenseData;
         }
+
+        public DataTable searchExpenseData(string name)
+        {
+            string incomeSQL = "SELECT e.Expense_ID, c.Name AS Payment_To, e.Description, e.Category, e.Account, e.Transaction_Date, e.Amount FROM Expense AS e INNER JOIN Contact AS c ON e.Contact_ID = c.Contact_ID WHERE c.Name LIKE '" + name + "%'";
+            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
+            return incomeData;
+        }
     }
 }
