@@ -1,4 +1,7 @@
-﻿using PersonalManagementSystem.Models;
+﻿using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
+using PersonalManagementSystem.Models;
 using PersonalManagementSystem.Views;
 using System;
 using System.Collections.Generic;
@@ -18,6 +21,8 @@ namespace PersonalManagementSystem
         static String incomeId;
         static String expenseId;
         static String contId;
+        DateTime startDate;
+        DateTime endDate;
 
         public void setId(int id)
         {
@@ -27,7 +32,8 @@ namespace PersonalManagementSystem
         static IncomeModel im = new IncomeModel();
         static ExpenseModel em = new ExpenseModel();
         static ContactModel cm = new ContactModel();
-        
+        static ReportModel rm = new ReportModel();
+
         public MainView()
         {
             InitializeComponent();
@@ -40,6 +46,9 @@ namespace PersonalManagementSystem
             loadContactData();
             loadTotalIncome();
             loadTotalExpense();
+            loadTotalContact();
+            loadIncomeCategoryOverviewChart();
+            loadReportData();
         }
 
         private void labelSignUp_Click(object sender, EventArgs e)
@@ -47,6 +56,17 @@ namespace PersonalManagementSystem
             LoginView login = new LoginView();
             login.Show();
             this.Hide();
+        }
+
+        private void loadIncomeExpenseChart()
+        {
+
+        }
+
+        private void loadIncomeCategoryOverviewChart()
+        {
+            DataTable incomeData = im.getIncomeCategoryOverview(user_id);
+  //          pieChartIncomeCategory.DataSource = incomeData;
         }
 
         //Income View
@@ -78,6 +98,7 @@ namespace PersonalManagementSystem
                 sum += Convert.ToInt32(dataGridViewIncome.Rows[i].Cells[6].Value);
             }
             incomeTotal.Text = "Total Income : " + sum.ToString();
+            labelIncome.Text = sum.ToString();
         }
 
         private void buttonAddIncome_Click(object sender, EventArgs e)
@@ -210,6 +231,7 @@ namespace PersonalManagementSystem
                 sum += Convert.ToInt32(dataGridViewExpense.Rows[i].Cells[6].Value);
             }
             expenseTotal.Text = "Total Expense : " + sum.ToString();
+            labelExpense.Text = sum.ToString();
         }
 
         private void buttonAddExpense_Click(object sender, EventArgs e)
@@ -245,8 +267,6 @@ namespace PersonalManagementSystem
                 expenseOverlay.Dispose();
                 loadExpenseData();
                 loadTotalExpense();
-
-
             }
         }
 
@@ -312,7 +332,7 @@ namespace PersonalManagementSystem
 
         private void dataGridViewExpense_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            expenseId = dataGridViewIncome.Rows[e.RowIndex].Cells[0].Value.ToString();
+            expenseId = dataGridViewExpense.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         // Contact View
@@ -333,6 +353,11 @@ namespace PersonalManagementSystem
             dataGridViewContact.Columns[3].HeaderText = "Mobile Number";
             dataGridViewContact.Columns[4].HeaderText = "Designation";
             dataGridViewContact.Columns[5].HeaderText = "Address";
+        }
+
+        private void loadTotalContact()
+        {
+            labelContact.Text = dataGridViewContact.Rows.Count.ToString();
         }
 
         private void buttonAddContact_Click(object sender, EventArgs e)
@@ -367,6 +392,7 @@ namespace PersonalManagementSystem
             {
                 contactOverlay.Dispose();
                 loadContactData();
+                loadTotalContact();
             }
         }
 
@@ -379,6 +405,7 @@ namespace PersonalManagementSystem
                 {
                     cm.deleteContactData(dataGridViewContact.CurrentRow.Cells[0].Value);
                     loadContactData();
+                    loadTotalContact();
                     MessageBox.Show("The selected record has been deletecd.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -424,6 +451,7 @@ namespace PersonalManagementSystem
             {
                 contactOverlay.Dispose();
                 loadContactData();
+                loadTotalContact();
             }
         }
 
@@ -432,5 +460,77 @@ namespace PersonalManagementSystem
             contId = dataGridViewContact.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
+        private void loadReportData()
+        {
+            DataTable reportData = rm.displayAllReportData(user_id);
+
+            dataGridViewRepot.DataSource = reportData;
+            dataGridViewRepot.Columns[0].HeaderText = "Name";
+            dataGridViewRepot.Columns[1].HeaderText = "Type";
+            dataGridViewRepot.Columns[2].HeaderText = "Start Date";
+            dataGridViewRepot.Columns[3].HeaderText = "End Date";
+            dataGridViewRepot.Columns[4].HeaderText = "Created";
+        }
+
+        private void buttonCreateReport_Click(object sender, EventArgs e)
+        {
+            Form reportOverlay = new Form();
+            try
+            {
+                using (CreateReportView createReport = new CreateReportView())
+                {
+                    createReport.setId(user_id);
+                    reportOverlay.StartPosition = FormStartPosition.Manual;
+                    reportOverlay.FormBorderStyle = FormBorderStyle.None;
+                    reportOverlay.Opacity = .50d;
+                    reportOverlay.BackColor = Color.Black;
+                    reportOverlay.WindowState = FormWindowState.Maximized;
+                    reportOverlay.TopMost = true;
+                    reportOverlay.Location = this.Location;
+                    reportOverlay.ShowInTaskbar = false;
+                    reportOverlay.Show();
+
+                    createReport.Owner = reportOverlay;
+                    createReport.ShowDialog();
+
+                    reportOverlay.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                reportOverlay.Dispose();
+                loadReportData();
+            }
+        }
+
+        private void dataGridViewReport_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            startDate = (DateTime)dataGridViewRepot.Rows[e.RowIndex].Cells[2].Value;
+            endDate = (DateTime)dataGridViewRepot.Rows[e.RowIndex].Cells[3].Value;
+            loadIncomeSummary(this.user_id, startDate, endDate);
+            loadExpenseSummary(this.user_id, startDate, endDate);
+        }
+
+        private void loadIncomeSummary(int user_id, DateTime startDate, DateTime endDate)
+        {
+            DataTable reportData = rm.getIncomeSummary(user_id, startDate, endDate);
+            
+            dataGridViewSummaryIncome.DataSource = reportData;
+            dataGridViewSummaryIncome.Columns[0].HeaderText = "Category";
+            dataGridViewSummaryIncome.Columns[1].HeaderText = "Total Amount";           
+        }
+
+        private void loadExpenseSummary(int user_id, DateTime startDate, DateTime endDate)
+        {
+            DataTable reportData = rm.getExpenseSummary(user_id, startDate, endDate);
+
+            dataGridViewSummaryExpense.DataSource = reportData;
+            dataGridViewSummaryExpense.Columns[0].HeaderText = "Category";
+            dataGridViewSummaryExpense.Columns[1].HeaderText = "Total Amount";
+        }
     }
 }

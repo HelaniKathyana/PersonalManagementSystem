@@ -61,5 +61,12 @@ namespace PersonalManagementSystem.Models
             DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
             return incomeData;
         }
+
+        public DataTable getIncomeCategoryOverview(int id)
+        {
+            string incomeSQL = "SELECT Category, count(Income_ID) as Total from Income where User_ID = '" + id + "' group by Category order by Category asc";
+            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
+            return incomeData;
+        }
     }
 }

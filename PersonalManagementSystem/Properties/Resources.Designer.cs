@@ -63,16 +63,6 @@ namespace PersonalManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Balance {
-            get {
-                object obj = ResourceManager.GetObject("Balance", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap checkmark {
             get {
                 object obj = ResourceManager.GetObject("checkmark", resourceCulture);
@@ -86,6 +76,36 @@ namespace PersonalManagementSystem.Properties {
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contact {
+            get {
+                object obj = ResourceManager.GetObject("contact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap expense {
+            get {
+                object obj = ResourceManager.GetObject("expense", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap income {
+            get {
+                object obj = ResourceManager.GetObject("income", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,26 +143,6 @@ namespace PersonalManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap profit {
-            get {
-                object obj = ResourceManager.GetObject("profit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search {
-            get {
-                object obj = ResourceManager.GetObject("search", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap signin_image {
             get {
                 object obj = ResourceManager.GetObject("signin-image", resourceCulture);
@@ -156,26 +156,6 @@ namespace PersonalManagementSystem.Properties {
         internal static System.Drawing.Bitmap signup_image {
             get {
                 object obj = ResourceManager.GetObject("signup-image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TotalExpense {
-            get {
-                object obj = ResourceManager.GetObject("TotalExpense", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TotalIncome {
-            get {
-                object obj = ResourceManager.GetObject("TotalIncome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
