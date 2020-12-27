@@ -68,5 +68,12 @@ namespace PersonalManagementSystem.Models
             DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
             return incomeData;
         }
+
+        public DataTable getTotalIncomes(int id)
+        {
+            string incomeSQL = "SELECT year(Transaction_Date) as Year, SUM(Amount) as Total from Income where User_ID = '" + id + "' AND Transaction_Date is not null group by year(Transaction_Date) order by year(Transaction_Date) asc";
+            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
+            return incomeData;
+        }
     }
 }
