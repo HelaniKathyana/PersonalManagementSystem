@@ -40,14 +40,16 @@ namespace PersonalManagementSystem
         }
 
         private void MainView_Load(object sender, EventArgs e)
-        {   
+        {
             loadIncomeData();
             loadExpenseData();
             loadContactData();
             loadTotalIncome();
             loadTotalExpense();
             loadTotalContact();
+            loadIncomeExpenseChart();
             loadIncomeCategoryOverviewChart();
+            loadExpenseCategoryOverviewChart();
             loadReportData();
         }
 
@@ -60,13 +62,95 @@ namespace PersonalManagementSystem
 
         private void loadIncomeExpenseChart()
         {
+            DataTable incomeData = im.getTotalIncomes(user_id);
+            DataTable expenseData = em.getTotalExpenses(user_id);
 
+            cartesianChartIncomeExpense.Series = new SeriesCollection();
+            ColumnSeries colSeriesIncomeObj = new ColumnSeries
+            {
+                Title = "Income",
+                Values = new ChartValues<double> { }     
+            };
+
+            foreach (DataRow dr in incomeData.Rows)
+            {
+                colSeriesIncomeObj.Values.Add(double.Parse(dr["Total"].ToString()));
+            }
+
+            ColumnSeries colSeriesExpenseObj = new ColumnSeries
+            {
+                Title = "Expense",
+                Values = new ChartValues<double> {}
+            };
+
+            foreach (DataRow dr in expenseData.Rows)
+            {
+                colSeriesExpenseObj.Values.Add(double.Parse(dr["Total"].ToString()));
+            }
+
+            //adding series will update and animate the chart automatically
+            cartesianChartIncomeExpense.Series.Add(colSeriesIncomeObj);
+            cartesianChartIncomeExpense.Series.Add(colSeriesExpenseObj);
+
+            cartesianChartIncomeExpense.AxisX.Add(
+             new Axis
+            {
+                Title = "Years",
+                Labels = new[] { "2018", "2019", "2020" }
+            });
+
+            cartesianChartIncomeExpense.AxisY.Add(new Axis
+            {
+                Title = "Total",
+                LabelFormatter = value => value.ToString("N")
+            });
         }
 
-        private void loadIncomeCategoryOverviewChart()
+
+    private void loadIncomeCategoryOverviewChart()
         {
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+
             DataTable incomeData = im.getIncomeCategoryOverview(user_id);
-  //          pieChartIncomeCategory.DataSource = incomeData;
+
+            pieChartIncomeCategory.Series = new SeriesCollection();
+            foreach (DataRow dr in incomeData.Rows)
+            {
+                PieSeries pieSeriesObj = new PieSeries
+                {
+                    Title = dr["Category"].ToString(),
+                    Values = new ChartValues<double> { double.Parse(dr["Total"].ToString()) },
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                };
+                pieChartIncomeCategory.Series.Add(pieSeriesObj);
+            }
+
+            pieChartIncomeCategory.LegendLocation = LegendLocation.Bottom;
+        }
+    
+        private void loadExpenseCategoryOverviewChart()
+        {
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+
+            DataTable expenseData = em.getExpenseCategoryOverview(user_id);
+
+            pieChartExpenseCategory.Series = new SeriesCollection();
+            foreach (DataRow dr in expenseData.Rows)
+            {
+                PieSeries pieSeriesObj = new PieSeries
+                {
+                    Title = dr["Category"].ToString(),
+                    Values = new ChartValues<double> { double.Parse(dr["Total"].ToString()) },
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                };
+                pieChartExpenseCategory.Series.Add(pieSeriesObj);
+            }
+
+            pieChartExpenseCategory.LegendLocation = LegendLocation.Bottom;
         }
 
         //Income View
@@ -460,6 +544,7 @@ namespace PersonalManagementSystem
             contId = dataGridViewContact.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
+        //Report View
         private void loadReportData()
         {
             DataTable reportData = rm.displayAllReportData(user_id);

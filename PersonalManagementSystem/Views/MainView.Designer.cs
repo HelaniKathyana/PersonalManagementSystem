@@ -30,6 +30,7 @@ namespace PersonalManagementSystem
         private void InitializeComponent()
         {
             System.Windows.Forms.TabControl mainViewTabControl;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,22 +40,35 @@ namespace PersonalManagementSystem
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dashboardTabPage = new System.Windows.Forms.TabPage();
+            this.dashboardSeparator = new Bunifu.Framework.UI.BunifuSeparator();
+            this.pieChartExpenseCategory = new LiveCharts.WinForms.PieChart();
+            this.labelExpenseCategory = new System.Windows.Forms.Label();
+            this.labelIncomeCategory = new System.Windows.Forms.Label();
             this.labelIncomeVsExpense = new System.Windows.Forms.Label();
             this.pieChartIncomeCategory = new LiveCharts.WinForms.PieChart();
             this.cartesianChartIncomeExpense = new LiveCharts.WinForms.CartesianChart();
-            this.expense = new System.Windows.Forms.Label();
-            this.income = new System.Windows.Forms.Label();
+            this.contactPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.labelTotalContact = new System.Windows.Forms.Label();
+            this.labelContact = new System.Windows.Forms.Label();
+            this.expensePanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.labelTotalExpense = new System.Windows.Forms.Label();
+            this.labelExpense = new System.Windows.Forms.Label();
+            this.incomePanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.labelTotalIncome = new System.Windows.Forms.Label();
+            this.labelIncome = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.inomeTabPage = new System.Windows.Forms.TabPage();
             this.labelSearchIncome = new System.Windows.Forms.Label();
             this.textSearchIncome = new System.Windows.Forms.TextBox();
@@ -80,67 +94,46 @@ namespace PersonalManagementSystem
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.textSearchContact = new System.Windows.Forms.TextBox();
             this.dataGridViewContact = new System.Windows.Forms.DataGridView();
+            this.pictureBoxSearchContacts = new System.Windows.Forms.PictureBox();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
+            this.panelReportPreview = new System.Windows.Forms.Panel();
+            this.dataGridViewSummaryExpense = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSummaryIncome = new System.Windows.Forms.DataGridView();
+            this.labelSummaryExpense = new System.Windows.Forms.Label();
+            this.labelSummaeyIncome = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelReportPreview = new System.Windows.Forms.Label();
+            this.dataGridViewRepot = new System.Windows.Forms.DataGridView();
+            this.reportSeparator = new Bunifu.Framework.UI.BunifuSeparator();
+            this.labelPastReport = new System.Windows.Forms.Label();
+            this.buttonCreateReport = new System.Windows.Forms.Button();
             this.predictionTabPage = new System.Windows.Forms.TabPage();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.labelSignUp = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.labelIncomeCategory = new System.Windows.Forms.Label();
-            this.labelExpenseCategory = new System.Windows.Forms.Label();
-            this.pieChartExpenseCategory = new LiveCharts.WinForms.PieChart();
-            this.dashboardSeparator = new Bunifu.Framework.UI.BunifuSeparator();
-            this.comboBoxAnalysis = new System.Windows.Forms.ComboBox();
-            this.buttonCreateReport = new System.Windows.Forms.Button();
-            this.labelPastReport = new System.Windows.Forms.Label();
-            this.reportSeparator = new Bunifu.Framework.UI.BunifuSeparator();
-            this.dataGridViewRepot = new System.Windows.Forms.DataGridView();
-            this.labelReportPreview = new System.Windows.Forms.Label();
-            this.panelReportPreview = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelSummaeyIncome = new System.Windows.Forms.Label();
-            this.labelSummaryExpense = new System.Windows.Forms.Label();
-            this.dataGridViewSummaryIncome = new System.Windows.Forms.DataGridView();
-            this.dataGridViewSummaryExpense = new System.Windows.Forms.DataGridView();
-            this.contactPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.labelTotalContact = new System.Windows.Forms.Label();
-            this.labelContact = new System.Windows.Forms.Label();
-            this.expensePanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.labelTotalExpense = new System.Windows.Forms.Label();
-            this.labelExpense = new System.Windows.Forms.Label();
-            this.incomePanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.labelTotalIncome = new System.Windows.Forms.Label();
-            this.labelIncome = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSearchContacts = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             mainViewTabControl = new System.Windows.Forms.TabControl();
             mainViewTabControl.SuspendLayout();
             this.dashboardTabPage.SuspendLayout();
-            this.inomeTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).BeginInit();
-            this.expensesTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpense)).BeginInit();
-            this.contactsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).BeginInit();
-            this.reportsTabPage.SuspendLayout();
-            this.panelTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepot)).BeginInit();
-            this.panelReportPreview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryIncome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryExpense)).BeginInit();
             this.contactPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.expensePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.incomePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.inomeTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).BeginInit();
+            this.expensesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpense)).BeginInit();
+            this.contactsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchContacts)).BeginInit();
+            this.reportsTabPage.SuspendLayout();
+            this.panelReportPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryExpense)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryIncome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepot)).BeginInit();
+            this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,7 +160,6 @@ namespace PersonalManagementSystem
             // 
             this.dashboardTabPage.AutoScroll = true;
             this.dashboardTabPage.BackColor = System.Drawing.Color.White;
-            this.dashboardTabPage.Controls.Add(this.comboBoxAnalysis);
             this.dashboardTabPage.Controls.Add(this.dashboardSeparator);
             this.dashboardTabPage.Controls.Add(this.pieChartExpenseCategory);
             this.dashboardTabPage.Controls.Add(this.labelExpenseCategory);
@@ -178,10 +170,6 @@ namespace PersonalManagementSystem
             this.dashboardTabPage.Controls.Add(this.contactPanel);
             this.dashboardTabPage.Controls.Add(this.expensePanel);
             this.dashboardTabPage.Controls.Add(this.incomePanel);
-            this.dashboardTabPage.Controls.Add(this.expense);
-            this.dashboardTabPage.Controls.Add(this.pictureBox3);
-            this.dashboardTabPage.Controls.Add(this.income);
-            this.dashboardTabPage.Controls.Add(this.pictureBox2);
             this.dashboardTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardTabPage.ForeColor = System.Drawing.SystemColors.ControlText;
             this.dashboardTabPage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -191,6 +179,50 @@ namespace PersonalManagementSystem
             this.dashboardTabPage.Size = new System.Drawing.Size(918, 558);
             this.dashboardTabPage.TabIndex = 0;
             this.dashboardTabPage.Text = "Dashboard";
+            // 
+            // dashboardSeparator
+            // 
+            this.dashboardSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dashboardSeparator.BackColor = System.Drawing.Color.Transparent;
+            this.dashboardSeparator.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.dashboardSeparator.LineThickness = 1;
+            this.dashboardSeparator.Location = new System.Drawing.Point(22, 716);
+            this.dashboardSeparator.Name = "dashboardSeparator";
+            this.dashboardSeparator.Size = new System.Drawing.Size(823, 35);
+            this.dashboardSeparator.TabIndex = 44;
+            this.dashboardSeparator.Transparency = 255;
+            this.dashboardSeparator.Vertical = false;
+            // 
+            // pieChartExpenseCategory
+            // 
+            this.pieChartExpenseCategory.Location = new System.Drawing.Point(403, 495);
+            this.pieChartExpenseCategory.Name = "pieChartExpenseCategory";
+            this.pieChartExpenseCategory.Size = new System.Drawing.Size(322, 215);
+            this.pieChartExpenseCategory.TabIndex = 43;
+            this.pieChartExpenseCategory.Text = "pieChart2";
+            // 
+            // labelExpenseCategory
+            // 
+            this.labelExpenseCategory.AutoSize = true;
+            this.labelExpenseCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExpenseCategory.ForeColor = System.Drawing.Color.DimGray;
+            this.labelExpenseCategory.Location = new System.Drawing.Point(421, 456);
+            this.labelExpenseCategory.Name = "labelExpenseCategory";
+            this.labelExpenseCategory.Size = new System.Drawing.Size(252, 25);
+            this.labelExpenseCategory.TabIndex = 42;
+            this.labelExpenseCategory.Text = "Expense Category Overview";
+            // 
+            // labelIncomeCategory
+            // 
+            this.labelIncomeCategory.AutoSize = true;
+            this.labelIncomeCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIncomeCategory.ForeColor = System.Drawing.Color.DimGray;
+            this.labelIncomeCategory.Location = new System.Drawing.Point(17, 456);
+            this.labelIncomeCategory.Name = "labelIncomeCategory";
+            this.labelIncomeCategory.Size = new System.Drawing.Size(246, 25);
+            this.labelIncomeCategory.TabIndex = 41;
+            this.labelIncomeCategory.Text = "Income Category Overview";
             // 
             // labelIncomeVsExpense
             // 
@@ -205,7 +237,7 @@ namespace PersonalManagementSystem
             // 
             // pieChartIncomeCategory
             // 
-            this.pieChartIncomeCategory.Location = new System.Drawing.Point(22, 522);
+            this.pieChartIncomeCategory.Location = new System.Drawing.Point(22, 495);
             this.pieChartIncomeCategory.Name = "pieChartIncomeCategory";
             this.pieChartIncomeCategory.Size = new System.Drawing.Size(322, 215);
             this.pieChartIncomeCategory.TabIndex = 39;
@@ -215,32 +247,170 @@ namespace PersonalManagementSystem
             // 
             this.cartesianChartIncomeExpense.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cartesianChartIncomeExpense.Location = new System.Drawing.Point(22, 208);
+            this.cartesianChartIncomeExpense.Location = new System.Drawing.Point(22, 181);
             this.cartesianChartIncomeExpense.Name = "cartesianChartIncomeExpense";
-            this.cartesianChartIncomeExpense.Size = new System.Drawing.Size(840, 250);
+            this.cartesianChartIncomeExpense.Size = new System.Drawing.Size(823, 250);
             this.cartesianChartIncomeExpense.TabIndex = 38;
             // 
-            // expense
+            // contactPanel
             // 
-            this.expense.AutoSize = true;
-            this.expense.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.expense.ForeColor = System.Drawing.Color.Gray;
-            this.expense.Location = new System.Drawing.Point(135, 180);
-            this.expense.Name = "expense";
-            this.expense.Size = new System.Drawing.Size(71, 20);
-            this.expense.TabIndex = 27;
-            this.expense.Text = "Expenses";
+            this.contactPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("contactPanel.BackgroundImage")));
+            this.contactPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.contactPanel.Controls.Add(this.pictureBox6);
+            this.contactPanel.Controls.Add(this.labelTotalContact);
+            this.contactPanel.Controls.Add(this.labelContact);
+            this.contactPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(229)))), ((int)(((byte)(151)))));
+            this.contactPanel.GradientBottomRight = System.Drawing.Color.Teal;
+            this.contactPanel.GradientTopLeft = System.Drawing.Color.SlateBlue;
+            this.contactPanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(229)))), ((int)(((byte)(151)))));
+            this.contactPanel.Location = new System.Drawing.Point(616, 24);
+            this.contactPanel.Name = "contactPanel";
+            this.contactPanel.Quality = 10;
+            this.contactPanel.Size = new System.Drawing.Size(280, 100);
+            this.contactPanel.TabIndex = 37;
             // 
-            // income
+            // pictureBox6
             // 
-            this.income.AutoSize = true;
-            this.income.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.income.ForeColor = System.Drawing.Color.Gray;
-            this.income.Location = new System.Drawing.Point(46, 178);
-            this.income.Name = "income";
-            this.income.Size = new System.Drawing.Size(59, 20);
-            this.income.TabIndex = 25;
-            this.income.Text = "Income";
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::PersonalManagementSystem.Properties.Resources.contact;
+            this.pictureBox6.Location = new System.Drawing.Point(18, 16);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(74, 69);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
+            // 
+            // labelTotalContact
+            // 
+            this.labelTotalContact.AutoSize = true;
+            this.labelTotalContact.BackColor = System.Drawing.Color.Transparent;
+            this.labelTotalContact.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalContact.ForeColor = System.Drawing.Color.White;
+            this.labelTotalContact.Location = new System.Drawing.Point(102, 16);
+            this.labelTotalContact.Name = "labelTotalContact";
+            this.labelTotalContact.Size = new System.Drawing.Size(125, 25);
+            this.labelTotalContact.TabIndex = 9;
+            this.labelTotalContact.Text = "Total Contact";
+            // 
+            // labelContact
+            // 
+            this.labelContact.AutoSize = true;
+            this.labelContact.BackColor = System.Drawing.Color.Transparent;
+            this.labelContact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContact.ForeColor = System.Drawing.Color.White;
+            this.labelContact.Location = new System.Drawing.Point(101, 48);
+            this.labelContact.Name = "labelContact";
+            this.labelContact.Size = new System.Drawing.Size(57, 32);
+            this.labelContact.TabIndex = 10;
+            this.labelContact.Text = "000";
+            // 
+            // expensePanel
+            // 
+            this.expensePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("expensePanel.BackgroundImage")));
+            this.expensePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.expensePanel.Controls.Add(this.pictureBox5);
+            this.expensePanel.Controls.Add(this.labelTotalExpense);
+            this.expensePanel.Controls.Add(this.labelExpense);
+            this.expensePanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(104)))));
+            this.expensePanel.GradientBottomRight = System.Drawing.Color.Purple;
+            this.expensePanel.GradientTopLeft = System.Drawing.Color.Crimson;
+            this.expensePanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(104)))));
+            this.expensePanel.Location = new System.Drawing.Point(319, 24);
+            this.expensePanel.Name = "expensePanel";
+            this.expensePanel.Quality = 10;
+            this.expensePanel.Size = new System.Drawing.Size(280, 100);
+            this.expensePanel.TabIndex = 36;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::PersonalManagementSystem.Properties.Resources.expense;
+            this.pictureBox5.Location = new System.Drawing.Point(18, 16);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(74, 69);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // labelTotalExpense
+            // 
+            this.labelTotalExpense.AutoSize = true;
+            this.labelTotalExpense.BackColor = System.Drawing.Color.Transparent;
+            this.labelTotalExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalExpense.ForeColor = System.Drawing.Color.White;
+            this.labelTotalExpense.Location = new System.Drawing.Point(102, 16);
+            this.labelTotalExpense.Name = "labelTotalExpense";
+            this.labelTotalExpense.Size = new System.Drawing.Size(161, 25);
+            this.labelTotalExpense.TabIndex = 5;
+            this.labelTotalExpense.Text = "Total Expenditure";
+            // 
+            // labelExpense
+            // 
+            this.labelExpense.AutoSize = true;
+            this.labelExpense.BackColor = System.Drawing.Color.Transparent;
+            this.labelExpense.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExpense.ForeColor = System.Drawing.Color.White;
+            this.labelExpense.Location = new System.Drawing.Point(101, 48);
+            this.labelExpense.Name = "labelExpense";
+            this.labelExpense.Size = new System.Drawing.Size(57, 32);
+            this.labelExpense.TabIndex = 7;
+            this.labelExpense.Text = "000";
+            // 
+            // incomePanel
+            // 
+            this.incomePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("incomePanel.BackgroundImage")));
+            this.incomePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.incomePanel.Controls.Add(this.labelTotalIncome);
+            this.incomePanel.Controls.Add(this.labelIncome);
+            this.incomePanel.Controls.Add(this.pictureBox1);
+            this.incomePanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
+            this.incomePanel.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(166)))), ((int)(((byte)(245)))));
+            this.incomePanel.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.incomePanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(206)))), ((int)(((byte)(234)))));
+            this.incomePanel.Location = new System.Drawing.Point(22, 24);
+            this.incomePanel.Name = "incomePanel";
+            this.incomePanel.Quality = 10;
+            this.incomePanel.Size = new System.Drawing.Size(280, 100);
+            this.incomePanel.TabIndex = 35;
+            // 
+            // labelTotalIncome
+            // 
+            this.labelTotalIncome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalIncome.AutoSize = true;
+            this.labelTotalIncome.BackColor = System.Drawing.Color.Transparent;
+            this.labelTotalIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalIncome.ForeColor = System.Drawing.Color.White;
+            this.labelTotalIncome.Location = new System.Drawing.Point(121, 16);
+            this.labelTotalIncome.Name = "labelTotalIncome";
+            this.labelTotalIncome.Size = new System.Drawing.Size(122, 25);
+            this.labelTotalIncome.TabIndex = 2;
+            this.labelTotalIncome.Text = "Total Income";
+            // 
+            // labelIncome
+            // 
+            this.labelIncome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelIncome.AutoSize = true;
+            this.labelIncome.BackColor = System.Drawing.Color.Transparent;
+            this.labelIncome.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIncome.ForeColor = System.Drawing.Color.White;
+            this.labelIncome.Location = new System.Drawing.Point(121, 48);
+            this.labelIncome.Name = "labelIncome";
+            this.labelIncome.Size = new System.Drawing.Size(57, 32);
+            this.labelIncome.TabIndex = 3;
+            this.labelIncome.Text = "000";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::PersonalManagementSystem.Properties.Resources.income;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(74, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // inomeTabPage
             // 
@@ -691,6 +861,15 @@ namespace PersonalManagementSystem
             this.dataGridViewContact.TabIndex = 0;
             this.dataGridViewContact.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewContact_RowHeaderMouseClick);
             // 
+            // pictureBoxSearchContacts
+            // 
+            this.pictureBoxSearchContacts.Location = new System.Drawing.Point(401, 24);
+            this.pictureBoxSearchContacts.Name = "pictureBoxSearchContacts";
+            this.pictureBoxSearchContacts.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxSearchContacts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSearchContacts.TabIndex = 2;
+            this.pictureBoxSearchContacts.TabStop = false;
+            // 
             // reportsTabPage
             // 
             this.reportsTabPage.AutoScroll = true;
@@ -708,153 +887,137 @@ namespace PersonalManagementSystem
             this.reportsTabPage.Text = "Reports";
             this.reportsTabPage.UseVisualStyleBackColor = true;
             // 
-            // predictionTabPage
+            // panelReportPreview
             // 
-            this.predictionTabPage.Location = new System.Drawing.Point(4, 44);
-            this.predictionTabPage.Name = "predictionTabPage";
-            this.predictionTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.predictionTabPage.Size = new System.Drawing.Size(918, 558);
-            this.predictionTabPage.TabIndex = 5;
-            this.predictionTabPage.Text = "Prediction";
-            this.predictionTabPage.UseVisualStyleBackColor = true;
+            this.panelReportPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelReportPreview.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelReportPreview.Controls.Add(this.dataGridViewSummaryExpense);
+            this.panelReportPreview.Controls.Add(this.dataGridViewSummaryIncome);
+            this.panelReportPreview.Controls.Add(this.labelSummaryExpense);
+            this.panelReportPreview.Controls.Add(this.labelSummaeyIncome);
+            this.panelReportPreview.Controls.Add(this.label1);
+            this.panelReportPreview.Location = new System.Drawing.Point(452, 111);
+            this.panelReportPreview.Name = "panelReportPreview";
+            this.panelReportPreview.Size = new System.Drawing.Size(446, 402);
+            this.panelReportPreview.TabIndex = 45;
             // 
-            // panelTitleBar
+            // dataGridViewSummaryExpense
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panelTitleBar.Controls.Add(this.labelSignUp);
-            this.panelTitleBar.Controls.Add(this.pictureBoxLogo);
-            this.panelTitleBar.Controls.Add(this.labelTitle);
-            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(926, 55);
-            this.panelTitleBar.TabIndex = 4;
-            // 
-            // labelSignUp
-            // 
-            this.labelSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelSignUp.AutoSize = true;
-            this.labelSignUp.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.labelSignUp.ForeColor = System.Drawing.Color.White;
-            this.labelSignUp.Location = new System.Drawing.Point(843, 17);
-            this.labelSignUp.Name = "labelSignUp";
-            this.labelSignUp.Size = new System.Drawing.Size(67, 21);
-            this.labelSignUp.TabIndex = 1;
-            this.labelSignUp.Text = "Sign Up";
-            this.labelSignUp.Click += new System.EventHandler(this.labelSignUp_Click);
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 19.75F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(54, 9);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(91, 37);
-            this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "Fedha";
-            // 
-            // labelIncomeCategory
-            // 
-            this.labelIncomeCategory.AutoSize = true;
-            this.labelIncomeCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIncomeCategory.ForeColor = System.Drawing.Color.DimGray;
-            this.labelIncomeCategory.Location = new System.Drawing.Point(17, 483);
-            this.labelIncomeCategory.Name = "labelIncomeCategory";
-            this.labelIncomeCategory.Size = new System.Drawing.Size(246, 25);
-            this.labelIncomeCategory.TabIndex = 41;
-            this.labelIncomeCategory.Text = "Income Category Overview";
-            // 
-            // labelExpenseCategory
-            // 
-            this.labelExpenseCategory.AutoSize = true;
-            this.labelExpenseCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExpenseCategory.ForeColor = System.Drawing.Color.DimGray;
-            this.labelExpenseCategory.Location = new System.Drawing.Point(421, 483);
-            this.labelExpenseCategory.Name = "labelExpenseCategory";
-            this.labelExpenseCategory.Size = new System.Drawing.Size(252, 25);
-            this.labelExpenseCategory.TabIndex = 42;
-            this.labelExpenseCategory.Text = "Expense Category Overview";
-            // 
-            // pieChartExpenseCategory
-            // 
-            this.pieChartExpenseCategory.Location = new System.Drawing.Point(403, 522);
-            this.pieChartExpenseCategory.Name = "pieChartExpenseCategory";
-            this.pieChartExpenseCategory.Size = new System.Drawing.Size(322, 215);
-            this.pieChartExpenseCategory.TabIndex = 43;
-            this.pieChartExpenseCategory.Text = "pieChart2";
-            // 
-            // dashboardSeparator
-            // 
-            this.dashboardSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewSummaryExpense.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewSummaryExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dashboardSeparator.BackColor = System.Drawing.Color.Transparent;
-            this.dashboardSeparator.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.dashboardSeparator.LineThickness = 1;
-            this.dashboardSeparator.Location = new System.Drawing.Point(22, 753);
-            this.dashboardSeparator.Name = "dashboardSeparator";
-            this.dashboardSeparator.Size = new System.Drawing.Size(840, 35);
-            this.dashboardSeparator.TabIndex = 44;
-            this.dashboardSeparator.Transparency = 255;
-            this.dashboardSeparator.Vertical = false;
+            this.dataGridViewSummaryExpense.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSummaryExpense.BackgroundColor = System.Drawing.Color.Ivory;
+            this.dataGridViewSummaryExpense.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSummaryExpense.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewSummaryExpense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSummaryExpense.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewSummaryExpense.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridViewSummaryExpense.Location = new System.Drawing.Point(19, 251);
+            this.dataGridViewSummaryExpense.Name = "dataGridViewSummaryExpense";
+            this.dataGridViewSummaryExpense.Size = new System.Drawing.Size(407, 120);
+            this.dataGridViewSummaryExpense.TabIndex = 50;
             // 
-            // comboBoxAnalysis
+            // dataGridViewSummaryIncome
             // 
-            this.comboBoxAnalysis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxAnalysis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAnalysis.FormattingEnabled = true;
-            this.comboBoxAnalysis.Items.AddRange(new object[] {
-            "Daily Analysis",
-            "Monthly Analysis",
-            "Annual Analysis"});
-            this.comboBoxAnalysis.Location = new System.Drawing.Point(652, 171);
-            this.comboBoxAnalysis.Name = "comboBoxAnalysis";
-            this.comboBoxAnalysis.Size = new System.Drawing.Size(210, 29);
-            this.comboBoxAnalysis.TabIndex = 45;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewSummaryIncome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewSummaryIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewSummaryIncome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSummaryIncome.BackgroundColor = System.Drawing.Color.Ivory;
+            this.dataGridViewSummaryIncome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSummaryIncome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewSummaryIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSummaryIncome.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewSummaryIncome.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridViewSummaryIncome.Location = new System.Drawing.Point(19, 86);
+            this.dataGridViewSummaryIncome.Name = "dataGridViewSummaryIncome";
+            this.dataGridViewSummaryIncome.Size = new System.Drawing.Size(407, 120);
+            this.dataGridViewSummaryIncome.TabIndex = 49;
             // 
-            // buttonCreateReport
+            // labelSummaryExpense
             // 
-            this.buttonCreateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCreateReport.BackColor = System.Drawing.Color.White;
-            this.buttonCreateReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.buttonCreateReport.FlatAppearance.BorderSize = 3;
-            this.buttonCreateReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.buttonCreateReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.buttonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCreateReport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateReport.ForeColor = System.Drawing.Color.Black;
-            this.buttonCreateReport.Location = new System.Drawing.Point(677, 17);
-            this.buttonCreateReport.Name = "buttonCreateReport";
-            this.buttonCreateReport.Size = new System.Drawing.Size(222, 36);
-            this.buttonCreateReport.TabIndex = 5;
-            this.buttonCreateReport.Text = "Create Report";
-            this.buttonCreateReport.UseVisualStyleBackColor = false;
-            this.buttonCreateReport.Click += new System.EventHandler(this.buttonCreateReport_Click);
+            this.labelSummaryExpense.AutoSize = true;
+            this.labelSummaryExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSummaryExpense.ForeColor = System.Drawing.Color.DimGray;
+            this.labelSummaryExpense.Location = new System.Drawing.Point(15, 226);
+            this.labelSummaryExpense.Name = "labelSummaryExpense";
+            this.labelSummaryExpense.Size = new System.Drawing.Size(143, 21);
+            this.labelSummaryExpense.TabIndex = 48;
+            this.labelSummaryExpense.Text = "Expense Summary";
             // 
-            // labelPastReport
+            // labelSummaeyIncome
             // 
-            this.labelPastReport.AutoSize = true;
-            this.labelPastReport.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPastReport.ForeColor = System.Drawing.Color.DimGray;
-            this.labelPastReport.Location = new System.Drawing.Point(34, 73);
-            this.labelPastReport.Name = "labelPastReport";
-            this.labelPastReport.Size = new System.Drawing.Size(118, 25);
-            this.labelPastReport.TabIndex = 41;
-            this.labelPastReport.Text = "Past Reports";
+            this.labelSummaeyIncome.AutoSize = true;
+            this.labelSummaeyIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSummaeyIncome.ForeColor = System.Drawing.Color.DimGray;
+            this.labelSummaeyIncome.Location = new System.Drawing.Point(15, 61);
+            this.labelSummaeyIncome.Name = "labelSummaeyIncome";
+            this.labelSummaeyIncome.Size = new System.Drawing.Size(138, 21);
+            this.labelSummaeyIncome.TabIndex = 47;
+            this.labelSummaeyIncome.Text = "Income Summary";
             // 
-            // reportSeparator
+            // label1
             // 
-            this.reportSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportSeparator.BackColor = System.Drawing.Color.Transparent;
-            this.reportSeparator.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.reportSeparator.LineThickness = 1;
-            this.reportSeparator.Location = new System.Drawing.Point(420, 111);
-            this.reportSeparator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.reportSeparator.Name = "reportSeparator";
-            this.reportSeparator.Size = new System.Drawing.Size(14, 402);
-            this.reportSeparator.TabIndex = 42;
-            this.reportSeparator.Transparency = 255;
-            this.reportSeparator.Vertical = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(77, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(300, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Income and Expense Summary Report";
+            // 
+            // labelReportPreview
+            // 
+            this.labelReportPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelReportPreview.AutoSize = true;
+            this.labelReportPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReportPreview.ForeColor = System.Drawing.Color.DimGray;
+            this.labelReportPreview.Location = new System.Drawing.Point(448, 77);
+            this.labelReportPreview.Name = "labelReportPreview";
+            this.labelReportPreview.Size = new System.Drawing.Size(122, 21);
+            this.labelReportPreview.TabIndex = 44;
+            this.labelReportPreview.Text = "Report Preview";
             // 
             // dataGridViewRepot
             // 
@@ -894,324 +1057,84 @@ namespace PersonalManagementSystem
             this.dataGridViewRepot.TabIndex = 43;
             this.dataGridViewRepot.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewReport_RowHeaderMouseClick);
             // 
-            // labelReportPreview
+            // reportSeparator
             // 
-            this.labelReportPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelReportPreview.AutoSize = true;
-            this.labelReportPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReportPreview.ForeColor = System.Drawing.Color.DimGray;
-            this.labelReportPreview.Location = new System.Drawing.Point(448, 77);
-            this.labelReportPreview.Name = "labelReportPreview";
-            this.labelReportPreview.Size = new System.Drawing.Size(122, 21);
-            this.labelReportPreview.TabIndex = 44;
-            this.labelReportPreview.Text = "Report Preview";
+            this.reportSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportSeparator.BackColor = System.Drawing.Color.Transparent;
+            this.reportSeparator.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.reportSeparator.LineThickness = 1;
+            this.reportSeparator.Location = new System.Drawing.Point(420, 111);
+            this.reportSeparator.Margin = new System.Windows.Forms.Padding(4);
+            this.reportSeparator.Name = "reportSeparator";
+            this.reportSeparator.Size = new System.Drawing.Size(14, 402);
+            this.reportSeparator.TabIndex = 42;
+            this.reportSeparator.Transparency = 255;
+            this.reportSeparator.Vertical = true;
             // 
-            // panelReportPreview
+            // labelPastReport
             // 
-            this.panelReportPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelReportPreview.BackColor = System.Drawing.Color.AliceBlue;
-            this.panelReportPreview.Controls.Add(this.dataGridViewSummaryExpense);
-            this.panelReportPreview.Controls.Add(this.dataGridViewSummaryIncome);
-            this.panelReportPreview.Controls.Add(this.labelSummaryExpense);
-            this.panelReportPreview.Controls.Add(this.labelSummaeyIncome);
-            this.panelReportPreview.Controls.Add(this.label1);
-            this.panelReportPreview.Location = new System.Drawing.Point(452, 111);
-            this.panelReportPreview.Name = "panelReportPreview";
-            this.panelReportPreview.Size = new System.Drawing.Size(446, 402);
-            this.panelReportPreview.TabIndex = 45;
+            this.labelPastReport.AutoSize = true;
+            this.labelPastReport.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPastReport.ForeColor = System.Drawing.Color.DimGray;
+            this.labelPastReport.Location = new System.Drawing.Point(34, 73);
+            this.labelPastReport.Name = "labelPastReport";
+            this.labelPastReport.Size = new System.Drawing.Size(118, 25);
+            this.labelPastReport.TabIndex = 41;
+            this.labelPastReport.Text = "Past Reports";
             // 
-            // label1
+            // buttonCreateReport
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Income and Expense Summary Report";
+            this.buttonCreateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCreateReport.BackColor = System.Drawing.Color.White;
+            this.buttonCreateReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonCreateReport.FlatAppearance.BorderSize = 3;
+            this.buttonCreateReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonCreateReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCreateReport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreateReport.ForeColor = System.Drawing.Color.Black;
+            this.buttonCreateReport.Location = new System.Drawing.Point(677, 17);
+            this.buttonCreateReport.Name = "buttonCreateReport";
+            this.buttonCreateReport.Size = new System.Drawing.Size(222, 36);
+            this.buttonCreateReport.TabIndex = 5;
+            this.buttonCreateReport.Text = "Create Report";
+            this.buttonCreateReport.UseVisualStyleBackColor = false;
+            this.buttonCreateReport.Click += new System.EventHandler(this.buttonCreateReport_Click);
             // 
-            // labelSummaeyIncome
+            // predictionTabPage
             // 
-            this.labelSummaeyIncome.AutoSize = true;
-            this.labelSummaeyIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSummaeyIncome.ForeColor = System.Drawing.Color.DimGray;
-            this.labelSummaeyIncome.Location = new System.Drawing.Point(15, 61);
-            this.labelSummaeyIncome.Name = "labelSummaeyIncome";
-            this.labelSummaeyIncome.Size = new System.Drawing.Size(138, 21);
-            this.labelSummaeyIncome.TabIndex = 47;
-            this.labelSummaeyIncome.Text = "Income Summary";
+            this.predictionTabPage.Location = new System.Drawing.Point(4, 44);
+            this.predictionTabPage.Name = "predictionTabPage";
+            this.predictionTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.predictionTabPage.Size = new System.Drawing.Size(918, 558);
+            this.predictionTabPage.TabIndex = 5;
+            this.predictionTabPage.Text = "Prediction";
+            this.predictionTabPage.UseVisualStyleBackColor = true;
             // 
-            // labelSummaryExpense
+            // panelTitleBar
             // 
-            this.labelSummaryExpense.AutoSize = true;
-            this.labelSummaryExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSummaryExpense.ForeColor = System.Drawing.Color.DimGray;
-            this.labelSummaryExpense.Location = new System.Drawing.Point(15, 226);
-            this.labelSummaryExpense.Name = "labelSummaryExpense";
-            this.labelSummaryExpense.Size = new System.Drawing.Size(143, 21);
-            this.labelSummaryExpense.TabIndex = 48;
-            this.labelSummaryExpense.Text = "Expense Summary";
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panelTitleBar.Controls.Add(this.labelSignUp);
+            this.panelTitleBar.Controls.Add(this.pictureBoxLogo);
+            this.panelTitleBar.Controls.Add(this.labelTitle);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(926, 55);
+            this.panelTitleBar.TabIndex = 4;
             // 
-            // dataGridViewSummaryIncome
+            // labelSignUp
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewSummaryIncome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewSummaryIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewSummaryIncome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewSummaryIncome.BackgroundColor = System.Drawing.Color.Ivory;
-            this.dataGridViewSummaryIncome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSummaryIncome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridViewSummaryIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSummaryIncome.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridViewSummaryIncome.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridViewSummaryIncome.Location = new System.Drawing.Point(19, 86);
-            this.dataGridViewSummaryIncome.Name = "dataGridViewSummaryIncome";
-            this.dataGridViewSummaryIncome.Size = new System.Drawing.Size(407, 120);
-            this.dataGridViewSummaryIncome.TabIndex = 49;
-            // 
-            // dataGridViewSummaryExpense
-            // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewSummaryExpense.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewSummaryExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewSummaryExpense.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewSummaryExpense.BackgroundColor = System.Drawing.Color.Ivory;
-            this.dataGridViewSummaryExpense.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSummaryExpense.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewSummaryExpense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSummaryExpense.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewSummaryExpense.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridViewSummaryExpense.Location = new System.Drawing.Point(19, 251);
-            this.dataGridViewSummaryExpense.Name = "dataGridViewSummaryExpense";
-            this.dataGridViewSummaryExpense.Size = new System.Drawing.Size(407, 120);
-            this.dataGridViewSummaryExpense.TabIndex = 50;
-            // 
-            // contactPanel
-            // 
-            this.contactPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("contactPanel.BackgroundImage")));
-            this.contactPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.contactPanel.Controls.Add(this.pictureBox6);
-            this.contactPanel.Controls.Add(this.labelTotalContact);
-            this.contactPanel.Controls.Add(this.labelContact);
-            this.contactPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(229)))), ((int)(((byte)(151)))));
-            this.contactPanel.GradientBottomRight = System.Drawing.Color.Teal;
-            this.contactPanel.GradientTopLeft = System.Drawing.Color.SlateBlue;
-            this.contactPanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(229)))), ((int)(((byte)(151)))));
-            this.contactPanel.Location = new System.Drawing.Point(616, 24);
-            this.contactPanel.Name = "contactPanel";
-            this.contactPanel.Quality = 10;
-            this.contactPanel.Size = new System.Drawing.Size(280, 100);
-            this.contactPanel.TabIndex = 37;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::PersonalManagementSystem.Properties.Resources.contact;
-            this.pictureBox6.Location = new System.Drawing.Point(18, 16);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(74, 69);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
-            // 
-            // labelTotalContact
-            // 
-            this.labelTotalContact.AutoSize = true;
-            this.labelTotalContact.BackColor = System.Drawing.Color.Transparent;
-            this.labelTotalContact.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalContact.ForeColor = System.Drawing.Color.White;
-            this.labelTotalContact.Location = new System.Drawing.Point(102, 16);
-            this.labelTotalContact.Name = "labelTotalContact";
-            this.labelTotalContact.Size = new System.Drawing.Size(125, 25);
-            this.labelTotalContact.TabIndex = 9;
-            this.labelTotalContact.Text = "Total Contact";
-            // 
-            // labelContact
-            // 
-            this.labelContact.AutoSize = true;
-            this.labelContact.BackColor = System.Drawing.Color.Transparent;
-            this.labelContact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContact.ForeColor = System.Drawing.Color.White;
-            this.labelContact.Location = new System.Drawing.Point(101, 48);
-            this.labelContact.Name = "labelContact";
-            this.labelContact.Size = new System.Drawing.Size(57, 32);
-            this.labelContact.TabIndex = 10;
-            this.labelContact.Text = "000";
-            // 
-            // expensePanel
-            // 
-            this.expensePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("expensePanel.BackgroundImage")));
-            this.expensePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.expensePanel.Controls.Add(this.pictureBox5);
-            this.expensePanel.Controls.Add(this.labelTotalExpense);
-            this.expensePanel.Controls.Add(this.labelExpense);
-            this.expensePanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(104)))));
-            this.expensePanel.GradientBottomRight = System.Drawing.Color.Purple;
-            this.expensePanel.GradientTopLeft = System.Drawing.Color.Crimson;
-            this.expensePanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(104)))));
-            this.expensePanel.Location = new System.Drawing.Point(319, 24);
-            this.expensePanel.Name = "expensePanel";
-            this.expensePanel.Quality = 10;
-            this.expensePanel.Size = new System.Drawing.Size(280, 100);
-            this.expensePanel.TabIndex = 36;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::PersonalManagementSystem.Properties.Resources.expense;
-            this.pictureBox5.Location = new System.Drawing.Point(18, 16);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(74, 69);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
-            // labelTotalExpense
-            // 
-            this.labelTotalExpense.AutoSize = true;
-            this.labelTotalExpense.BackColor = System.Drawing.Color.Transparent;
-            this.labelTotalExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalExpense.ForeColor = System.Drawing.Color.White;
-            this.labelTotalExpense.Location = new System.Drawing.Point(102, 16);
-            this.labelTotalExpense.Name = "labelTotalExpense";
-            this.labelTotalExpense.Size = new System.Drawing.Size(161, 25);
-            this.labelTotalExpense.TabIndex = 5;
-            this.labelTotalExpense.Text = "Total Expenditure";
-            // 
-            // labelExpense
-            // 
-            this.labelExpense.AutoSize = true;
-            this.labelExpense.BackColor = System.Drawing.Color.Transparent;
-            this.labelExpense.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExpense.ForeColor = System.Drawing.Color.White;
-            this.labelExpense.Location = new System.Drawing.Point(101, 48);
-            this.labelExpense.Name = "labelExpense";
-            this.labelExpense.Size = new System.Drawing.Size(57, 32);
-            this.labelExpense.TabIndex = 7;
-            this.labelExpense.Text = "000";
-            // 
-            // incomePanel
-            // 
-            this.incomePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("incomePanel.BackgroundImage")));
-            this.incomePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.incomePanel.Controls.Add(this.labelTotalIncome);
-            this.incomePanel.Controls.Add(this.labelIncome);
-            this.incomePanel.Controls.Add(this.pictureBox1);
-            this.incomePanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
-            this.incomePanel.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(166)))), ((int)(((byte)(245)))));
-            this.incomePanel.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.incomePanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(206)))), ((int)(((byte)(234)))));
-            this.incomePanel.Location = new System.Drawing.Point(22, 24);
-            this.incomePanel.Name = "incomePanel";
-            this.incomePanel.Quality = 10;
-            this.incomePanel.Size = new System.Drawing.Size(280, 100);
-            this.incomePanel.TabIndex = 35;
-            // 
-            // labelTotalIncome
-            // 
-            this.labelTotalIncome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalIncome.AutoSize = true;
-            this.labelTotalIncome.BackColor = System.Drawing.Color.Transparent;
-            this.labelTotalIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalIncome.ForeColor = System.Drawing.Color.White;
-            this.labelTotalIncome.Location = new System.Drawing.Point(121, 16);
-            this.labelTotalIncome.Name = "labelTotalIncome";
-            this.labelTotalIncome.Size = new System.Drawing.Size(122, 25);
-            this.labelTotalIncome.TabIndex = 2;
-            this.labelTotalIncome.Text = "Total Income";
-            // 
-            // labelIncome
-            // 
-            this.labelIncome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelIncome.AutoSize = true;
-            this.labelIncome.BackColor = System.Drawing.Color.Transparent;
-            this.labelIncome.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIncome.ForeColor = System.Drawing.Color.White;
-            this.labelIncome.Location = new System.Drawing.Point(121, 48);
-            this.labelIncome.Name = "labelIncome";
-            this.labelIncome.Size = new System.Drawing.Size(57, 32);
-            this.labelIncome.TabIndex = 3;
-            this.labelIncome.Text = "000";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::PersonalManagementSystem.Properties.Resources.income;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Magenta;
-            this.pictureBox3.Location = new System.Drawing.Point(111, 180);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox3.TabIndex = 26;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.pictureBox2.Location = new System.Drawing.Point(22, 180);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBoxSearchContacts
-            // 
-            this.pictureBoxSearchContacts.Location = new System.Drawing.Point(401, 24);
-            this.pictureBoxSearchContacts.Name = "pictureBoxSearchContacts";
-            this.pictureBoxSearchContacts.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxSearchContacts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSearchContacts.TabIndex = 2;
-            this.pictureBoxSearchContacts.TabStop = false;
+            this.labelSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSignUp.AutoSize = true;
+            this.labelSignUp.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.labelSignUp.ForeColor = System.Drawing.Color.White;
+            this.labelSignUp.Location = new System.Drawing.Point(843, 17);
+            this.labelSignUp.Name = "labelSignUp";
+            this.labelSignUp.Size = new System.Drawing.Size(67, 21);
+            this.labelSignUp.TabIndex = 1;
+            this.labelSignUp.Text = "Sign Up";
+            this.labelSignUp.Click += new System.EventHandler(this.labelSignUp_Click);
             // 
             // pictureBoxLogo
             // 
@@ -1222,6 +1145,17 @@ namespace PersonalManagementSystem
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 19.75F, System.Drawing.FontStyle.Bold);
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(54, 9);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(91, 37);
+            this.labelTitle.TabIndex = 1;
+            this.labelTitle.Text = "Fedha";
             // 
             // MainView
             // 
@@ -1239,24 +1173,6 @@ namespace PersonalManagementSystem
             mainViewTabControl.ResumeLayout(false);
             this.dashboardTabPage.ResumeLayout(false);
             this.dashboardTabPage.PerformLayout();
-            this.inomeTabPage.ResumeLayout(false);
-            this.inomeTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).EndInit();
-            this.expensesTabPage.ResumeLayout(false);
-            this.expensesTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpense)).EndInit();
-            this.contactsTabPage.ResumeLayout(false);
-            this.contactsTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).EndInit();
-            this.reportsTabPage.ResumeLayout(false);
-            this.reportsTabPage.PerformLayout();
-            this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepot)).EndInit();
-            this.panelReportPreview.ResumeLayout(false);
-            this.panelReportPreview.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryIncome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryExpense)).EndInit();
             this.contactPanel.ResumeLayout(false);
             this.contactPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -1266,9 +1182,25 @@ namespace PersonalManagementSystem
             this.incomePanel.ResumeLayout(false);
             this.incomePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.inomeTabPage.ResumeLayout(false);
+            this.inomeTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).EndInit();
+            this.expensesTabPage.ResumeLayout(false);
+            this.expensesTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpense)).EndInit();
+            this.contactsTabPage.ResumeLayout(false);
+            this.contactsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchContacts)).EndInit();
+            this.reportsTabPage.ResumeLayout(false);
+            this.reportsTabPage.PerformLayout();
+            this.panelReportPreview.ResumeLayout(false);
+            this.panelReportPreview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryExpense)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryIncome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepot)).EndInit();
+            this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -1276,10 +1208,6 @@ namespace PersonalManagementSystem
 
         #endregion
         private System.Windows.Forms.TabPage dashboardTabPage;
-        private System.Windows.Forms.Label expense;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label income;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label labelTotalIncome;
         private System.Windows.Forms.Label labelExpense;
         private System.Windows.Forms.Label labelTotalExpense;
@@ -1331,7 +1259,6 @@ namespace PersonalManagementSystem
         private LiveCharts.WinForms.PieChart pieChartExpenseCategory;
         private System.Windows.Forms.Label labelExpenseCategory;
         private System.Windows.Forms.Label labelIncomeCategory;
-        private System.Windows.Forms.ComboBox comboBoxAnalysis;
         private System.Windows.Forms.Panel panelReportPreview;
         private System.Windows.Forms.DataGridView dataGridViewSummaryExpense;
         private System.Windows.Forms.DataGridView dataGridViewSummaryIncome;

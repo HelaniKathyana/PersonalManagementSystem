@@ -57,9 +57,23 @@ namespace PersonalManagementSystem.Models
 
         public DataTable searchExpenseData(string name)
         {
-            string incomeSQL = "SELECT e.Expense_ID, c.Name AS Payment_To, e.Description, e.Category, e.Account, e.Transaction_Date, e.Amount FROM Expense AS e INNER JOIN Contact AS c ON e.Contact_ID = c.Contact_ID WHERE c.Name LIKE '" + name + "%'";
-            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
-            return incomeData;
+            string expenseSQL = "SELECT e.Expense_ID, c.Name AS Payment_To, e.Description, e.Category, e.Account, e.Transaction_Date, e.Amount FROM Expense AS e INNER JOIN Contact AS c ON e.Contact_ID = c.Contact_ID WHERE c.Name LIKE '" + name + "%'";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
+        }
+
+        public DataTable getExpenseCategoryOverview(int id)
+        {
+            string expenseSQL = "SELECT Category, count(Expense_ID) as Total from Expense where User_ID = '" + id + "' group by Category order by Category asc";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
+        }
+
+        public DataTable getTotalExpenses(int id)
+        {
+            string expenseSQL = "SELECT year(Transaction_Date) as Year, SUM(Amount) as Total from Expense where User_ID = '" + id + "' AND Transaction_Date is not null group by year(Transaction_Date) order by year(Transaction_Date) asc";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
         }
     }
 }
