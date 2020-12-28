@@ -50,7 +50,7 @@ namespace PersonalManagementSystem.Models
 
         public DataTable searchContactData(string name)
         {
-            string contactSQL = "SELECT * FROM Contact WHERE Name LIKE '" + name + "%'";
+            string contactSQL = "SELECT Contact_ID, Name, Email, Mobile_Number, Designation, Address FROM Contact WHERE Name LIKE '" + name + "%'";
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }
