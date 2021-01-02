@@ -50,6 +50,7 @@ namespace PersonalManagementSystem
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dashboardTabPage = new System.Windows.Forms.TabPage();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.dashboardSeparator = new Bunifu.Framework.UI.BunifuSeparator();
             this.pieChartExpenseCategory = new LiveCharts.WinForms.PieChart();
             this.labelExpenseCategory = new System.Windows.Forms.Label();
@@ -108,6 +109,16 @@ namespace PersonalManagementSystem
             this.labelPastReport = new System.Windows.Forms.Label();
             this.buttonCreateReport = new System.Windows.Forms.Button();
             this.predictionTabPage = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBoxPredictedTotalExpense = new System.Windows.Forms.TextBox();
+            this.labelPredictedTotalExpense = new System.Windows.Forms.Label();
+            this.buttonSubmit = new System.Windows.Forms.Button();
+            this.labelEndDate = new System.Windows.Forms.Label();
+            this.labelStartDate = new System.Windows.Forms.Label();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.labelForPrediction = new System.Windows.Forms.Label();
+            this.labelPredict = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.labelSignUp = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -133,6 +144,8 @@ namespace PersonalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryIncome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepot)).BeginInit();
+            this.predictionTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -160,6 +173,7 @@ namespace PersonalManagementSystem
             // 
             this.dashboardTabPage.AutoScroll = true;
             this.dashboardTabPage.BackColor = System.Drawing.Color.White;
+            this.dashboardTabPage.Controls.Add(this.bunifuSeparator1);
             this.dashboardTabPage.Controls.Add(this.dashboardSeparator);
             this.dashboardTabPage.Controls.Add(this.pieChartExpenseCategory);
             this.dashboardTabPage.Controls.Add(this.labelExpenseCategory);
@@ -180,6 +194,20 @@ namespace PersonalManagementSystem
             this.dashboardTabPage.TabIndex = 0;
             this.dashboardTabPage.Text = "Dashboard";
             // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(22, 437);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(755, 16);
+            this.bunifuSeparator1.TabIndex = 45;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
             // dashboardSeparator
             // 
             this.dashboardSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -189,7 +217,7 @@ namespace PersonalManagementSystem
             this.dashboardSeparator.LineThickness = 1;
             this.dashboardSeparator.Location = new System.Drawing.Point(22, 716);
             this.dashboardSeparator.Name = "dashboardSeparator";
-            this.dashboardSeparator.Size = new System.Drawing.Size(823, 35);
+            this.dashboardSeparator.Size = new System.Drawing.Size(755, 35);
             this.dashboardSeparator.TabIndex = 44;
             this.dashboardSeparator.Transparency = 255;
             this.dashboardSeparator.Vertical = false;
@@ -249,7 +277,7 @@ namespace PersonalManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cartesianChartIncomeExpense.Location = new System.Drawing.Point(22, 181);
             this.cartesianChartIncomeExpense.Name = "cartesianChartIncomeExpense";
-            this.cartesianChartIncomeExpense.Size = new System.Drawing.Size(823, 250);
+            this.cartesianChartIncomeExpense.Size = new System.Drawing.Size(755, 250);
             this.cartesianChartIncomeExpense.TabIndex = 38;
             // 
             // contactPanel
@@ -1103,6 +1131,16 @@ namespace PersonalManagementSystem
             // 
             // predictionTabPage
             // 
+            this.predictionTabPage.Controls.Add(this.pictureBox2);
+            this.predictionTabPage.Controls.Add(this.textBoxPredictedTotalExpense);
+            this.predictionTabPage.Controls.Add(this.labelPredictedTotalExpense);
+            this.predictionTabPage.Controls.Add(this.buttonSubmit);
+            this.predictionTabPage.Controls.Add(this.labelEndDate);
+            this.predictionTabPage.Controls.Add(this.labelStartDate);
+            this.predictionTabPage.Controls.Add(this.dateTimePickerEnd);
+            this.predictionTabPage.Controls.Add(this.dateTimePickerStart);
+            this.predictionTabPage.Controls.Add(this.labelForPrediction);
+            this.predictionTabPage.Controls.Add(this.labelPredict);
             this.predictionTabPage.Location = new System.Drawing.Point(4, 44);
             this.predictionTabPage.Name = "predictionTabPage";
             this.predictionTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1110,6 +1148,123 @@ namespace PersonalManagementSystem
             this.predictionTabPage.TabIndex = 5;
             this.predictionTabPage.Text = "Prediction";
             this.predictionTabPage.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::PersonalManagementSystem.Properties.Resources.prediction;
+            this.pictureBox2.Location = new System.Drawing.Point(375, 211);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(531, 329);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 53;
+            this.pictureBox2.TabStop = false;
+            // 
+            // textBoxPredictedTotalExpense
+            // 
+            this.textBoxPredictedTotalExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPredictedTotalExpense.Location = new System.Drawing.Point(457, 309);
+            this.textBoxPredictedTotalExpense.Name = "textBoxPredictedTotalExpense";
+            this.textBoxPredictedTotalExpense.Size = new System.Drawing.Size(115, 29);
+            this.textBoxPredictedTotalExpense.TabIndex = 52;
+            // 
+            // labelPredictedTotalExpense
+            // 
+            this.labelPredictedTotalExpense.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPredictedTotalExpense.AutoSize = true;
+            this.labelPredictedTotalExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPredictedTotalExpense.Location = new System.Drawing.Point(260, 314);
+            this.labelPredictedTotalExpense.Name = "labelPredictedTotalExpense";
+            this.labelPredictedTotalExpense.Size = new System.Drawing.Size(185, 20);
+            this.labelPredictedTotalExpense.TabIndex = 51;
+            this.labelPredictedTotalExpense.Text = "Predicted Total Expenses :";
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.BackColor = System.Drawing.Color.White;
+            this.buttonSubmit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonSubmit.FlatAppearance.BorderSize = 3;
+            this.buttonSubmit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.buttonSubmit.ForeColor = System.Drawing.Color.Black;
+            this.buttonSubmit.Image = ((System.Drawing.Image)(resources.GetObject("buttonSubmit.Image")));
+            this.buttonSubmit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSubmit.Location = new System.Drawing.Point(623, 211);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonSubmit.Size = new System.Drawing.Size(129, 36);
+            this.buttonSubmit.TabIndex = 50;
+            this.buttonSubmit.Text = "Predict";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            // 
+            // labelEndDate
+            // 
+            this.labelEndDate.AutoSize = true;
+            this.labelEndDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEndDate.Location = new System.Drawing.Point(478, 137);
+            this.labelEndDate.Name = "labelEndDate";
+            this.labelEndDate.Size = new System.Drawing.Size(79, 20);
+            this.labelEndDate.TabIndex = 49;
+            this.labelEndDate.Text = "End Date :";
+            // 
+            // labelStartDate
+            // 
+            this.labelStartDate.AutoSize = true;
+            this.labelStartDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStartDate.Location = new System.Drawing.Point(164, 137);
+            this.labelStartDate.Name = "labelStartDate";
+            this.labelStartDate.Size = new System.Drawing.Size(85, 20);
+            this.labelStartDate.TabIndex = 48;
+            this.labelStartDate.Text = "Start Date :";
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(482, 160);
+            this.dateTimePickerEnd.MinDate = new System.DateTime(2021, 1, 2, 0, 0, 0, 0);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(270, 25);
+            this.dateTimePickerEnd.TabIndex = 47;
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.CalendarFont = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerStart.Location = new System.Drawing.Point(168, 160);
+            this.dateTimePickerStart.MaxDate = new System.DateTime(2021, 1, 2, 0, 0, 0, 0);
+            this.dateTimePickerStart.MinDate = new System.DateTime(2021, 1, 2, 0, 0, 0, 0);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(270, 25);
+            this.dateTimePickerStart.TabIndex = 46;
+            this.dateTimePickerStart.Value = new System.DateTime(2021, 1, 2, 0, 0, 0, 0);
+            // 
+            // labelForPrediction
+            // 
+            this.labelForPrediction.AutoSize = true;
+            this.labelForPrediction.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelForPrediction.ForeColor = System.Drawing.Color.DimGray;
+            this.labelForPrediction.Location = new System.Drawing.Point(164, 102);
+            this.labelForPrediction.Name = "labelForPrediction";
+            this.labelForPrediction.Size = new System.Drawing.Size(240, 21);
+            this.labelForPrediction.TabIndex = 45;
+            this.labelForPrediction.Text = "Prediction for next Four Weeks:";
+            // 
+            // labelPredict
+            // 
+            this.labelPredict.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPredict.AutoSize = true;
+            this.labelPredict.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPredict.ForeColor = System.Drawing.Color.DimGray;
+            this.labelPredict.Location = new System.Drawing.Point(342, 46);
+            this.labelPredict.Name = "labelPredict";
+            this.labelPredict.Size = new System.Drawing.Size(201, 25);
+            this.labelPredict.TabIndex = 42;
+            this.labelPredict.Text = "Predict Financial State";
+            this.labelPredict.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelTitleBar
             // 
@@ -1199,6 +1354,9 @@ namespace PersonalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryExpense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSummaryIncome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepot)).EndInit();
+            this.predictionTabPage.ResumeLayout(false);
+            this.predictionTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
@@ -1270,5 +1428,16 @@ namespace PersonalManagementSystem
         private Bunifu.Framework.UI.BunifuSeparator reportSeparator;
         private System.Windows.Forms.Label labelPastReport;
         private System.Windows.Forms.Button buttonCreateReport;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private System.Windows.Forms.Label labelPredict;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.Label labelForPrediction;
+        private System.Windows.Forms.Label labelStartDate;
+        private System.Windows.Forms.Label labelEndDate;
+        private System.Windows.Forms.TextBox textBoxPredictedTotalExpense;
+        private System.Windows.Forms.Label labelPredictedTotalExpense;
+        private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

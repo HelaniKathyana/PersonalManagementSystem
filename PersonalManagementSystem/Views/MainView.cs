@@ -23,6 +23,8 @@ namespace PersonalManagementSystem
         static String contId;
         DateTime startDate;
         DateTime endDate;
+        DateTime dateStart = DateTime.Today;
+        DateTime dateEnd = DateTime.Today.AddDays(-28);
 
         public void setId(int id)
         {
@@ -616,6 +618,32 @@ namespace PersonalManagementSystem
             dataGridViewSummaryExpense.DataSource = reportData;
             dataGridViewSummaryExpense.Columns[0].HeaderText = "Category";
             dataGridViewSummaryExpense.Columns[1].HeaderText = "Total Amount";
+        }
+
+        //Prediction
+        private int averageExpenditure()
+        {
+            int expense = 0;
+            DataTable expenseData = em.getTotalExpensesForDateRange(user_id, dateEnd, dateStart);
+
+            foreach (DataRow row in expenseData.Rows)
+            {
+                Console.WriteLine(row["Total"].ToString());
+                String expensed = row["Total"].ToString();
+                expense = int.Parse(expensed);            
+            }
+            int average = expense / 28;
+            return average;
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            int averageExpenses = averageExpenditure();
+            endDate = dateTimePickerEnd.Value;
+            String  data = (endDate - dateStart).TotalDays.ToString();
+            float date = float.Parse(data);
+            float predictExpense = averageExpenses * date;
+            textBoxPredictedTotalExpense.Text = predictExpense.ToString();
         }
     }
 }

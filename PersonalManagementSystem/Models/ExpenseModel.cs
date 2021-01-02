@@ -75,5 +75,12 @@ namespace PersonalManagementSystem.Models
             DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
             return expenseData;
         }
+
+        public DataTable getTotalExpensesForDateRange(int id, DateTime startDate, DateTime endDate)
+        {
+            string expenseSQL = "SELECT SUM(Amount) as Total from Expense where Transaction_Date BETWEEN '" + startDate + "' AND '" + endDate + "' AND User_ID = '" + id + "'";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
+        }
     }
 }
