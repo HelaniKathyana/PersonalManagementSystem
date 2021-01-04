@@ -48,9 +48,9 @@ namespace PersonalManagementSystem.Models
             return contactData;
         }
 
-        public DataTable searchContactData(string name)
+        public DataTable searchContactData(string name, int id)
         {
-            string contactSQL = "SELECT Contact_ID, Name, Email, Mobile_Number, Designation, Address FROM Contact WHERE Name LIKE '" + name + "%'";
+            string contactSQL = "SELECT Contact_ID, Name, Email, Mobile_Number, Designation, Address FROM Contact WHERE Name LIKE '" + name + "%' AND User_ID = '" + id + "'";
             DataTable contactData = ServerConnection.executeSQL(contactSQL);
             return contactData;
         }

@@ -123,6 +123,7 @@ namespace PersonalManagementSystem
             this.labelSignUp = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.buttonGenerateReport = new System.Windows.Forms.Button();
             mainViewTabControl = new System.Windows.Forms.TabControl();
             mainViewTabControl.SuspendLayout();
             this.dashboardTabPage.SuspendLayout();
@@ -203,7 +204,7 @@ namespace PersonalManagementSystem
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(22, 437);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(755, 16);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(738, 16);
             this.bunifuSeparator1.TabIndex = 45;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -217,7 +218,7 @@ namespace PersonalManagementSystem
             this.dashboardSeparator.LineThickness = 1;
             this.dashboardSeparator.Location = new System.Drawing.Point(22, 716);
             this.dashboardSeparator.Name = "dashboardSeparator";
-            this.dashboardSeparator.Size = new System.Drawing.Size(755, 35);
+            this.dashboardSeparator.Size = new System.Drawing.Size(738, 35);
             this.dashboardSeparator.TabIndex = 44;
             this.dashboardSeparator.Transparency = 255;
             this.dashboardSeparator.Vertical = false;
@@ -277,7 +278,7 @@ namespace PersonalManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cartesianChartIncomeExpense.Location = new System.Drawing.Point(22, 181);
             this.cartesianChartIncomeExpense.Name = "cartesianChartIncomeExpense";
-            this.cartesianChartIncomeExpense.Size = new System.Drawing.Size(755, 250);
+            this.cartesianChartIncomeExpense.Size = new System.Drawing.Size(738, 250);
             this.cartesianChartIncomeExpense.TabIndex = 38;
             // 
             // contactPanel
@@ -901,6 +902,7 @@ namespace PersonalManagementSystem
             // reportsTabPage
             // 
             this.reportsTabPage.AutoScroll = true;
+            this.reportsTabPage.Controls.Add(this.buttonGenerateReport);
             this.reportsTabPage.Controls.Add(this.panelReportPreview);
             this.reportsTabPage.Controls.Add(this.labelReportPreview);
             this.reportsTabPage.Controls.Add(this.dataGridViewRepot);
@@ -974,9 +976,6 @@ namespace PersonalManagementSystem
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gold;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewSummaryIncome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewSummaryIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewSummaryIncome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSummaryIncome.BackgroundColor = System.Drawing.Color.Ivory;
             this.dataGridViewSummaryIncome.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1312,6 +1311,27 @@ namespace PersonalManagementSystem
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Fedha";
             // 
+            // buttonGenerateReport
+            // 
+            this.buttonGenerateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonGenerateReport.BackColor = System.Drawing.Color.White;
+            this.buttonGenerateReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonGenerateReport.FlatAppearance.BorderSize = 3;
+            this.buttonGenerateReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonGenerateReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.buttonGenerateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGenerateReport.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.buttonGenerateReport.ForeColor = System.Drawing.Color.Black;
+            this.buttonGenerateReport.Image = ((System.Drawing.Image)(resources.GetObject("buttonGenerateReport.Image")));
+            this.buttonGenerateReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGenerateReport.Location = new System.Drawing.Point(210, 477);
+            this.buttonGenerateReport.Name = "buttonGenerateReport";
+            this.buttonGenerateReport.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonGenerateReport.Size = new System.Drawing.Size(192, 36);
+            this.buttonGenerateReport.TabIndex = 46;
+            this.buttonGenerateReport.Text = "Generate Report";
+            this.buttonGenerateReport.UseVisualStyleBackColor = false;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1439,5 +1459,6 @@ namespace PersonalManagementSystem
         private System.Windows.Forms.Label labelPredictedTotalExpense;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button buttonGenerateReport;
     }
 }

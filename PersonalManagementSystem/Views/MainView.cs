@@ -12,6 +12,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace PersonalManagementSystem
 {
@@ -424,7 +427,7 @@ namespace PersonalManagementSystem
         // Contact View
         private void textSearchContactName_TextChanged(object sender, EventArgs e)
         {
-            DataTable contactData = cm.searchContactData(textSearchContact.Text);
+            DataTable contactData = cm.searchContactData(textSearchContact.Text, user_id);
             dataGridViewContact.DataSource = contactData;
         }
 
