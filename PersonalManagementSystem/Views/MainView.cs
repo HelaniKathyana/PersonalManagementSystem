@@ -32,6 +32,7 @@ namespace PersonalManagementSystem
         public void setId(int id)
         {
             user_id = id;
+            displayYearList(id);
         }
 
         static IncomeModel im = new IncomeModel();
@@ -161,7 +162,22 @@ namespace PersonalManagementSystem
         //Income View
         private void textSearchIncomeName_TextChanged(object sender, EventArgs e)
         {
-            DataTable incomeData = im.searchIncomeData(textSearchIncome.Text);
+            DataTable incomeData = im.searchIncomeData(textSearchIncome.Text, user_id);
+            dataGridViewIncome.DataSource = incomeData;
+        }
+
+        private void displayYearList(int id)
+        {
+            DataTable incomeData = im.displayYearList(id);
+            comboBoxIncome.DataSource = incomeData;
+            comboBoxIncome.DisplayMember = "Year";
+            comboBoxIncome.ValueMember = "Year";
+        }
+
+        private void comboBoxIncome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DateTime year = (DateTime)comboBoxIncome.SelectedValue;
+            DataTable incomeData = im.displayIncomeDataByYear(year, user_id);
             dataGridViewIncome.DataSource = incomeData;
         }
 

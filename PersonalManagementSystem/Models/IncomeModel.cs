@@ -55,9 +55,9 @@ namespace PersonalManagementSystem.Models
             return incomeData;
         }
 
-        public DataTable searchIncomeData(string name)
+        public DataTable searchIncomeData(string name, int id)
         {
-            string incomeSQL = "SELECT i.Income_ID, c.Name AS Payment_From, i.Description, i.Category, i.Account, i.Transaction_Date, i.Amount FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE c.Name LIKE '" + name + "%'";
+            string incomeSQL = "SELECT i.Income_ID, c.Name AS Payment_From, i.Description, i.Category, i.Account, i.Transaction_Date, i.Amount FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE c.Name LIKE '" + name + "%' AND i.User_ID = '" + id + "'";
             DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
             return incomeData;
         }
@@ -72,6 +72,20 @@ namespace PersonalManagementSystem.Models
         public DataTable getTotalIncomes(int id)
         {
             string incomeSQL = "SELECT year(Transaction_Date) as Year, SUM(Amount) as Total from Income where User_ID = '" + id + "' AND Transaction_Date is not null group by year(Transaction_Date) order by year(Transaction_Date) asc";
+            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
+            return incomeData;
+        }
+
+        public DataTable displayYearList(int id)
+        {
+            string incomeSQL = "SELECT year(Transaction_Date) AS Year FROM Income WHERE User_ID = '" + id + "' GROUP BY year(Transaction_Date) ORDER BY year(Transaction_Date) DESC";
+            DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
+            return incomeData;
+        }
+
+        public DataTable displayIncomeDataByYear(DateTime year, int id)
+        {
+            string incomeSQL = "SELECT Income_ID, c.Name AS Payment_From, Description, Category, Account, Transaction_Date, Amount FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE year(Transaction_Date) = '" + year + "' AND i.User_ID = '" + id + "'";
             DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
             return incomeData;
         }
