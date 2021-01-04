@@ -310,7 +310,7 @@ namespace PersonalManagementSystem
         //Expense View
         private void textSearchExpenseName_TextChanged(object sender, EventArgs e)
         {
-            DataTable expenseData = em.searchExpenseData(textSearchExpense.Text);
+            DataTable expenseData = em.searchExpenseData(textSearchExpense.Text, user_id);
             dataGridViewExpense.DataSource = expenseData;
         }
 
