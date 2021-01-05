@@ -82,5 +82,19 @@ namespace PersonalManagementSystem.Models
             DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
             return expenseData;
         }
+
+        public DataTable displayYearList(int id)
+        {
+            string expenseSQL = "SELECT year(Transaction_Date) AS Year FROM Expense WHERE User_ID = '" + id + "' GROUP BY year(Transaction_Date) ORDER BY year(Transaction_Date) DESC";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
+        }
+
+        public DataTable displayExpenseDataByYear(string year, int id)
+        {
+            string expenseSQL = "SELECT Income_ID, c.Name AS Payment_To, Description, Category, Account, Transaction_Date, Amount FROM Expense AS e INNER JOIN Contact AS c ON e.Contact_ID = c.Contact_ID WHERE Transaction_Date LIKE '" + year + "%' AND e.User_ID = '" + id + "'";
+            DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
+            return expenseData;
+        }
     }
 }

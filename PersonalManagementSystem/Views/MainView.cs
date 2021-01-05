@@ -32,7 +32,8 @@ namespace PersonalManagementSystem
         public void setId(int id)
         {
             user_id = id;
-            displayYearList(id);
+            displayIncomeYearList(id);
+            displayExpenseYearList(id);
         }
 
         static IncomeModel im = new IncomeModel();
@@ -166,7 +167,7 @@ namespace PersonalManagementSystem
             dataGridViewIncome.DataSource = incomeData;
         }
 
-        private void displayYearList(int id)
+        private void displayIncomeYearList(int id)
         {
             DataTable incomeData = im.displayYearList(id);
             comboBoxIncome.DataSource = incomeData;
@@ -311,6 +312,21 @@ namespace PersonalManagementSystem
         private void textSearchExpenseName_TextChanged(object sender, EventArgs e)
         {
             DataTable expenseData = em.searchExpenseData(textSearchExpense.Text, user_id);
+            dataGridViewExpense.DataSource = expenseData;
+        }
+
+        private void displayExpenseYearList(int id)
+        {
+            DataTable expenseData = em.displayYearList(id);
+            comboBoxExpense.DataSource = expenseData;
+            comboBoxExpense.DisplayMember = "Year";
+            comboBoxExpense.ValueMember = "Year";
+        }
+
+        private void comboBoxExpense_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedYear = comboBoxExpense.SelectedValue.ToString();
+            DataTable expenseData = im.displayIncomeDataByYear(selectedYear, user_id);
             dataGridViewExpense.DataSource = expenseData;
         }
 
