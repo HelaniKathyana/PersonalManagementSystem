@@ -102,7 +102,7 @@ namespace PersonalManagementSystem
              new Axis
             {
                 Title = "Years",
-                Labels = new[] { "2018", "2019", "2020" }
+                Labels = new[] { "2019", "2020", "2021" }
             });
 
             cartesianChartIncomeExpense.AxisY.Add(new Axis
@@ -176,8 +176,8 @@ namespace PersonalManagementSystem
 
         private void comboBoxIncome_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime year = (DateTime)comboBoxIncome.SelectedValue;
-            DataTable incomeData = im.displayIncomeDataByYear(year, user_id);
+            String selectedYear = comboBoxIncome.SelectedValue.ToString();
+            DataTable incomeData = im.displayIncomeDataByYear(selectedYear, user_id);
             dataGridViewIncome.DataSource = incomeData;
         }
 
@@ -619,6 +619,7 @@ namespace PersonalManagementSystem
             endDate = (DateTime)dataGridViewRepot.Rows[e.RowIndex].Cells[3].Value;
             loadIncomeSummary(this.user_id, startDate, endDate);
             loadExpenseSummary(this.user_id, startDate, endDate);
+            MakeDataTable(this.user_id, startDate, endDate, "");
         }
 
         private void loadIncomeSummary(int user_id, DateTime startDate, DateTime endDate)
@@ -637,6 +638,136 @@ namespace PersonalManagementSystem
             dataGridViewSummaryExpense.DataSource = reportData;
             dataGridViewSummaryExpense.Columns[0].HeaderText = "Category";
             dataGridViewSummaryExpense.Columns[1].HeaderText = "Total Amount";
+        }
+
+        //pdf implementation
+        void ExportDataTableToPdf(DataTable dtblIncomeTable, DataTable dtblExpenseTable, String strPdfPath, string strHeader)
+        {
+            System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
+            Document document = new Document();
+            document.SetPageSize(iTextSharp.text.PageSize.A4);
+            PdfWriter writer = PdfWriter.GetInstance(document, fs);
+            document.Open();
+
+            //Report Header
+            BaseFont bfntHead = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            iTextSharp.text.Font fntHead = new iTextSharp.text.Font(bfntHead, 16, 1);
+            Paragraph prgHeading = new Paragraph();
+            prgHeading.Alignment = Element.ALIGN_CENTER;
+            prgHeading.Add(new Chunk(strHeader.ToUpper(), fntHead));
+            document.Add(prgHeading);
+
+            //Add line break
+            document.Add(new Chunk("\n"));
+
+            //Report Sub Header
+            Paragraph prgIncomeSubHeader = new Paragraph();
+            BaseFont btnIncomeSubHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            var subIncomeHeaderFontColour = new BaseColor(128, 128, 128);
+            iTextSharp.text.Font fntIncome = new iTextSharp.text.Font(btnIncomeSubHeader, 12, 1, subIncomeHeaderFontColour);
+            prgIncomeSubHeader.Alignment = Element.ALIGN_LEFT;
+            prgIncomeSubHeader.Add(new Chunk("Income Summary", fntIncome));
+            document.Add(prgIncomeSubHeader);
+
+            //Write the table
+            PdfPTable incomeTable = new PdfPTable(dtblIncomeTable.Columns.Count);
+            //Table header
+            BaseFont btnIncomeColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            var columnIncomeHeaderFontColour = new BaseColor(255, 255, 255);
+            iTextSharp.text.Font fntIncomeColumnHeader = new iTextSharp.text.Font(btnIncomeColumnHeader, 10, 1, columnIncomeHeaderFontColour);
+            for (int i = 0; i < dtblIncomeTable.Columns.Count; i++)
+            {
+                PdfPCell cell = new PdfPCell();
+                var backgroundFontColour = new BaseColor(128, 128, 128);
+                cell.BackgroundColor = backgroundFontColour;
+                cell.AddElement(new Chunk(dtblIncomeTable.Columns[i].ColumnName.ToUpper(), fntIncomeColumnHeader));
+                incomeTable.AddCell(cell);
+            }
+
+            //table Data
+            for (int i = 0; i < dtblIncomeTable.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtblIncomeTable.Columns.Count; j++)
+                {
+                    incomeTable.AddCell(dtblIncomeTable.Rows[i][j].ToString());
+                }
+            }
+
+            //Add line break
+            document.Add(new Chunk("\n"));
+            document.Add(incomeTable);
+            document.Add(new Chunk("\n"));
+
+            //Report Sub Header
+            Paragraph prgExpenseSubHeader = new Paragraph();
+            BaseFont btnExpenseSubHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            var subExpenseHeaderFontColour = new BaseColor(128, 128, 128);
+            iTextSharp.text.Font fntExpense = new iTextSharp.text.Font(btnExpenseSubHeader, 12, 1, subExpenseHeaderFontColour);
+            prgExpenseSubHeader.Alignment = Element.ALIGN_LEFT;
+            prgExpenseSubHeader.Add(new Chunk("Expense Summary", fntExpense));
+            document.Add(prgExpenseSubHeader);
+
+            document.Add(new Chunk("\n"));
+
+            //Write the table
+            PdfPTable expenseTable = new PdfPTable(dtblExpenseTable.Columns.Count);
+            //Table header
+            BaseFont btnExpenseColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            var columnHeaderFontColour = new BaseColor(255, 255, 255);
+            iTextSharp.text.Font fntExpenseColumnHeader = new iTextSharp.text.Font(btnExpenseColumnHeader, 10, 1, columnHeaderFontColour);
+            for (int i = 0; i < dtblExpenseTable.Columns.Count; i++)
+            {
+                PdfPCell cell = new PdfPCell();
+                var backgroundFontColour = new BaseColor(128, 128, 128);
+                cell.BackgroundColor = backgroundFontColour;
+                cell.AddElement(new Chunk(dtblExpenseTable.Columns[i].ColumnName.ToUpper(), fntExpenseColumnHeader));
+                expenseTable.AddCell(cell);
+            }
+
+            //table Data
+            for (int i = 0; i < dtblExpenseTable.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtblExpenseTable.Columns.Count; j++)
+                {
+                    expenseTable.AddCell(dtblExpenseTable.Rows[i][j].ToString());
+                }
+            }
+ 
+            document.Add(expenseTable);
+            document.Close();
+            writer.Close();
+            fs.Close();
+        }
+
+        //data for pdf reports
+        DataTable MakeDataTable(int user_id, DateTime startDate, DateTime endDate, string name)
+        {
+            //Create income table object
+            if (name.Equals("income"))
+            {
+                DataTable reportData = rm.getIncomeSummary(user_id, startDate, endDate);
+                return reportData;
+            }
+            else
+            {
+                DataTable reportData = rm.getExpenseSummary(user_id, startDate, endDate);
+                return reportData;
+            }
+        }
+
+        private void buttonGenerateReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dtbl = MakeDataTable(user_id, startDate, endDate, "income");
+                DataTable dtb2 = MakeDataTable(user_id, startDate, endDate, "expense");
+                ExportDataTableToPdf(dtbl, dtb2, @"D:\Report.pdf", "Income and Expense Summary Report");
+                System.Diagnostics.Process.Start(@"D:\Report.pdf");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message");
+            }
         }
 
         //Prediction

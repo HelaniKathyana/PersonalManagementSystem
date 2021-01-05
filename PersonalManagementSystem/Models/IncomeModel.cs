@@ -83,9 +83,9 @@ namespace PersonalManagementSystem.Models
             return incomeData;
         }
 
-        public DataTable displayIncomeDataByYear(DateTime year, int id)
+        public DataTable displayIncomeDataByYear(string year, int id)
         {
-            string incomeSQL = "SELECT Income_ID, c.Name AS Payment_From, Description, Category, Account, Transaction_Date, Amount FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE year(Transaction_Date) = '" + year + "' AND i.User_ID = '" + id + "'";
+            string incomeSQL = "SELECT Income_ID, c.Name AS Payment_From, Description, Category, Account, Transaction_Date, Amount FROM Income AS i INNER JOIN Contact AS c ON i.Contact_ID = c.Contact_ID WHERE Transaction_Date LIKE '" + year + "%' AND i.User_ID = '" + id + "'";
             DataTable incomeData = ServerConnection.executeSQL(incomeSQL);
             return incomeData;
         }
