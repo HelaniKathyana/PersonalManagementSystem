@@ -27,6 +27,13 @@ namespace PersonalManagementSystem.Models
             return reportData;
         }
 
+        public DataTable deleteReportData(object name)
+        {
+            string reportSQL = "DELETE FROM Report WHERE Name = '" + name + "'";
+            DataTable reportData = ServerConnection.executeSQL(reportSQL);
+            return reportData;
+        }
+
         public DataTable getIncomeSummary(int id, DateTime startDate, DateTime endDate)
         {
             string reportSQL = "SELECT Category, SUM(Amount) as Total_Salary FROM Income WHERE User_ID = '" + id + "' AND Transaction_Date BETWEEN '" + startDate + "' AND '" + endDate + "' group by Category order by Category asc";

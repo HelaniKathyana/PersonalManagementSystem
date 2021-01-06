@@ -92,7 +92,7 @@ namespace PersonalManagementSystem.Models
 
         public DataTable displayExpenseDataByYear(string year, int id)
         {
-            string expenseSQL = "SELECT Income_ID, c.Name AS Payment_To, Description, Category, Account, Transaction_Date, Amount FROM Expense AS e INNER JOIN Contact AS c ON e.Contact_ID = c.Contact_ID WHERE Transaction_Date LIKE '" + year + "%' AND e.User_ID = '" + id + "'";
+            string expenseSQL = "SELECT Expense_ID, c.Name AS Payment_To, Description, Category, Account, Transaction_Date, Amount FROM Expense AS e INNER JOIN Contact AS c ON e.Contact_ID = c.Contact_ID WHERE Transaction_Date LIKE '" + year + "%' AND e.User_ID = '" + id + "'";
             DataTable expenseData = ServerConnection.executeSQL(expenseSQL);
             return expenseData;
         }

@@ -326,7 +326,7 @@ namespace PersonalManagementSystem
         private void comboBoxExpense_SelectedIndexChanged(object sender, EventArgs e)
         {
             String selectedYear = comboBoxExpense.SelectedValue.ToString();
-            DataTable expenseData = im.displayIncomeDataByYear(selectedYear, user_id);
+            DataTable expenseData = em.displayExpenseDataByYear(selectedYear, user_id);
             dataGridViewExpense.DataSource = expenseData;
         }
 
@@ -626,6 +626,29 @@ namespace PersonalManagementSystem
             {
                 reportOverlay.Dispose();
                 loadReportData();
+            }
+        }
+
+
+        private void buttonDeleteReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Do you want to permanently delete the selected record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    rm.deleteReportData(dataGridViewRepot.CurrentRow.Cells[0].Value);
+                    loadReportData();
+                    MessageBox.Show("The selected record has been deletecd.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                // and error occured
             }
         }
 

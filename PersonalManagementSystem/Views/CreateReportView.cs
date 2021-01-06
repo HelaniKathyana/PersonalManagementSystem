@@ -53,11 +53,10 @@ namespace PersonalManagementSystem.Views
                 return;
             }
 
-            DateTime today = DateTime.Today.Date;
-            if (endDatePicker.Value < today)
+            if (endDatePicker.Value == startDatePicker.Value)
             {
-                MessageBox.Show("You are not allowed to select older day than today!", caption, btn, ico);
-                endDatePicker.Select();
+                MessageBox.Show("You are not allowed to select same dates!", caption, btn, ico);
+                startDatePicker.Select();
                 return;
             }
 
