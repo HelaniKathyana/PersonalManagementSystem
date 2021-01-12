@@ -143,7 +143,7 @@ namespace PersonalManagementSystem.Views
             this.startDatePicker.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDatePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDatePicker.Location = new System.Drawing.Point(21, 171);
-            this.startDatePicker.MaxDate = new System.DateTime(2021, 1, 6, 0, 0, 0, 0);
+            this.startDatePicker.MaxDate = new System.DateTime(2021, 1, 12, 0, 0, 0, 0);
             this.startDatePicker.Name = "startDatePicker";
             this.startDatePicker.Size = new System.Drawing.Size(271, 29);
             this.startDatePicker.TabIndex = 20;
@@ -163,7 +163,7 @@ namespace PersonalManagementSystem.Views
             // 
             this.endDatePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDatePicker.Location = new System.Drawing.Point(310, 171);
-            this.endDatePicker.MaxDate = new System.DateTime(2021, 1, 6, 0, 0, 0, 0);
+            this.endDatePicker.MaxDate = new System.DateTime(2021, 1, 12, 0, 0, 0, 0);
             this.endDatePicker.Name = "endDatePicker";
             this.endDatePicker.Size = new System.Drawing.Size(271, 29);
             this.endDatePicker.TabIndex = 22;

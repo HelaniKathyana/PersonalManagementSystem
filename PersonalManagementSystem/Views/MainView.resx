@@ -121,6 +121,15 @@
     <value>False</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonSubmit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAMpJREFUOE9j
+        GGKg/KoNQ9m1LCiPBFB+3Yqh9NonIJ4CFSESlF2zAGr6CMSzGRr+M0FFiQCl14yA+B3QgDmkaSy6agjU
+        +BaI56JqLL2ewFBy1RzKwwTF143BNmJoBAGQ+0uvfcBqAMzGkuvzcDj1PyNDybWpQEUfwQECA+VX9IFi
+        b4ByCwj4EWgAKOhLr30BesOeoeSGHpD9GohXMIT+Z4YqwgfABkwHYlBUgDQuJlIjDIAMuD4J6PyVDA37
+        WaCCpACgAaTZSA5gYAAAK+RjrJVmraAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="contactPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -159,15 +168,6 @@
 </value>
   </data>
   <data name="buttonGenerateReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAMpJREFUOE9j
-        GGKg/KoNQ9m1LCiPBFB+3Yqh9NonIJ4CFSESlF2zAGr6CMSzGRr+M0FFiQCl14yA+B3QgDmkaSy6agjU
-        +BaI56JqLL2ewFBy1RzKwwTF143BNmJoBAGQ+0uvfcBqAMzGkuvzcDj1PyNDybWpQEUfwQECA+VX9IFi
-        b4ByCwj4EWgAKOhLr30BesOeoeSGHpD9GohXMIT+Z4YqwgfABkwHYlBUgDQuJlIjDIAMuD4J6PyVDA37
-        WaCCpACgAaTZSA5gYAAAK+RjrJVmraAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="buttonSubmit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAMpJREFUOE9j
         GGKg/KoNQ9m1LCiPBFB+3Yqh9NonIJ4CFSESlF2zAGr6CMSzGRr+M0FFiQCl14yA+B3QgDmkaSy6agjU
