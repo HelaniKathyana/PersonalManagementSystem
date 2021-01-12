@@ -60,6 +60,7 @@ namespace PersonalManagementSystem
             loadReportData();
         }
 
+        //sign up
         private void labelSignUp_Click(object sender, EventArgs e)
         {
             LoginView login = new LoginView();
@@ -114,7 +115,7 @@ namespace PersonalManagementSystem
         }
 
 
-    private void loadIncomeCategoryOverviewChart()
+        private void loadIncomeCategoryOverviewChart()
         {
             Func<ChartPoint, string> labelPoint = chartPoint =>
                 string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
@@ -161,6 +162,8 @@ namespace PersonalManagementSystem
         }
 
         //Income View
+
+        //search method for Income
         private void textSearchIncomeName_TextChanged(object sender, EventArgs e)
         {
             DataTable incomeData = im.searchIncomeData(textSearchIncome.Text, user_id);
@@ -182,6 +185,7 @@ namespace PersonalManagementSystem
             dataGridViewIncome.DataSource = incomeData;
         }
 
+        // load all the income details by given user id
         private void loadIncomeData()
         {
             DataTable incomeData = im.displayAllIncomeData(user_id);
@@ -207,6 +211,7 @@ namespace PersonalManagementSystem
             labelIncome.Text = sum.ToString();
         }
 
+        //add method for income
         private void buttonAddIncome_Click(object sender, EventArgs e)
         {
             Form incomeOverlay = new Form();
@@ -243,6 +248,7 @@ namespace PersonalManagementSystem
             }
         }
 
+        //delete method for income
         private void buttonDeleteIncome_Click(object sender, EventArgs e)
         {
             try
@@ -266,6 +272,7 @@ namespace PersonalManagementSystem
             }
         }
 
+        //update method for income
         private void buttonEditIncome_Click(object sender, EventArgs e)
         {
             Form contactOverlay = new Form();
@@ -303,12 +310,15 @@ namespace PersonalManagementSystem
             }
         }
 
+        //set income id
         private void dataGridViewIncome_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             incomeId = dataGridViewIncome.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         //Expense View
+
+        //search method for Expense 
         private void textSearchExpenseName_TextChanged(object sender, EventArgs e)
         {
             DataTable expenseData = em.searchExpenseData(textSearchExpense.Text, user_id);
@@ -330,6 +340,7 @@ namespace PersonalManagementSystem
             dataGridViewExpense.DataSource = expenseData;
         }
 
+        // load all the expense details by given user id
         private void loadExpenseData()
         {
             DataTable expenseData = em.displayAllExpenseData(user_id);
@@ -355,6 +366,7 @@ namespace PersonalManagementSystem
             labelExpense.Text = sum.ToString();
         }
 
+        //add method for expense
         private void buttonAddExpense_Click(object sender, EventArgs e)
         {
             Form expenseOverlay = new Form();
@@ -391,6 +403,7 @@ namespace PersonalManagementSystem
             }
         }
 
+        //delete method for expense
         private void buttonDeleteExpense_Click(object sender, EventArgs e)
         {
             try
@@ -414,6 +427,7 @@ namespace PersonalManagementSystem
             }
         }
 
+        //update method for expense
         private void buttonEditExpense_Click(object sender, EventArgs e)
         {
             Form expenseOverlay = new Form();
@@ -451,18 +465,22 @@ namespace PersonalManagementSystem
             }
         }
 
+        //set expense id
         private void dataGridViewExpense_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             expenseId = dataGridViewExpense.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         // Contact View
+
+        //search method for contact 
         private void textSearchContactName_TextChanged(object sender, EventArgs e)
         {
             DataTable contactData = cm.searchContactData(textSearchContact.Text, user_id);
             dataGridViewContact.DataSource = contactData;
         }
 
+        // load all the contact details by given user id
         private void loadContactData()
         {
             DataTable contactData = cm.displayAllContactData(user_id);
@@ -481,6 +499,7 @@ namespace PersonalManagementSystem
             labelContact.Text = dataGridViewContact.Rows.Count.ToString();
         }
 
+        //add method for contact
         private void buttonAddContact_Click(object sender, EventArgs e)
         {
             Form contactOverlay = new Form();
@@ -517,6 +536,7 @@ namespace PersonalManagementSystem
             }
         }
 
+        //delete method for contact
         private void buttonDeleteContact_Click(object sender, EventArgs e)
         {
             try
@@ -540,6 +560,7 @@ namespace PersonalManagementSystem
             }
         }
 
+        //update method for contact
         private void buttonEditContacts_Click(object sender, EventArgs e)
         {
             Form contactOverlay = new Form();
@@ -576,12 +597,15 @@ namespace PersonalManagementSystem
             }
         }
 
+        //set contact id
         private void dataGridViewContact_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             contId = dataGridViewContact.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         //Report View
+
+        //load all the report details for given id
         private void loadReportData()
         {
             DataTable reportData = rm.displayAllReportData(user_id);
@@ -594,6 +618,7 @@ namespace PersonalManagementSystem
             dataGridViewRepot.Columns[4].HeaderText = "Created";
         }
 
+        //create method for report
         private void buttonCreateReport_Click(object sender, EventArgs e)
         {
             Form reportOverlay = new Form();
@@ -629,7 +654,7 @@ namespace PersonalManagementSystem
             }
         }
 
-
+        //delete method for report
         private void buttonDeleteReport_Click(object sender, EventArgs e)
         {
             try
@@ -794,6 +819,7 @@ namespace PersonalManagementSystem
             }
         }
 
+        //generate pdf for incomes and expenses
         private void buttonGenerateReport_Click(object sender, EventArgs e)
         {
             try
